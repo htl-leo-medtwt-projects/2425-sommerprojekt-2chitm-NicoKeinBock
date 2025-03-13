@@ -5,14 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jump Odyssey</title>
     <link rel="stylesheet" href="../css/index.css">
+    <script src="../javascript/main.js" defer></script>
 </head>
 <body>
     <h1>Jump Odyssey</h1>
     <nav>
-    <div id="spielen" class="mainMenu"><a href="./game.html">Spielen</a></div>
-    <div id="einstellungen" class="mainMenu"><a href="./einstellungen.html">Einstellungen</a></div>
-    <div id="statistiken" class="mainMenu"><a href="./statistiken.html">Statistiken</a></div>
-    <div id="impressum" class="mainMenu"><a href="./impressum.html">Impressum</a></div>
-</nav>
+        <a href="./game.html">
+            <div id="spielen" class="mainMenu">
+                <p>Spielen</p>
+            </div>
+        </a>
+        <a href="#">
+            <div id="einstellungen" class="mainMenu" onclick="openSettings()">
+                <p>Einstellungen</p>
+            </div>
+        </a>
+        <a href="#">
+            <div id="statistiken" class="mainMenu">
+                <p>Statistiken</p>
+            </div>
+        </a>
+        <a href="./impressum.html">
+            <div id="impressum" class="mainMenu">
+                <p>Impressum</p>
+            </div>
+        </a>
+    </nav>
+    <div id="settings-popup" style="display: none;">
+    <h1>Einstellungen</h1>
+    <p>Hier können Sie Ihre Einstellungen ändern.</p>
+    <button id="close-settings">Schließen</button>
+</div>
 </body>
 </html>
