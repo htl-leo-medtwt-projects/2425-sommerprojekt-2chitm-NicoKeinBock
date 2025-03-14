@@ -9,6 +9,14 @@
 </head>
 <body>
     <h1>Jump Odyssey</h1>
+    <div id="settings-popup" style="display: none;">
+        <h2>Einstellungen</h2>
+        <p>Musik</p>
+        <input type="range" min="1" max="100" value="50" class="slider" id="myRange">        
+        <p>Soundeffekte</p>
+        <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+        <button id="close-settings">Schließen</button>
+    </div>
     <nav>
         <a href="./game.html">
             <div id="spielen" class="mainMenu">
@@ -31,10 +39,8 @@
             </div>
         </a>
     </nav>
-    <div id="settings-popup" style="display: none;">
-    <h1>Einstellungen</h1>
-    <p>Hier können Sie Ihre Einstellungen ändern.</p>
-    <button id="close-settings">Schließen</button>
+   
+
 </div>
 </body>
 </html>
