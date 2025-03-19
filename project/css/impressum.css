@@ -1,0 +1,17 @@
+@font-face {
+    font-family: Jersey25;
+    src: url(../Font/Jersey_25,Playfair_Display/Jersey_25/Jersey25-Regular.ttf);
+}
+@font-face {
+    font-family: InriaSans;
+    src: url(../Font/Inria_Sans,Jersey_25,Playfair_Display/Inria_Sans/InriaSans-Regular.ttf);
+
+}
+:root{
+  --primary-color1: rgb(0, 255, 204);
+  --primary-color2: rgb(122, 255, 56);
+
+}
+h1{
+    font-family: Jersey25;
+}
