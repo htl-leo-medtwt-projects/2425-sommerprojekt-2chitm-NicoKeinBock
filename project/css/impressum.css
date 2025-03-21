@@ -12,6 +12,52 @@
   --primary-color2: rgb(122, 255, 56);
 
 }
+body{
+    background-image: url(../Images/Impressum.png);
+    width: 100vw;
+    background-size: 140%;
+
+}
 h1{
     font-family: Jersey25;
+    text-align: center;
+    font-size: 350%;
+}
+p{
+    font-family: InriaSans;
+}
+h3,h2{
+    font-family: Jersey25;
+    
+}
+img{
+    width: 10%;
+   
+    position: absolute;
+    top: 0.3vh;
+}
+h1{
+    animation: shimmer 5s infinite;
+}
+@keyframes shimmer {
+    0% {
+      text-shadow: 0 0 6px #1856ba4d, 0 0 10px #00409a4d;
+    }
+  
+    50% {
+      text-shadow: 0 0 12px rgba(24, 68, 163, 0.5), 0 0 20px rgba(20, 127, 180, 0.5);
+    }
+  
+    100% {
+      text-shadow: 0 0 6px #1856ba4d, 0 0 10px #00409a4d;
+    }
+  }
+#impressum{
+    margin-bottom: 3vh;
+}
+img:hover{
+    transform: scale(1.1);
+}
+img{
+    transition: all 0.5s;
 }
