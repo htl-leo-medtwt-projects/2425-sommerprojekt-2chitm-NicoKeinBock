@@ -1,17 +1,36 @@
-function openSettings(){
-    document.getElementById("settings-popup").style.display = "block";
-
-}
-document.getElementById("close-settings").addEventListener("click", function(){
-    document.getElementById("settings-popup").style.display = "none";
-});
-let soundState = 1; 
-
-function switchImage(changer){
-    soundState = soundState * changer;
-    if (soundState === 1) {
-        document.getElementById('soundImage').src = "../images/sound_off.png";
+function toggleSettings() {
+    var settingsPopup = document.getElementById("settings-popup");
+    if (settingsPopup.style.display === "block") {
+        settingsPopup.style.display = "none";
     } else {
-        document.getElementById('soundImage').src = "../images/sound_on.png";
+        settingsPopup.style.display = "block";
+        document.getElementById('gameMenuBox').style.display = "none";
+    }
+}
+
+function toggleGameMap() {
+    var gameMap = document.getElementById("gameMap");
+    if (gameMap.style.display === "block") {
+        gameMap.style.display = "none";
+    } else {
+        gameMap.style.display = "block";
+    }
+}
+
+function toggleMenu() {
+    var gameMenuBox = document.getElementById("gameMenuBox");
+    if (gameMenuBox.style.display === "block") {
+        gameMenuBox.style.display = "none";
+    } else {
+        gameMenuBox.style.display = "block";
+    }
+}
+
+function toggleSoundImage() {
+    var soundImage = document.getElementById("soundImage");
+    if (soundImage.src === "../images/sound_on.png") {
+        soundImage.src = "../images/sound_off.png";
+    } else {
+        soundImage.src = "../images/sound_on.png";
     }
 }

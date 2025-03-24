@@ -17,18 +17,18 @@
         <p>Soundeffekte</p>
         <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
         <div id="soundImageWrapper">
-        <img src="../Images/sound_off.png" alt="sound_select" id="soundImage" onclick="switchImage(-1)">
+        <img src="../Images/sound_off.png" alt="sound_select" id="soundImage" onclick="toggleSoundImage()">
         </div>
-        <button id="close-settings">Schließen</button>
+        <button id="close-settings" onclick="toggleSettings()">Schließen</button>
     </div>
     <nav>
-        <a href="./game.html">
-            <div id="spielen" class="mainMenu">
+        <a href="#">
+            <div id="spielen" class="mainMenu" onclick="toggleGameMap()">
                 <p>Spielen</p>
             </div>
         </a>
         <a href="#">
-            <div id="einstellungen" class="mainMenu" onclick="openSettings()">
+            <div id="einstellungen" class="mainMenu" onclick="toggleSettings()">
                 <p>Einstellungen</p>
             </div>
         </a>
@@ -44,8 +44,19 @@
         </a>
     </nav>
 </div>
-<div id="game">
-    <div id="settings"></div>
+<div id="gameMap">
+    <div id="settings" onclick="toggleMenu()"></div>
+    <div id="gameMenuBox">
+    <div id="gameMenu">
+        <div class=settingsMenu onclick="toggleSettings()">
+            <p id="settingsMenuTitle">Einstellungen</p>
+        </div>
+        <div class="settingsMenu" onclick="toggleGameMap(); toggleMenu()">
+            <p>Hauptmenü</p>
+        </div>
+    </div>
+</div>
+    <div id="coverUp"></div>
     <div id="level1"></div>
     <div id="level2"></div>
     <div id="level3"></div>
