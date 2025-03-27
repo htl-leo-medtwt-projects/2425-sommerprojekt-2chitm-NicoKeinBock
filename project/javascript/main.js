@@ -61,3 +61,36 @@ function toggleMusic() {
         toggleSoundImage();
     }
 }
+let PLAYER_IMAGES = {
+    player1: "../images/shinobi.png",
+    player2: "../images/samurei.png",
+    player3: "../images/fighter.png",
+}
+function togglePlayerSelection() {
+    let box = document.getElementById('playerSelection');
+    
+    box.innerHTML += `
+      <div class="playerSelectionBox" id="playerSelectionBox1">
+        <img src="${PLAYER_IMAGES.player1}" class="playerSelectionImage" id="playerSelectionImage1">
+      </div>
+      <div class="playerSelectionBox" id="playerSelectionBox2">
+        <img src="${PLAYER_IMAGES.player2}" class="playerSelectionImage" id="playerSelectionImage2">
+      </div>
+      <div class="playerSelectionBox" id="playerSelectionBox3">
+        <img src="${PLAYER_IMAGES.player3}" class="playerSelectionImage" id="playerSelectionImage3">
+      </div>
+    `;
+    
+    box.style.display = "block"
+  }
+let callCount = 1;
+
+document.getElementById('spielen').addEventListener('click', function() {
+ 
+  if (callCount === 1) {
+    callCount++;
+    togglePlayerSelection();
+  } else if (callCount === 2) {
+    toggleGameMap();
+  }
+});
