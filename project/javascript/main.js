@@ -34,7 +34,6 @@ function toggleSoundImage() {
         soundImage.src = "../images/sound_on.png";
     }
 }
-<<<<<<< HEAD
 function rotateBox() {
     var box = document.getElementById("settings");
     box.classList.add("rotate");
@@ -42,8 +41,6 @@ function rotateBox() {
       box.classList.remove("rotate");
     }, 400);
   }
-=======
-
 var music = new Audio();
 music.src = "../music/index.mp3";
 music.loop = true;
@@ -64,4 +61,3 @@ function toggleMusic() {
         toggleSoundImage();
     }
 }
->>>>>>> d87648730a36933b9661cdfac8d4deb7944af71f
