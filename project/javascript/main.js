@@ -8,7 +8,7 @@ function toggleSettings() {
     }
 }
 
-function toggleGameMap() {
+   function  toggleGameMap() {
     var gameMap = document.getElementById("gameMap");
     if (gameMap.style.display === "block") {
         gameMap.style.display = "none";
@@ -34,3 +34,10 @@ function toggleSoundImage() {
         soundImage.src = "../images/sound_on.png";
     }
 }
+function rotateBox() {
+    var box = document.getElementById("settings");
+    box.classList.add("rotate");
+    setTimeout(function() {
+      box.classList.remove("rotate");
+    }, 400);
+  }

@@ -208,5 +208,22 @@ left: 5vw;
   #gameMenuBox{
     display: none;
   }
-
+  #howTo{
+    position: absolute;
+    left: 90vw;
+   top: -7vh;
+   animation: shimmer 2s infinite;
+  }
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(180deg);
+    }
+  }
+  
+  .rotate {
+    animation: rotate 0.3s linear;
+  }
 

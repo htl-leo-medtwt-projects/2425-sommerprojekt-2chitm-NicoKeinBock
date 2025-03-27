@@ -6,10 +6,12 @@
     <title>Jump Odyssey</title>
     <link rel="stylesheet" href="../css/index.css">
     <script src="../javascript/main.js" defer></script>
+    <link rel="preload" as="image" href="../Images/zahnrad.png">
 </head>
 <body>
     <div id="startseite">
     <h1>Jump Odyssey</h1>
+    
     <div id="settings-popup" style="display: none;">
         <h2>Einstellungen</h2>
         <p>Musik</p>
@@ -45,7 +47,10 @@
     </nav>
 </div>
 <div id="gameMap">
-    <div id="settings" onclick="toggleMenu()"></div>
+    <div id="howTo">
+        <h1>?</h1>
+    </div>
+    <div id="settings" onclick="toggleMenu();rotateBox()"></div>
     <div id="gameMenuBox">
     <div id="gameMenu">
         <div class=settingsMenu onclick="toggleSettings()">
