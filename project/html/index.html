@@ -15,11 +15,11 @@
     <div id="settings-popup" style="display: none;">
         <h2>Einstellungen</h2>
         <p>Musik</p>
-        <input type="range" min="1" max="100" value="50" class="slider" id="myRange">        
+        <input type="range" min="1" max="100" value="50" class="slider" id="musicVolume">        
         <p>Soundeffekte</p>
         <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
         <div id="soundImageWrapper">
-        <img src="../Images/sound_off.png" alt="sound_select" id="soundImage" onclick="toggleSoundImage()">
+        <img src="../Images/sound_off.png" alt="sound_select" id="soundImage" onclick="toggleSoundImage();toggleMusic()">
         </div>
         <button id="close-settings" onclick="toggleSettings()">Schließen</button>
     </div>
@@ -66,7 +66,6 @@
     <div id="level2"></div>
     <div id="level3"></div>
 </div>
-
 </div>
 </body>
 </html>
