@@ -32,7 +32,7 @@ margin-bottom: 1vh;
 a{
 color: #000;
 font-family: "InriaSans";
-font-size: 3rem;
+font-size: 300%;
 text-decoration: none;
 padding: 1%;
 transition: all 0.5s;
@@ -63,8 +63,8 @@ nav {
   .mainMenu {
     border-radius: 15px;
     border: 4px solid #000;
-    width: 22.5rem;
-    height: 4.5rem;
+    width: 24.5vw;
+    height: 9vh;
     margin-left: auto;
     margin-right: auto;
     display: flex;
@@ -270,4 +270,7 @@ left: 5vw;
     height: 15%; /* oder 0.2344em */
     overflow: hidden;
     border: solid;
+  }
+  button, .settingsMenu, #settings, #soundImageWrapper:hover{
+    cursor: pointer;
   }
