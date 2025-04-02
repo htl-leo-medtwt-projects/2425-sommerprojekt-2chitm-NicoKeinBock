@@ -69,15 +69,18 @@ let PLAYER_IMAGES = {
 function togglePlayerSelection() {
     let box = document.getElementById('playerSelection');
     
-    box.innerHTML += `
-      <div class="playerSelectionBox" id="playerSelectionBox1">
+    box.innerHTML = `
+    <h2>Wähle deinen Skin</h2>
+    <div id="skinImageBox">
+      <div class="playerSelectionBox" id="playerSelectionBox1" onclick="skinSelect(0)">
         <img src="${PLAYER_IMAGES.player1}" class="playerSelectionImage" id="playerSelectionImage1">
       </div>
-      <div class="playerSelectionBox" id="playerSelectionBox2">
+      <div class="playerSelectionBox" id="playerSelectionBox2" onclick="skinSelect(1);">
         <img src="${PLAYER_IMAGES.player2}" class="playerSelectionImage" id="playerSelectionImage2">
       </div>
-      <div class="playerSelectionBox" id="playerSelectionBox3">
+      <div class="playerSelectionBox" id="playerSelectionBox3" onclick= "skinSelect(2)">
         <img src="${PLAYER_IMAGES.player3}" class="playerSelectionImage" id="playerSelectionImage3">
+      </div>
       </div>
     `;
     

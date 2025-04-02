@@ -226,12 +226,48 @@ left: 5vw;
   .rotate {
     animation: rotate 0.3s linear;
   }
-  #playerSelection{
-    display: none;
+  #playerSelection {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 80%;
-    margin-left: auto;
-    margin-right: auto;
+    height: 80%;
     background: linear-gradient(180deg, rgba(0, 255, 204, 0.97) 0.01%, rgba(122, 255, 56, 0.85) 100%);
+    z-index: 50;
+    display: none;
+    border-radius: 15px;
+  }
+  .playerSelectionBox{
+   margin-left: auto;
+   margin-right: auto;    
+  }
+  #skinImageBox{
+    display: grid;
+    grid-template-columns: auto auto auto;
+  
+  }
+  .playerSelectionBox img{
+    width:15vw;
+  }
+  .playerSelectionBox:hover{
+    cursor: pointer;
+    border: solid;
+    border-radius: 40px;
 
   }
-
+  #spriteImg {
+    height: 100%; /* oder 1em */
+    bottom: 0%; /* oder 0.25em */
+    position: relative;
+    right: 80%;
+    
+  }
+  
+  #player {
+    position: absolute;
+    width: 3%; /* oder 0.25em */
+    height: 15%; /* oder 0.2344em */
+    overflow: hidden;
+    border: solid;
+  }

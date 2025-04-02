@@ -3,13 +3,14 @@ let PLAYER = {
     spriteImg: document.getElementById('spriteImg'),
     spriteImgNumber: 0, 
     spriteDirection: 1,
-    tokenCount: 0
+    tokenCount: 0,
+    skin: ""
 }
 let MAP = {
-    map: document.getElementById('map'),
-    level1: document.getElementById() ,
-    level2: document.getElementById(),
-    level3: document.getElementById(),
+    map: document.getElementById('gameMap'),
+    level1: document.getElementById('') ,
+    level2: document.getElementById(''),
+    level3: document.getElementById(''),
 
 }
 function movePlayer(dx, dy, dr) {
@@ -39,3 +40,28 @@ function animatePlayer() {
         PLAYER.spriteImgNumber = 0;
     }
 }
+function skinSelect(index) {
+ 
+  
+    switch (index) {
+      case 0:
+        PLAYER.skin = "../images/Player/Shinobi";
+        break;
+      case 1:
+        PLAYER.skin = "../images/Player/Samurai";
+        break;
+      case 2:
+        PLAYER.skin = "../images/Player/Fighter";
+        break;
+      default:
+        throw new Error('Invalid index');
+    }
+    try {
+      document.getElementById('spriteImg').src = PLAYER.skin + "/Idle.png";
+    } catch (error) {
+      console.error('Error updating sprite image:', error);
+    }
+    document.getElementById('playerSelection').style.display = "none";
+    MAP.map.style.display = "block";
+  }
+
