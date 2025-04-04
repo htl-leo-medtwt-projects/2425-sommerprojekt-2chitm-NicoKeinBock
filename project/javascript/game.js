@@ -1,26 +1,31 @@
 let PLAYER = {
     box: document.getElementById('player'),
     spriteImg: document.getElementById('spriteImg'),
+    spriteMovement: 0,
     spriteImgNumber: 0, 
     spriteDirection: 1,
+    spriteResetPoint: 0,
     tokenCount: 0,
-    skin: ""
+    skin: "",
+    jumpHeight: 0
+
+}
+let GAME_CONFIG = {
+  gameSpeed: 30,
+  characterSpeed: 5 
 }
 let MAP = {
     map: document.getElementById('gameMap'),
-    level1: document.getElementById('') ,
-    level2: document.getElementById(''),
-    level3: document.getElementById(''),
-
+  
 }
 function gameLoop() {
   console.log('Game Loop Running');
   if (KEY_EVENTS.leftArrow) {
-      movePlayer((-1) * GAME_CONFIG.characterSpeed, 0, -1);
+      movePlayer((-1) * GAME_CONFIG.characterSpeed, 0, 1);
       animatePlayer();
   }
   if (KEY_EVENTS.rightArrow) {
-      movePlayer(GAME_CONFIG.characterSpeed, 0, 1);
+      movePlayer(GAME_CONFIG.characterSpeed, 0, -1);
       animatePlayer();
   }
   if (KEY_EVENTS.upArrow) {
@@ -31,57 +36,74 @@ function gameLoop() {
       movePlayer(0, GAME_CONFIG.characterSpeed, 0);
       animatePlayer();
   }
+  if (KEY_EVENTS.space) {
 
+  }
+  if(KEY_EVENTS.shift){
+    GAME_CONFIG.characterSpeed = 10;
+  }
+  else{
+    GAME_CONFIG.characterSpeed = 5;
+  }
   gameLoopTimeout = setTimeout(gameLoop, 1000 / GAME_CONFIG.gameSpeed);
 }
 function movePlayer(dx, dy, dr) {
-    // save original position
-    let originalX = parseFloat(PLAYER.box.style.left);
-    let originalY = parseFloat(PLAYER.box.style.top);
+    let rect = PLAYER.box.getBoundingClientRect();
+    let newX = rect.left + dx;
+    let newY = rect.top + dy;
 
-    // calculate new position
-    PLAYER.box.style.left = (originalX + dx) + 'vw';
-    PLAYER.box.style.top = (originalY + dy) + 'vh';
+    PLAYER.box.style.position = "absolute"; 
+    PLAYER.box.style.left = newX + "px";
+    PLAYER.box.style.top = newY + "px";
 
-    // update sprite direction if needed
-    if (dr != 0 && dr != PLAYER.spriteDirection) {
+    if (dr !== 0 && dr !== PLAYER.spriteDirection) {
         PLAYER.spriteDirection = dr;
-        PLAYER.box.style.transform = `scaleX(${-dr})`; // Flip the sprite direction
+        PLAYER.box.style.transform = `scaleX(${-dr})`;
     }
 }
+
 function animatePlayer() {
-    if (PLAYER.spriteImgNumber < 3) {
+    if (PLAYER.spriteImgNumber < 7) {
         PLAYER.spriteImgNumber++;
         let x = parseFloat(PLAYER.spriteImg.style.right);
-        x += 64.0;
-        PLAYER.spriteImg.style.right = x + "px";
+        x += PLAYER.spriteMovement
+        PLAYER.spriteImg.style.right = x + "%";
     } else {
-        PLAYER.spriteImg.style.right = "0px";
+        PLAYER.spriteImg.style.right = PLAYER.spriteResetPoint + "%" ;
         PLAYER.spriteImgNumber = 0;
     }
 }
 function skinSelect(index) {
- 
-  
     switch (index) {
       case 0:
         PLAYER.skin = "../images/Player/Shinobi";
+        PLAYER.spriteMovement = 230.5
+        PLAYER.spriteResetPoint = 33;
+        document.getElementById('spriteImg').style.right = "33";
         break;
       case 1:
         PLAYER.skin = "../images/Player/Samurai";
+        PLAYER.spriteMovement = 227.6
+        PLAYER.spriteResetPoint = 22
+        document.getElementById('spriteImg').style.right = "24";
+
         break;
       case 2:
         PLAYER.skin = "../images/Player/Fighter";
+        PLAYER.spriteMovement = 230.5
+        PLAYER.spriteResetPoint = 48;
+        document.getElementById('spriteImg').style.right = "48";
         break;
       default:
         throw new Error('Invalid index');
     }
     try {
-      document.getElementById('spriteImg').src = PLAYER.skin + "/Idle.png";
+      document.getElementById('spriteImg').src = PLAYER.skin + "/Run.png";
     } catch (error) {
       console.error('Error updating sprite image:', error);
     }
     document.getElementById('playerSelection').style.display = "none";
     MAP.map.style.display = "block";
+    gameLoop();
   }
 

@@ -257,20 +257,25 @@ left: 5vw;
 
   }
   #spriteImg {
+    position: relative;
     height: 100%; /* oder 1em */
     bottom: 0%; /* oder 0.25em */
-    position: relative;
-    right: 80%;
-    
   }
   
   #player {
     position: absolute;
-    width: 3%; /* oder 0.25em */
-    height: 15%; /* oder 0.2344em */
-    overflow: hidden;
-    border: solid;
+    width: 3%; 
+    height: 15%; 
+   overflow: hidden;
   }
   button, .settingsMenu, #settings, #soundImageWrapper:hover{
     cursor: pointer;
+  }
+  #shop img{
+    width: 15vw;
+  }
+  #shop{
+    position: absolute;
+    left: 65vw;
+    top: 29vh;
   }
