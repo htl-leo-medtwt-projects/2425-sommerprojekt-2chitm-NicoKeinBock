@@ -111,6 +111,7 @@ function skinSelect(index) {
     if(howToPlay.style.display === "none"){
       howToPlay.style.display = "block"
       let howToPlayText = `
+      <div id= "howToText">
       <h2>So spielst du</h2>
       <p>Benutze WASD um den Spieler zu steuern</p>
       <p>Du kannst während du SHIFT gedrückt hältst sprinten</p>
@@ -118,6 +119,7 @@ function skinSelect(index) {
       <p>Drücke ESC um das Level zu pausieren</p>
       <p>Benütze den Shop um die gesammelten Münzen für Boosts auszugeben</p>
       <button onclick="howToPlay()">Schließen</button>
+      </div>
       `
       howToPlay.innerHTML = howToPlayText
     }
