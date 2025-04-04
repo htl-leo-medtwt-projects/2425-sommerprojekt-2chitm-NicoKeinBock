@@ -106,4 +106,22 @@ function skinSelect(index) {
     MAP.map.style.display = "block";
     gameLoop();
   }
-
+  function howToPlay(){
+    var howToPlay = document.getElementById('howToPlay')
+    if(howToPlay.style.display === "none"){
+      howToPlay.style.display = "block"
+      let howToPlayText = `
+      <h2>So spielst du</h2>
+      <p>Benutze WASD um den Spieler zu steuern</p>
+      <p>Du kannst während du SHIFT gedrückt hältst sprinten</p>
+      <p>Drücke SPACE um in den Leveln zu springen</p>
+      <p>Drücke ESC um das Level zu pausieren</p>
+      <p>Benütze den Shop um die gesammelten Münzen für Boosts auszugeben</p>
+      <button onclick="howToPlay()">Schließen</button>
+      `
+      howToPlay.innerHTML = howToPlayText
+    }
+    else{
+      howToPlay.style.display = "none"
+    }
+  }
