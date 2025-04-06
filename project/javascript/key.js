@@ -54,3 +54,14 @@ function keyListenerUp(e) {
         KEY_EVENTS.shift = false;
     }
 }
+function isColliding(div1, div2, tolerance = 0) {
+    const rect1 = div1.getBoundingClientRect();
+    const rect2 = div2.getBoundingClientRect();
+  
+    const distanceTop = rect2.top - rect1.bottom;
+    const distanceBottom = rect1.top - rect2.bottom;
+    const distanceLeft = rect2.left - rect1.right;
+    const distanceRight = rect1.left - rect2.right;
+  
+    return !(tolerance < distanceTop || tolerance < distanceBottom || tolerance < distanceLeft || tolerance < distanceRight);
+  }
