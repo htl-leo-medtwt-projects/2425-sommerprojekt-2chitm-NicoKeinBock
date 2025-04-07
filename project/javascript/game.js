@@ -7,7 +7,8 @@ let PLAYER = {
     spriteResetPoint: 0,
     tokenCount: 0,
     skin: "",
-    jumpHeight: 0
+    jumpHeight: 0,
+    gravity: 5
 
 }
 let GAME_CONFIG = {
@@ -135,19 +136,54 @@ function skinSelect(index) {
   function checkForCollisionsWithLevelEntrance(){
     if(isColliding(PLAYER.box,MAP.level1Entrance, 0)){
       console.log("Level 1 Entrance");
+      document.getElementById('level1Entrance').innerHTML = `
+      <p class="LevelEntranceText">Drücke E um Level 1 zu betreten</p>
+      `
+      if(KEY_EVENTS.e){
+        console.log("Entered IF")
+        enterLevel1()
+      }
     }
     else if(isColliding(PLAYER.box,MAP.level2Entrance, 0)){
       console.log("Level 2 Entrance");
+      document.getElementById('level2Entrance').innerHTML = `
+      <p class="LevelEntranceText">Drücke E um Level 2 zu betreten</p>
+      `
     }
     else if(isColliding(PLAYER.box,MAP.level3Entrance, 0)){
       console.log("Level 3 Entrance");
+      document.getElementById('level3Entrance').innerHTML = `
+      <p class="LevelEntranceText">Drücke E um Level 3 zu betreten</p>
+      `
     }
     else if(isColliding(PLAYER.box,MAP.shopEntrance, 0)){
       console.log("Shop Entrance");
+      document.getElementById('shopEntrance').innerHTML = `
+      <p class="LevelEntranceText">Drücke E um den Shop zu betreten</p>
+      `
+    }
+    else{
+      document.getElementById('level1Entrance').innerHTML = ''
+      document.getElementById('level2Entrance').innerHTML = ''
+      document.getElementById('level3Entrance').innerHTML = ''
+      document.getElementById('shopEntrance').innerHTML = ''
     }
   }
   function enterLevel1(){
     MAP.map.style.display = "none";
-    document.getElementById('Level1').style.display = "block";
+    document.getElementById('level1').style.display = "block";
   }
+  function enterLevel2(){
+    MAP.map.style.display = "none";
+    document.getElementById('level2').style.display = "block";
+  }
+  function enterLevel3(){
+    MAP.map.style.display = "none";
+    document.getElementById('level3').style.display = "block";
+  }
+  function enterShop(){
+    MAP.map.style.display = "none";
+    document.getElementById('shopGUI').style.display = "block";
+  }
+
 

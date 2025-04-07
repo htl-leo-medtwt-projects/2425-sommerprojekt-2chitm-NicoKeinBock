@@ -330,3 +330,19 @@ cursor: pointer;
     left: 67.5vw;
     top: 35vh;
   }
+  .LevelEntranceText{
+    font-size: 190%;
+    color: #ffffff;
+    font-family: Jersey25;
+    
+  }
+  #level1{
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    position: absolute;
+    background: linear-gradient(180deg, rgba(0, 255, 204, 0.97) 0.01%, rgba(122, 255, 56, 0.85) 100%);
+    z-index: 100;
+    display: none;
+  }

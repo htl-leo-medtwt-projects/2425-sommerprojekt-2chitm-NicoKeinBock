@@ -14,6 +14,7 @@ function toggleSettings() {
         gameMap.style.display = "none";
     } else {
         gameMap.style.display = "block";
+        gameLoop();
     }
 }
 
