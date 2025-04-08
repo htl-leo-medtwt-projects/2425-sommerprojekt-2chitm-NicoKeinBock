@@ -1,6 +1,12 @@
 let PLAYER = {
-    box: document.getElementById('player'),
+    playerMenu: document.getElementById('player'),
+    playerLevel1: document.getElementById('player1'),
+    playerLevel2: document.getElementById('player2'),
+    playerLevel3: document.getElementById('player3'),
     spriteImg: document.getElementById('spriteImg'),
+    spriteImg1: document.getElementById('spriteImg1'),
+    spriteImg2: document.getElementById('spriteImg2'),
+    spriteImg3: document.getElementById('spriteImg3'),
     spriteMovement: 0,
     spriteImgNumber: 1, 
     spriteDirection: 1,
@@ -20,7 +26,9 @@ let MAP = {
     level1Entrance: document.getElementById('level1Entrance'),
     level2Entrance: document.getElementById('level2Entrance'),
     level3Entrance: document.getElementById('level3Entrance'),
-    shopEntrance: document.getElementById('shopEntrance')
+    shopEntrance: document.getElementById('shopEntrance'),
+    startseite: document.getElementById('startseite')
+
 }
 function gameLoop() {
   console.log('Game Loop Running');
@@ -56,7 +64,7 @@ function gameLoop() {
   gameLoopTimeout = setTimeout(gameLoop, 1000 / GAME_CONFIG.gameSpeed);
 }
 function movePlayer(dx, dy, dr) {
-  let rect = PLAYER.box.getBoundingClientRect();
+  let rect = PLAYER.playerMenu.getBoundingClientRect();
   let newX = rect.left + dx;
   let newY = rect.top + dy;
 
@@ -68,13 +76,13 @@ function movePlayer(dx, dy, dr) {
   if (newY < 0) newY = 0;
   if (newY + rect.height > FIELD_HEIGHT) newY = FIELD_HEIGHT - rect.height;
 
-  PLAYER.box.style.position = "absolute"; 
-  PLAYER.box.style.left = newX + "px";
-  PLAYER.box.style.top = newY + "px";
+  PLAYER.playerMenu.style.position = "absolute"; 
+  PLAYER.playerMenu.style.left = newX + "px";
+  PLAYER.playerMenu.style.top = newY + "px";
 
   if (dr !== 0 && dr !== PLAYER.spriteDirection) {
       PLAYER.spriteDirection = dr;
-      PLAYER.box.style.transform = `scaleX(${-dr})`;
+      PLAYER.playerMenu.style.transform = `scaleX(${-dr})`;
   }
 }
 
@@ -103,7 +111,12 @@ function skinSelect(index) {
         throw new Error('Invalid index');
     }
     try {
-      document.getElementById('spriteImg').src = PLAYER.skin + "/running/sprite_1.png";
+      PLAYER.spriteImg.src = PLAYER.skin + "/running/sprite_1.png";
+      PLAYER.spriteImg1.src = PLAYER.skin + "/running/sprite_1.png";
+      PLAYER.spriteImg2.src = PLAYER.skin + "/running/sprite_1.png";
+      PLAYER.spriteImg3.src = PLAYER.skin + "/running/sprite_1.png";
+
+      PLAYER.spriteImg1
     } catch (error) {
       console.error('Error updating sprite image:', error);
     }
@@ -134,7 +147,7 @@ function skinSelect(index) {
     }
   }
   function checkForCollisionsWithLevelEntrance(){
-    if(isColliding(PLAYER.box,MAP.level1Entrance, 0)){
+    if(isColliding(PLAYER.playerMenu,MAP.level1Entrance, 0)){
       console.log("Level 1 Entrance");
       document.getElementById('level1Entrance').innerHTML = `
       <p class="LevelEntranceText">Drücke E um Level 1 zu betreten</p>
@@ -144,19 +157,19 @@ function skinSelect(index) {
         enterLevel1()
       }
     }
-    else if(isColliding(PLAYER.box,MAP.level2Entrance, 0)){
+    else if(isColliding(PLAYER.playerMenu,MAP.level2Entrance, 0)){
       console.log("Level 2 Entrance");
       document.getElementById('level2Entrance').innerHTML = `
       <p class="LevelEntranceText">Drücke E um Level 2 zu betreten</p>
       `
     }
-    else if(isColliding(PLAYER.box,MAP.level3Entrance, 0)){
+    else if(isColliding(PLAYER.playerMenu,MAP.level3Entrance, 0)){
       console.log("Level 3 Entrance");
       document.getElementById('level3Entrance').innerHTML = `
       <p class="LevelEntranceText">Drücke E um Level 3 zu betreten</p>
       `
     }
-    else if(isColliding(PLAYER.box,MAP.shopEntrance, 0)){
+    else if(isColliding(PLAYER.playerMenu,MAP.shopEntrance, 0)){
       console.log("Shop Entrance");
       document.getElementById('shopEntrance').innerHTML = `
       <p class="LevelEntranceText">Drücke E um den Shop zu betreten</p>
@@ -172,6 +185,8 @@ function skinSelect(index) {
   function enterLevel1(){
     MAP.map.style.display = "none";
     document.getElementById('level1').style.display = "block";
+    MAP.startseite.style.display = "none"
+    
   }
   function enterLevel2(){
     MAP.map.style.display = "none";

@@ -337,13 +337,13 @@ cursor: pointer;
     font-family: Jersey25;
     
   }
-  #level1{
+  #level1 {
     width: 100vw;
     height: 100vh;
     top: 0;
     left: 0;
     position: absolute;
-    background: linear-gradient(180deg, rgba(0, 255, 204, 0.97) 0.01%, rgba(122, 255, 56, 0.85) 100%);
-    z-index: 100;
+    background: linear-gradient(180deg, rgba(0, 255, 204, 1) 0.01%, rgba(122, 255, 56, 1) 100%);
+    z-index: 200;
     display: none;
   }
