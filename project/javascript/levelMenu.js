@@ -137,7 +137,6 @@ function skinSelect(index) {
       <p>Drücke SPACE um in den Leveln zu springen</p>
       <p>Drücke ESC um das Level zu pausieren</p>
       <p>Benütze den Shop um die gesammelten Münzen für Boosts auszugeben</p>
-      <button onclick="howToPlay()">Schließen</button>
       </div>
       `
       howToPlay.innerHTML = howToPlayText
@@ -179,7 +178,7 @@ function skinSelect(index) {
       document.getElementById('level1Entrance').innerHTML = ''
       document.getElementById('level2Entrance').innerHTML = ''
       document.getElementById('level3Entrance').innerHTML = ''
-      document.getElementById('shopEntrance').innerHTML = ''
+      document.getElementById('shopEntrance').innerHTML = '<img src="../Images/shop.png" alt="shop" id="shopEntranceImg">'
     }
   }
   function enterLevel1(){

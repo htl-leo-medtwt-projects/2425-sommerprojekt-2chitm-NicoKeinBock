@@ -274,13 +274,18 @@ left: 5vw;
   button, .settingsMenu, #settings, #soundImageWrapper:hover{
     cursor: pointer;
   }
-  #shop img{
-    width: 15vw;
-  }
-  #shop{
+ 
+  #shopEntrance{
     position: absolute;
-    left: 65vw;
-    top: 29vh;
+    border: solid black;
+    width: 10vw;
+    height: 19vh;
+    left: 67.5vw;
+    top: 35vh;
+    z-index: 100;
+  }
+  #shopEntranceImg{
+    width: 20vw;
   }
   #howToQuestionmark{
 cursor: pointer;
@@ -312,7 +317,7 @@ cursor: pointer;
     border: blue solid;
     width: 13vw;
     height: 12vh;
-    top: 34vh;
+    top: 36vh;
     left: 86vw;
   }
   #level3Entrance{
@@ -320,22 +325,15 @@ cursor: pointer;
     border: green solid;
     width: 10vw;
     height: 20vh;
-    top: 72vh;
+    top: 78vh;
     left: 84.5vw;
-  }
-  #shopEntrance{
-    position: absolute;
-    border: solid black;
-    width: 10vw;
-    height: 19vh;
-    left: 67.5vw;
-    top: 35vh;
   }
   .LevelEntranceText{
     font-size: 190%;
-    color: #ffffff;
+    color: #d1d1d1;
     font-family: Jersey25;
-    
+    background-color: grey;
+    border-radius: 15px;
   }
   #level1 {
     width: 100vw;
