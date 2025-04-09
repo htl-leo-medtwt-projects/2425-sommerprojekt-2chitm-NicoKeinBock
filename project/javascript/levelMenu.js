@@ -13,9 +13,6 @@ let PLAYER = {
     spriteResetPoint: 0,
     tokenCount: 0,
     skin: "",
-    jumpHeight: 0,
-    gravity: 5
-
 }
 let GAME_CONFIG = {
   gameSpeed: 30,
@@ -31,7 +28,7 @@ let MAP = {
 
 }
 function gameLoop() {
-  console.log('Game Loop Running');
+    if (GAME_STATE !== "menu") return; 
   if (KEY_EVENTS.leftArrow) {
     checkForCollisionsWithLevelEntrance()
      movePlayer((-1) * GAME_CONFIG.characterSpeed, 0, 1);
@@ -181,12 +178,18 @@ function skinSelect(index) {
       document.getElementById('shopEntrance').innerHTML = '<img src="../Images/shop.png" alt="shop" id="shopEntranceImg">'
     }
   }
-  function enterLevel1(){
+  function enterLevel1() {
+    GAME_STATE = "level1";
+    clearTimeout(gameLoopTimeout); 
     MAP.map.style.display = "none";
-    document.getElementById('level1').style.display = "block";
-    MAP.startseite.style.display = "none"
-    
+    document.getElementById("level1").style.display = "block";
+    MAP.startseite.style.display = "none";
+    updateLevel1();  
   }
+  
+
+  
+  
   function enterLevel2(){
     MAP.map.style.display = "none";
     document.getElementById('level2').style.display = "block";
@@ -200,4 +203,4 @@ function skinSelect(index) {
     document.getElementById('shopGUI').style.display = "block";
   }
 
-
+ 

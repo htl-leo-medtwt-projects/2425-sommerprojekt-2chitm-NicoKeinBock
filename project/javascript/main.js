@@ -1,3 +1,4 @@
+let GAME_STATE = "menu";
 function toggleSettings() {
     var settingsPopup = document.getElementById("settings-popup");
     if (settingsPopup.style.display === "block") {
@@ -14,6 +15,7 @@ function toggleSettings() {
         gameMap.style.display = "none";
     } else {
         gameMap.style.display = "block";
+        game
         gameLoop();
     }
 }

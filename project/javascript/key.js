@@ -16,7 +16,6 @@ function keyListenerDown(e) {
     
     if (e.key == "a") {
         KEY_EVENTS.leftArrow = true;
-        console.log('left')
     }
     if (e.key == "w") {
         KEY_EVENTS.upArrow = true;
@@ -36,6 +35,14 @@ function keyListenerDown(e) {
     if(e.key == "e"){
         KEY_EVENTS.e = true;
     }
+    if (e.code === 'Space') {
+      if (GAME_STATE === "level1" && !isJumping) {
+        player1VelocityY = -15; 
+        isJumping = true;
+      }
+      e.preventDefault(); 
+    }
+    
 }
 
 function keyListenerUp(e) {

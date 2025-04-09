@@ -19,7 +19,7 @@ body{
     width: 100vw;
 }
 
-h1{
+h1{  
 text-align: center;
 font-family:Jersey25;
 font-size: 8rem;
@@ -271,6 +271,9 @@ left: 5vw;
     width: 3%; 
     height: 15%; 
   }
+  #player1{
+    top: 89vh;
+  }
   button, .settingsMenu, #settings, #soundImageWrapper:hover{
     cursor: pointer;
   }
@@ -341,7 +344,131 @@ cursor: pointer;
     top: 0;
     left: 0;
     position: absolute;
-    background: linear-gradient(180deg, rgba(0, 255, 204, 1) 0.01%, rgba(122, 255, 56, 1) 100%);
-    z-index: 200;
+    background-image: url(../Images/sunset.jpg);  
+    background-size: 100%; 
+     z-index: 200;
     display: none;
   }
+  
+  .Level1JumpBox img{
+    width: 100vw;
+    
+  }
+  #level1Box1{
+    position: absolute;
+    top: 80vh;
+    width: 10vw;
+    height: 4vh;
+    
+  }
+  #level1Box2{
+    position: absolute;
+    top: 70vh;
+    left: 15vw;
+    width: 5vw;
+    height: 4vh;
+  }
+  #level1Box3{
+    position: absolute;
+    left: 25vw;
+    top: 60vh;
+    width: 3vw;
+    height: 4vh;
+  }
+  #level1Box4{
+    position: absolute;
+    width: 10vw;
+    height: 4vh;
+    top: 50vh;
+    left: 35vw;
+  }
+  #level1Box5{
+    position: absolute;
+    width: 2.5vw;
+    height: 4vh;
+    top: 45vh;
+    left: 55vw;
+  }
+  #level1Box6{
+    position: absolute;
+    width: 2.5vw;
+    height: 4vh;
+    top: 50vh;
+    left: 65vw;
+  }
+  #level1Box7{
+    position: absolute;
+    width: 2.5vw;
+    height: 4vh;
+    top: 50vh;
+    left: 65vw;
+  }
+  #level1Box8{
+    position: absolute;
+    width: 5vw;
+    height: 4vh;
+    top: 45vh;
+    left: 86vw;
+  }
+  #level1Box9{
+    position: absolute;
+    width: 2vw;
+    height: 2vh;
+    top: 37vh;
+    left: 95vw;
+  }
+  #level1Box10{
+    position: absolute;
+    width: 4vw;
+    height: 3vh;
+    top: 18vh;
+    left: 87vw;
+  }
+  #level1Box11{
+    position: absolute;
+    width: 5vw;
+    height: 4vh;
+    top: 20vh;
+    left: 75vw;
+  }
+  #level1Box12{
+    position: absolute;
+    width: 6vw;
+    height: 4vh;
+    top: 15vh;
+    left: 57vw;
+  }
+  #level1Box13{
+    position: absolute;
+    width: 1vw;
+    height: 2vh;
+    top: 20vh;
+    left: 45vw;
+  }
+  #level1Box14{
+    position: absolute;
+    width: 5w;
+    height: 4vh;
+    top: 20vh;
+    left: 30vw;
+  }
+  #level1Box15{
+    position: absolute;
+    width: 2.5vw;
+    height: 4vh;
+    top: 20vh;
+    left: 20vw;
+  }
+  #level1Box16{
+    position: absolute;
+    width: 8vw;
+    height: 4vh;
+    top: 20vh;
+    left: 2vw;
+  }
+  
+  
+
+
+
+
