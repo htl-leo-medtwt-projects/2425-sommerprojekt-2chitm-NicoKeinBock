@@ -14,7 +14,7 @@ let hasTouchedBox16 = false;
 let deathCounter = 0
 
 function startLevel1() {
-    setTimeout(updateLevel1, GAME_LOOP_INTERVAL);
+    startStopwatch();
 }
 
 function updateLevel1() {
@@ -57,7 +57,7 @@ function updateLevel1() {
             resetPlayerLevel1();
             showDeathFlash();
             updateDeathCounter(deathCounter);
-            startTime = startTime - 5000; 
+            startTime = startTime -  5000; 
         }
     }
 
@@ -209,6 +209,7 @@ updateDeathCounter(deathCounter);
 function startStopwatch() {
     if (startTime === null) {
       startTime = new Date().getTime();
+      
       intervalId = setInterval(updateStopwatch, 10);
     } else {
       clearInterval(intervalId);
@@ -240,4 +241,3 @@ function startStopwatch() {
     intervalId = null;
   }
   resetStopwatch()
-  startStopwatch();

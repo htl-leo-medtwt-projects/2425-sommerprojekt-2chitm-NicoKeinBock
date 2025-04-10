@@ -186,6 +186,7 @@ function skinSelect(index) {
     document.getElementById("level1").style.display = "block";
     MAP.startseite.style.display = "none";
     updateLevel1();  
+    startLevel1()
   }
   function enterLevel2(){
     MAP.map.style.display = "none";
