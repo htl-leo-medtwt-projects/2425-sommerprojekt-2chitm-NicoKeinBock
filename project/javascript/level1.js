@@ -6,7 +6,7 @@ const PLAYER_LEVEL1 = {
 let startTime = null;
 let elapsedTime = 0;
 let intervalId = null;
-
+// gravtationslogik ergoogelt, aber selbst programmiert
 let player1VelocityY = 0;
 let isJumping = false;
 const GAME_LOOP_INTERVAL = 16;
