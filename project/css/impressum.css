@@ -13,10 +13,9 @@
 
 }
 body{
-    background-image: url(../Images/Impressum.png);
-    width: 100vw;
-    background-size: 140%;
-
+    background-image: url(../Images/sunset.jpg);
+    background-size: cover;
+    
 }
 h1{
     font-family: Jersey25;
@@ -25,9 +24,11 @@ h1{
 }
 p{
     font-family: InriaSans;
+    color:rgb(182, 182, 182);
 }
 h3,h2{
     font-family: Jersey25;
+    color: white;
     
 }
 img{
@@ -41,15 +42,15 @@ h1{
 }
 @keyframes shimmer {
     0% {
-      text-shadow: 0 0 6px #1856ba4d, 0 0 10px #00409a4d;
+      text-shadow: 0 0 6px rgba(255, 255, 255, 0.5), 0 0 10px rgba(255, 255, 255, 0.5);
     }
   
     50% {
-      text-shadow: 0 0 12px rgba(24, 68, 163, 0.5), 0 0 20px rgba(20, 127, 180, 0.5);
+      text-shadow: 0 0 12px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.8);
     }
   
     100% {
-      text-shadow: 0 0 6px #1856ba4d, 0 0 10px #00409a4d;
+      text-shadow: 0 0 6px rgba(255, 255, 255, 0.5), 0 0 10px rgba(255, 255, 255, 0.5);
     }
   }
 #impressum{

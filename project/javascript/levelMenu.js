@@ -28,7 +28,8 @@ let MAP = {
 
 }
 function gameLoop() {
-    if (GAME_STATE !== "menu") return; 
+    if (GAME_STATE !== "menu") return;
+    console.log('Gameloop running') 
   if (KEY_EVENTS.leftArrow) {
     checkForCollisionsWithLevelEntrance()
      movePlayer((-1) * GAME_CONFIG.characterSpeed, 0, 1);
@@ -186,10 +187,6 @@ function skinSelect(index) {
     MAP.startseite.style.display = "none";
     updateLevel1();  
   }
-  
-
-  
-  
   function enterLevel2(){
     MAP.map.style.display = "none";
     document.getElementById('level2').style.display = "block";
