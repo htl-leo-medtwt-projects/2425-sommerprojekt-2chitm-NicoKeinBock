@@ -61,7 +61,7 @@ function updateLevel1() {
         }
     }
 
-    const levelBox16 = document.getElementById("level1Box16");
+    const levelBox16 = document.getElementById("level1Box15");
     if (levelBox16 && !hasTouchedBox16) {
         const box16Rect = levelBox16.getBoundingClientRect();
         if (
@@ -241,3 +241,19 @@ function startStopwatch() {
     intervalId = null;
   }
   resetStopwatch()
+ 
+  function createGrassPlattform(id) {
+    const plattform = document.createElement('img');
+    plattform.src = '../Images/grassPlattform.png';
+    plattform.alt = '';
+    plattform.className = 'Level1JumpBox';
+    plattform.id = `level1Box${id}`;
+    return plattform;
+  }
+  const level1 = document.getElementById('level1');
+const anzahlPlattforms = 16; 
+
+for (let i = 1; i < anzahlPlattforms; i++) {
+  const plattform = createGrassPlattform(i);
+  level1.appendChild(plattform);
+}

@@ -5,7 +5,8 @@ let KEY_EVENTS = {
     downArrow: false,
     space: false,
     shift: false,
-    e: false
+    e: false,
+    esc: false
 };
 
 document.addEventListener("keydown", keyListenerDown);
@@ -35,12 +36,15 @@ function keyListenerDown(e) {
     if(e.key == "e"){
         KEY_EVENTS.e = true;
     }
-    if (e.code === 'Space') {
+    if (e.code == 'Space') {
       if (GAME_STATE === "level1" && !isJumping) {
         player1VelocityY = -15; 
         isJumping = true;
       }
       e.preventDefault(); 
+    }
+    if(e.key== "Esc"){
+    KEY_EVENTS.esc = true;
     }
     
 }
@@ -68,6 +72,10 @@ function keyListenerUp(e) {
       KEY_EVENTS.e = false;
       console.log("KEY_EVENTS.e wurde auf false gesetzt");
     }
+    if(e.key === "Esc"){
+      KEY_EVENTS.esc = false;
+    }
+
 }
 function isColliding(div1, div2, tolerance = 0) {
     const rect1 = div1.getBoundingClientRect();
