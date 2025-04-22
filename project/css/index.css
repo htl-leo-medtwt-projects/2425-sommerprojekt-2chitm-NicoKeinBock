@@ -522,8 +522,34 @@ cursor: pointer;
     font-size: 150%;
     color: white;
   }
+  #winscreen1{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(180deg, var(--primary-color1) 0.01%, var(--primary-color2) 100%);
+    border-radius: 15px;
+    padding: 4%;
+  }
+  .level1Buttons{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 3%;
+    border: solid;
+    background: linear-gradient(180deg, var(--primary-color1) 0.01%, var(--primary-color2) 100%);
+    border-radius: 15px;
+  }
+  .level1Buttons:hover{
+    cursor: pointer;
+  }
+  #playAgainButton{
+    margin-bottom: 3vh;
+  }
+ .levelCompletedText{
+  animation: shimmer 5s infinite;
+ }
+ 
 
-  
   
 
 

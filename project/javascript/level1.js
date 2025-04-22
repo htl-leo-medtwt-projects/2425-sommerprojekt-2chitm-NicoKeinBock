@@ -2,7 +2,11 @@
 const PLAYER_LEVEL1 = {
     playerMenu: document.getElementById("player1"),
     spriteImg: document.getElementById("spriteImg1"),
+    highscore: 0,
+    highscoreText: "",
+    newCoins: 0
 };
+let stopwatchText
 let startTime = null;
 let elapsedTime = 0;
 let intervalId = null;
@@ -14,21 +18,26 @@ let hasTouchedBox16 = false;
 let deathCounter = 0
 
 function startLevel1() {
+    GAME_CONFIG.characterSpeed = 5;
     startStopwatch();
 }
 
 function updateLevel1() {
+    const gravity = window.innerHeight * 0.0006;
+    const maxFallSpeed = window.innerHeight * 0.05;
+
     if (KEY_EVENTS.leftArrow) {
         movePlayerLevel1(-1 * GAME_CONFIG.characterSpeed, 0, 1);
-        if(!isJumping){
-        animatePlayerLevel1();
+        if (!isJumping) {
+            animatePlayerLevel1();
         }
     }
+
     if (KEY_EVENTS.rightArrow) {
         movePlayerLevel1(GAME_CONFIG.characterSpeed, 0, -1);
-        if(!isJumping){
+        if (!isJumping) {
             animatePlayerLevel1();
-            }
+        }
     }
 
     if (KEY_EVENTS.shift) {
@@ -38,12 +47,12 @@ function updateLevel1() {
     }
 
     if (KEY_EVENTS.space && !isJumping) {
-        player1VelocityY = -150;
+        player1VelocityY = -window.innerHeight * 0.025; // Responsive jump
         isJumping = true;
     }
 
-    player1VelocityY += 1;
-    if (player1VelocityY > 20) player1VelocityY = 20;
+    player1VelocityY += gravity;
+    if (player1VelocityY > maxFallSpeed) player1VelocityY = maxFallSpeed;
 
     movePlayerLevel1(0, player1VelocityY, 0);
 
@@ -57,7 +66,7 @@ function updateLevel1() {
             resetPlayerLevel1();
             showDeathFlash();
             updateDeathCounter(deathCounter);
-            startTime = startTime -  5000; 
+            startTime = startTime - 5000;
         }
     }
 
@@ -66,25 +75,26 @@ function updateLevel1() {
         const box16Rect = levelBox16.getBoundingClientRect();
         if (
             playerRect.right > box16Rect.left &&
-            playerRect.left < box16Rect.right  &&
-            playerRect.bottom > box16Rect.top  - 5&&
+            playerRect.left < box16Rect.right &&
+            playerRect.bottom > box16Rect.top - 5 &&
             playerRect.top < box16Rect.bottom
         ) {
             hasTouchedBox16 = true;
             showWinningFlash();
-            stopStopwatch()
+            stopStopwatch();
         }
     }
 
     if (isTouchingGround(PLAYER_LEVEL1.playerMenu) && player1VelocityY > 0) {
         const playerHeight = PLAYER_LEVEL1.playerMenu.offsetHeight;
-        PLAYER_LEVEL1.playerMenu.style.top = (window.innerHeight - playerHeight) + "px";
+        PLAYER_LEVEL1.playerMenu.style.top = (window.innerHeight - playerHeight) * 100 / window.innerHeight + "vh";
         player1VelocityY = 0;
         isJumping = false;
     }
 
-    setTimeout(updateLevel1, GAME_LOOP_INTERVAL);
+    level1Timeout = setTimeout(updateLevel1, GAME_LOOP_INTERVAL);
 }
+
 
 function movePlayerLevel1(dx, dy, dr) {
     let moveX = dx;
@@ -102,11 +112,15 @@ function movePlayerLevel1(dx, dy, dr) {
         }
     }
 
-    let newX = PLAYER_LEVEL1.playerMenu.offsetLeft + moveX;
-    let newY = PLAYER_LEVEL1.playerMenu.offsetTop + moveY;
-
     const FIELD_WIDTH = window.innerWidth;
     const FIELD_HEIGHT = window.innerHeight;
+
+    let currentLeftPx = PLAYER_LEVEL1.playerMenu.offsetLeft;
+    let currentTopPx = PLAYER_LEVEL1.playerMenu.offsetTop;
+
+    let newX = currentLeftPx + moveX;
+    let newY = currentTopPx + moveY;
+
     const width = PLAYER_LEVEL1.playerMenu.offsetWidth;
     const height = PLAYER_LEVEL1.playerMenu.offsetHeight;
 
@@ -115,14 +129,19 @@ function movePlayerLevel1(dx, dy, dr) {
     if (newY < 0) newY = 0;
     if (newY + height > FIELD_HEIGHT) newY = FIELD_HEIGHT - height;
 
-    PLAYER_LEVEL1.playerMenu.style.left = newX + "px";
-    PLAYER_LEVEL1.playerMenu.style.top = newY + "px";
+    // Convert pixel values to vw/vh
+    const leftInVw = (newX / FIELD_WIDTH) * 100;
+    const topInVh = (newY / FIELD_HEIGHT) * 100;
+
+    PLAYER_LEVEL1.playerMenu.style.left = `${leftInVw}vw`;
+    PLAYER_LEVEL1.playerMenu.style.top = `${topInVh}vh`;
 
     if (dr !== 0 && dr !== PLAYER_LEVEL1.spriteDirection) {
         PLAYER_LEVEL1.spriteDirection = dr;
         PLAYER_LEVEL1.playerMenu.style.transform = `scaleX(${-dr})`;
     }
 }
+
 
 function isTouchingGround(playerElement) {
     const playerRect = playerElement.getBoundingClientRect();
@@ -190,6 +209,7 @@ function showWinningFlash() {
     setTimeout(() => {
         flash.style.opacity = "0";
     }, 150);
+    displayLevel1ResultScreen()
 }
 function updateDeathCounter(deathCount) {
     const deathCounter = document.getElementById("deathCounter");
@@ -224,7 +244,7 @@ function startStopwatch() {
     const minutes = Math.floor(elapsedTime / 60);
     const seconds = Math.floor(elapsedTime % 60);
     const milliseconds = Math.floor((elapsedTime % 1) * 100);
-    const stopwatchText = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}:${milliseconds.toString().padStart(2, '0')}`;
+     stopwatchText = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}:${milliseconds.toString().padStart(2, '0')}`;
     document.getElementById('stopwatch').innerHTML = stopwatchText;
   }
   
@@ -257,3 +277,78 @@ for (let i = 1; i < anzahlPlattforms; i++) {
   const plattform = createGrassPlattform(i);
   level1.appendChild(plattform);
 }
+function checkHighscore() {
+    const oldHighscore = localStorage.getItem('highscore');
+    const oldHighscoreText = localStorage.getItem('highscoreText')
+    const newScore = elapsedTime;
+    const newScoreText = stopwatchText
+  
+    if (oldHighscore === null || newScore < oldHighscore) {
+      localStorage.setItem('highscore', newScore);
+      localStorage.setItem('highscoreText', newScoreText);
+
+      PLAYER_LEVEL1.highscore = newScore
+      PLAYER_LEVEL1.highscoreText = newScoreText
+    } else {
+        PLAYER_LEVEL1.highscore = oldHighscore;
+        PLAYER_LEVEL1.highscoreText = oldHighscoreText;
+    }
+  }
+  function displayLevel1ResultScreen(){
+    checkHighscore();
+    calculateCoinsFromTime(); 
+    let winscreen1 = document.createElement('div');
+    winscreen1.id = 'winscreen1';
+    winscreen1.innerHTML = `
+        <h2 class = "levelCompletedText">LEVEL 1 ABGESCHLOSSEN</h2>
+        <h3>Zeit: ${stopwatchText}</h3>
+        <h3>Highscore: ${PLAYER_LEVEL1.highscoreText}</h3>
+        <h3>Münzen: ${PLAYER_LEVEL1.newCoins}</h3>
+        <div id="playAgainButton" class = "level1Buttons" onclick="playAgain()"><p>Spiel wiederholen</p></div>
+        <div id="backToMenuButton" class = "level1Buttons" onclick="backToMenu()"><p>Zurück zum Menü</p> </div>
+    `;
+    document.getElementById('level1').appendChild(winscreen1);
+}
+function calculateCoinsFromTime() {
+    const time = elapsedTime; 
+    let coinsGathered = Math.max(1, Math.round(100 / time)); // Math.max verhindert das man weniger als eine Münze bekommt
+    PLAYER_LEVEL1.newCoins += coinsGathered;
+}
+function playAgain() {
+    PLAYER_LEVEL1.playerMenu.style.top = "60vh";
+    PLAYER_LEVEL1.playerMenu.style.left = "5vw";
+    player1VelocityY = 0;
+    isJumping = false;
+    resetStopwatch();
+    deathCounter = 0;
+    updateDeathCounter(deathCounter);
+    GAME_CONFIG.characterSpeed = 5;
+    const winFlash = document.getElementById("winFlash");
+    winFlash.style.opacity = "0";
+    const winscreen1 = document.getElementById("winscreen1");
+    winscreen1.remove();
+    hasTouchedBox16 = false;
+    startStopwatch()
+  }
+  function backToMenu() {
+    stopStopwatch();
+    resetStopwatch();
+    PLAYER_LEVEL1.playerMenu.style.top = "60vh";
+    PLAYER_LEVEL1.playerMenu.style.left = "5vw";
+    player1VelocityY = 0;
+    isJumping = false;
+    deathCounter = 0;
+    updateDeathCounter(deathCounter);
+    const winscreen1 = document.getElementById("winscreen1");
+    if (winscreen1) {
+        winscreen1.remove();
+    }
+    hasTouchedBox16 = false;
+    document.getElementById("level1").style.display = "none";
+    GAME_STATE = "menu";
+    gameLoop()
+    GAME_CONFIG.characterSpeed = 5;
+    MAP.map.style.display = "block";
+    MAP.startseite.style.display = "block"
+    clearTimeout(level1Timeout);
+  }

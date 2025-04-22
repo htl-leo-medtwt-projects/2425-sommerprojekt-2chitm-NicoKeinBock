@@ -182,12 +182,14 @@ function skinSelect(index) {
   function enterLevel1() {
     GAME_STATE = "level1";
     clearTimeout(gameLoopTimeout); 
+    GAME_CONFIG.characterSpeed = 5; 
     MAP.map.style.display = "none";
     document.getElementById("level1").style.display = "block";
     MAP.startseite.style.display = "none";
     updateLevel1();  
-    startLevel1()
+    startLevel1();
   }
+  
   function enterLevel2(){
     MAP.map.style.display = "none";
     document.getElementById('level2').style.display = "block";
