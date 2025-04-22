@@ -24,7 +24,7 @@ function startLevel1() {
 
 function updateLevel1() {
     const gravity = window.innerHeight * 0.0006;
-    const maxFallSpeed = window.innerHeight * 0.05;
+    const maxFallSpeed = window.innerHeight * 0.8;
 
     if (KEY_EVENTS.leftArrow) {
         movePlayerLevel1(-1 * GAME_CONFIG.characterSpeed, 0, 1);

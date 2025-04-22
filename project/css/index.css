@@ -167,15 +167,7 @@ left: 5vw;
   position: absolute;
   display: none;
 }
-#coverUp{
-  background-image: url(../Images/coverUp.png);
-  background-size:contain;
-  width: 2.3vw;
-  height: 5.5vh;
-  position: absolute;
-  top: 63.1vh;
-  left: 38vw;
-}
+
 #gameMenu{
   position: absolute;
   width: 30vw;
@@ -274,7 +266,11 @@ left: 5vw;
   #player1{
     position: absolute;
     top: 60vh;
-   
+  
+  }
+  #player2{
+    position: absolute;
+    top: 60vh;
   }
   button, .settingsMenu, #settings, #soundImageWrapper:hover{
     cursor: pointer;
@@ -351,7 +347,20 @@ cursor: pointer;
      z-index: 200;
     display: none;
   }
-  
+  #level2{
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    position: absolute;
+    background-image: url(../Images/Impressum.png);  
+    background-size: 100%; 
+     z-index: 200;
+    display: none;
+  }
+  #level3{
+    display: none;
+  }
   .Level1JumpBox img{
     width: 100vw;
     padding: 0;
@@ -498,7 +507,7 @@ cursor: pointer;
   #winFlash {
       background: var(--primary-color2);
   }
-  #deathCounter{
+  #deathCounter, #deathCounter2{
     position: absolute;
     left: 90vw;
     top: 5vh;
@@ -508,13 +517,13 @@ cursor: pointer;
     color: white;
     
   }
-  #deathCounter p {
+  #deathCounter p , #deathCounter2 p{
     font-family: Jersey25;
   }
-  #deathCounter img{
+  #deathCounter img, #deathCounter2 img{
     width: 5vw;
   }
-  #stopwatch{
+  #stopwatch, #stopwatch2{
     position: absolute;
     left: 5vw;
     top: 5vh;
@@ -548,7 +557,89 @@ cursor: pointer;
  .levelCompletedText{
   animation: shimmer 5s infinite;
  }
- 
+ .Level2JumpBox{
+    padding: 0;
+ }
+ #level2Box1{
+  position: absolute;
+  top: 80vh ;
+  width: 10vh;
+ }
+ #level2Box2{
+  position: absolute;
+  top: 80vh ;
+  width: 10vh;
+ }
+ #level2Box3{
+  position: absolute;
+  top: 80vh ;
+  width: 10vh;
+ }
+ #level2Box4{
+  position: absolute;
+  top: 80vh ;
+  width: 10vh;
+ }
+ #level2Box5{
+  position: absolute;
+  top: 80vh ;
+  width: 10vh;
+ }
+ #level2Box6{
+  position: absolute;
+  top: 80vh ;
+  width: 10vh;
+ }
+ #level2Box7{
+  position: absolute;
+  top: 80vh ;
+  width: 10vh;
+ }
+ #level2Box8{
+  position: absolute;
+  top: 80vh ;
+  width: 10vh;
+ }
+ #level2Box9{
+  position: absolute;
+  top: 80vh ;
+  width: 10vh;
+ }
+ #level2Box10{
+  position: absolute;
+  top: 80vh ;
+  width: 10vh;
+ }
+
+ #level2Box11{
+  position: absolute;
+  top: 80vh ;
+  width: 10vh;
+ }
+ #level2Box12{
+  position: absolute;
+  top: 80vh ;
+  width: 10vh;
+ }
+ #level2Box13{
+  position: absolute;
+  top: 80vh ;
+  width: 10vh;
+ } #level2Box14{
+  position: absolute;
+  top: 80vh ;
+  width: 10vh;
+ } #level2Box15{
+  position: absolute;
+  top: 80vh ;
+  width: 10vh;
+ }
+ #level2Box16{
+  position: absolute;
+  top: 80vh ;
+  width: 10vh;
+ }
+
 
   
 
