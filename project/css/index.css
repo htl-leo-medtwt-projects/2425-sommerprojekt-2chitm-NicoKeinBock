@@ -267,11 +267,13 @@ left: 5vw;
   #player1{
     position: absolute;
     top: 60vh;
+    left: 20vw;
   
   }
   #player2{
     position: absolute;
-    top: 60vh;
+    top: 80vh;
+    left: 22vw;
   }
   button, .settingsMenu, #settings, #soundImageWrapper:hover{
     cursor: pointer;
@@ -370,6 +372,9 @@ cursor: pointer;
     top: 85vh;
     width: 10vw;
     height: 4vh;
+    box-shadow: inset 0 0 20px red;
+    border-radius: 15px;
+    padding: 1%;
   }
   
   #level1Box2 {
@@ -563,85 +568,98 @@ cursor: pointer;
  }
  #level2Box1{
   position: absolute;
-  top: 95vh ;
-  width: 20vh;
- }
+  top: 90dvh ;
+  width: 15vh;
+  height: 5vh;
+  left: 20vw;
+  box-shadow: inset 0 0 20px red;
+  border-radius: 15px;
+  padding: 1%;
+}
  #level2Box2{
   position: absolute;
-  top: 80vh ;
-  left: 50vh;
-  width: 10vh;
+  top: 83vh ;
+  left: 10vw;
+  width: 5vh;
  }
  #level2Box3{
   position: absolute;
-  top: 80vh ;
-  width: 10vh;
+  top: 78vh ;
+  left: 2vw;
+  width: 5vh;
  }
  #level2Box4{
   position: absolute;
-  top: 80vh ;
-  width: 10vh;
+  top: 68vh ;
+  left: 13vw;
+  width: 8vh;
  }
  #level2Box5{
   position: absolute;
-  top: 80vh ;
-  width: 10vh;
+  top: 58vh ;
+  left: 5vw;
+  width: 6.5vh;
  }
  #level2Box6{
   position: absolute;
-  top: 80vh ;
-  width: 10vh;
+  top: 50vh ;
+  width: 6vh;
+  left: 18vw;
  }
  #level2Box7{
   position: absolute;
-  top: 80vh ;
+  top: 40vh ;
+  left: 7vw;
   width: 10vh;
  }
  #level2Box8{
   position: absolute;
-  top: 80vh ;
+  top: 30vh ;
+  left: 24vw;
   width: 10vh;
  }
  #level2Box9{
   position: absolute;
-  top: 80vh ;
+  left: 50vw;
+  top: 80vh;
   width: 10vh;
  }
  #level2Box10{
   position: absolute;
-  top: 80vh ;
+  top: 70vh ;
+  left: 65vw;
   width: 10vh;
  }
 
  #level2Box11{
   position: absolute;
-  top: 80vh ;
+  top: 57vh ;
+  left: 79vw;
   width: 10vh;
  }
  #level2Box12{
   position: absolute;
-  top: 80vh ;
+  top: 10vh ;
   width: 10vh;
  }
  #level2Box13{
   position: absolute;
-  top: 80vh ;
+  top: 10vh ;
   width: 10vh;
  } #level2Box14{
   position: absolute;
-  top: 80vh ;
+  top: 10vh ;
   width: 10vh;
  } #level2Box15{
   position: absolute;
-  top: 80vh ;
+  top: 10vh ;
   top: 10vh;
   width: 10vh;
+  box-shadow: inset 0 0 20px var(--primary-color2);
+  border-radius: 15px;
+  padding: 1%;
  }
- #level2Box16{
-  position: absolute;
- 
-  width: 10vh;
- }
+
 #playAgainButton, #backToMenuButton, #close-settings , .settingsMenu{
   transition: all 0.3s;
 }

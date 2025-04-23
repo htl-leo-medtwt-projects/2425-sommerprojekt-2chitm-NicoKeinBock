@@ -28,8 +28,8 @@ function startLevel2() {
 }
 
 function updateLevel2() {
-    const gravity = window.innerHeight * 0.0006;
-    const maxFallSpeed = window.innerHeight * 0.05;
+    const gravity = window.innerHeight * 0.0011;
+    const maxFallSpeed = window.innerHeight * 0.8;
 
     if (KEY_EVENTS.leftArrow) {
         movePlayerLevel2(-1 * GAME_CONFIG.characterSpeed, 0, 1);
@@ -45,8 +45,12 @@ function updateLevel2() {
         }
     }
 
-    GAME_CONFIG.characterSpeed = KEY_EVENTS.shift ? 10 : 5;
-
+    if (KEY_EVENTS.shift) {
+        GAME_CONFIG.characterSpeed = 10;
+    } else {
+        GAME_CONFIG.characterSpeed = 5;
+    }
+     
     if (KEY_EVENTS.space && !isJumping2) {
         player2VelocityY = -window.innerHeight * 0.025;
         isJumping2 = true;
@@ -107,7 +111,7 @@ function movePlayerLevel2(dx, dy, dr) {
     if (isCollidingWithBox2(PLAYER_LEVEL2.playerMenu, 0, dy)) {
         moveY = 0;
         if (dy > 0) {
-            isJumping = false;
+            isJumping2 = false;
             player2VelocityY = 0;
         }
     }
@@ -181,8 +185,8 @@ function isCollidingWithBox2(playerElement, dx, dy) {
 function resetPlayerLevel2() {
     player2VelocityY = 0;
     isJumping2 = false;
-    PLAYER_LEVEL2.playerMenu.style.top = "60vh";
-    PLAYER_LEVEL2.playerMenu.style.left = "5vw";
+    PLAYER_LEVEL2.playerMenu.style.top = "80vh";
+    PLAYER_LEVEL2.playerMenu.style.left = "22vw";
 }
 
 function showWinningFlash2() {
@@ -228,7 +232,7 @@ function updateStopwatch2() {
     const seconds = Math.floor(elapsedTime2 % 60);
     const milliseconds = Math.floor((elapsedTime2 % 1) * 100);
     stopwatchText2 = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}:${milliseconds.toString().padStart(2, '0')}`;
-    document.getElementById('stopwatch').innerHTML = stopwatchText2;
+    document.getElementById('stopwatch2').innerHTML = stopwatchText2;
 }
 
 function resetStopwatch2() {
@@ -236,7 +240,7 @@ function resetStopwatch2() {
     intervalId2 = null;
     startTime2 = null;
     elapsedTime2 = 0;
-    document.getElementById('stopwatch').innerHTML = '00:00:00';
+    document.getElementById('stopwatch2').innerHTML = '00:00:00';
 }
 
 function stopStopwatch2() {

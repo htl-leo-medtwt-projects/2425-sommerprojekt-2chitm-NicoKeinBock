@@ -159,6 +159,10 @@ function skinSelect(index) {
       document.getElementById('level2Entrance').innerHTML = `
       <p class="LevelEntranceText">Drücke E um Level 2 zu betreten</p>
       `
+      if(KEY_EVENTS.e){
+        console.log("Entered IF")
+        enterLevel2()
+      }
     }
     else if(isColliding(PLAYER.playerMenu,MAP.level3Entrance, 0)){
       console.log("Level 3 Entrance");

@@ -13,68 +13,72 @@ document.addEventListener("keydown", keyListenerDown);
 document.addEventListener("keyup", keyListenerUp);
 
 function keyListenerDown(e) {
-    console.log("Key pressed:", e.key); 
-    
-    if (e.key == "a") {
-        KEY_EVENTS.leftArrow = true;
+  console.log("Key pressed:", e.key); 
+  
+  if (e.key === "a" || e.key === "A") {
+      KEY_EVENTS.leftArrow = true;
+  }
+  if (e.key === "w" || e.key === "W") {
+      KEY_EVENTS.upArrow = true;
+  }
+  if (e.key === "d" || e.key === "D") {
+      KEY_EVENTS.rightArrow = true;
+  }
+  if (e.key === "s" || e.key === "S") {
+      KEY_EVENTS.downArrow = true;
+  }
+  if (e.key === "Space") {
+      KEY_EVENTS.space = true;
+  }
+  if (e.key === "Shift") {
+      KEY_EVENTS.shift = true;
+  }
+  if(e.key === "e" || e.key === "E"){
+      KEY_EVENTS.e = true;
+  }
+  if (e.code === 'Space') {
+    if (GAME_STATE === "level1" && !isJumping) {
+      player1VelocityY = -15; 
+      isJumping = true;
     }
-    if (e.key == "w") {
-        KEY_EVENTS.upArrow = true;
+    if (GAME_STATE === "level2" && !isJumping2) {
+      player2VelocityY = -15; 
+      isJumping2 = true;
     }
-    if (e.key == "d") {
-        KEY_EVENTS.rightArrow = true;
-    }
-    if (e.key == "s") {
-        KEY_EVENTS.downArrow = true;
-    }
-    if (e.key == "Space") {
-        KEY_EVENTS.space = true;
-    }
-    if (e.key == "Shift") {
-        KEY_EVENTS.shift = true;
-    }
-    if(e.key == "e"){
-        KEY_EVENTS.e = true;
-    }
-    if (e.code == 'Space') {
-      if (GAME_STATE === "level1" && !isJumping) {
-        player1VelocityY = -15; 
-        isJumping = true;
-      }
-      e.preventDefault(); 
-    }
-    if(e.key== "Esc"){
-    KEY_EVENTS.esc = true;
-    }
-    
+    e.preventDefault(); 
+  }
+  if(e.key === "Esc"){
+  KEY_EVENTS.esc = true;
+  }
+  
 }
 
 function keyListenerUp(e) {
-    if (e.key === "a") {
-      KEY_EVENTS.leftArrow = false;
-    }
-    if (e.key === "w") {
-      KEY_EVENTS.upArrow = false;
-    }
-    if (e.key === "d") {
-      KEY_EVENTS.rightArrow = false;
-    }
-    if (e.key === "s") {
-      KEY_EVENTS.downArrow = false;
-    }
-    if (e.key === "Space") {
-      KEY_EVENTS.space = false;
-    }
-    if (e.key ==="Shift") {
-      KEY_EVENTS.shift = false;
-    }
-    if(e.key === "e"){
-      KEY_EVENTS.e = false;
-      console.log("KEY_EVENTS.e wurde auf false gesetzt");
-    }
-    if(e.key === "Esc"){
-      KEY_EVENTS.esc = false;
-    }
+  if (e.key === "a" || e.key === "A") {
+    KEY_EVENTS.leftArrow = false;
+  }
+  if (e.key === "w" || e.key === "W") {
+    KEY_EVENTS.upArrow = false;
+  }
+  if (e.key === "d" || e.key === "D") {
+    KEY_EVENTS.rightArrow = false;
+  }
+  if (e.key === "s" || e.key === "S") {
+    KEY_EVENTS.downArrow = false;
+  }
+  if (e.key === "Space") {
+    KEY_EVENTS.space = false;
+  }
+  if (e.key === "Shift") {
+    KEY_EVENTS.shift = false;
+  }
+  if(e.key === "e" || e.key === "E"){
+    KEY_EVENTS.e = false;
+    console.log("KEY_EVENTS.e wurde auf false gesetzt");
+  }
+  if(e.key === "Esc"){
+    KEY_EVENTS.esc = false;
+  }
 
 }
 function isColliding(div1, div2, tolerance = 0) {

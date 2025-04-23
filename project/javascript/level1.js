@@ -23,7 +23,7 @@ function startLevel1() {
 }
 
 function updateLevel1() {
-    const gravity = window.innerHeight * 0.0015;
+    const gravity = window.innerHeight * 0.0011;
     const maxFallSpeed = window.innerHeight * 0.8;
 
     if (KEY_EVENTS.leftArrow) {
@@ -47,7 +47,7 @@ function updateLevel1() {
     }
 
     if (KEY_EVENTS.space && !isJumping) {
-        player1VelocityY = -window.innerHeight * 0.025; // Responsive jump
+        player1VelocityY = -window.innerHeight * 0.03; // Responsive jump
         isJumping = true;
     }
 
