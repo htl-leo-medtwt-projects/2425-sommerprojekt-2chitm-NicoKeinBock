@@ -633,28 +633,32 @@ cursor: pointer;
 
  #level2Box11{
   position: absolute;
-  top: 57vh ;
+  top: 63vh ;
   left: 79vw;
-  width: 10vh;
+  width: 5vh;
  }
  #level2Box12{
   position: absolute;
-  top: 10vh ;
+  top: 52.5vh;
+  left: 87vw;
   width: 10vh;
  }
  #level2Box13{
   position: absolute;
-  top: 10vh ;
+  top: 42vh ;
+  left: 73vw;
   width: 10vh;
  } #level2Box14{
   position: absolute;
-  top: 10vh ;
+  top: 33vh ;
+  left: 60vw;
   width: 10vh;
  } #level2Box15{
   position: absolute;
   top: 10vh ;
-  top: 10vh;
+  top: 22vh;
   width: 10vh;
+  left: 70vw;
   box-shadow: inset 0 0 20px var(--primary-color2);
   border-radius: 15px;
   padding: 1%;
