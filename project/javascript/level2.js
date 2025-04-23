@@ -100,15 +100,15 @@ function movePlayerLevel2(dx, dy, dr) {
     let moveX = dx;
     let moveY = dy;
 
-    if (isCollidingWithBox(PLAYER_LEVEL2.playerMenu, dx, 0)) {
+    if (isCollidingWithBox2(PLAYER_LEVEL2.playerMenu, dx, 0)) {
         moveX = 0;
     }
 
-    if (isCollidingWithBox(PLAYER_LEVEL2.playerMenu, 0, dy)) {
+    if (isCollidingWithBox2(PLAYER_LEVEL2.playerMenu, 0, dy)) {
         moveY = 0;
         if (dy > 0) {
             isJumping = false;
-            player1VelocityY = 0;
+            player2VelocityY = 0;
         }
     }
 
@@ -248,7 +248,7 @@ resetStopwatch2();
 
 function createGrassPlattformLevel2(id) {
     const plattform = document.createElement('img');
-    plattform.src = '../Images/grassPlattform.png';
+    plattform.src = '../Images/stonePlattform.png';
     plattform.alt = '';
     plattform.className = 'Level2JumpBox';
     plattform.id = `level2Box${id}`;
