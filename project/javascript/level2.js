@@ -329,7 +329,7 @@ function displayLevel2ResultScreen() {
 
 function calculateCoinsFromTime2() {
     const time = elapsedTime2;
-    let coinsGathered = Math.max(1, Math.round(100 / time));
+    let coinsGathered = Math.max(1, Math.round(1000 / time));
     PLAYER_LEVEL2.newCoins += coinsGathered;
 }
 

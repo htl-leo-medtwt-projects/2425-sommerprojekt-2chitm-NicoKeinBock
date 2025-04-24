@@ -291,6 +291,10 @@ left: 5vw;
   }
   #howToQuestionmark{
 cursor: pointer;
+transition: all 0.3s;
+  }
+  #howToQuestionmark:hover{
+    transform: scale(1.1);
   }
   #howToPlay{
     display: none;
@@ -306,6 +310,7 @@ cursor: pointer;
     display: flex;
     display: none;
   }
+
   #level1Entrance{
     position: absolute;
     border: red solid;  /* Temporär*/
