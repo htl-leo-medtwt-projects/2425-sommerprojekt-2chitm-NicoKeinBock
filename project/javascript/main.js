@@ -3,9 +3,13 @@ function toggleSettings() {
     var settingsPopup = document.getElementById("settings-popup");
     if (settingsPopup.style.display === "block") {
         settingsPopup.style.display = "none";
+         document.getElementById('canvas-basic').style.display = "none"
     } else {
+      document.getElementById('canvas-basic').style.display = "block"
         settingsPopup.style.display = "block";
         document.getElementById('gameMenuBox').style.display = "none";
+       
+
     }
 }
 
@@ -98,5 +102,19 @@ document.getElementById('spielen').addEventListener('click', function() {
     togglePlayerSelection();
   } else if (callCount === 2) {
     toggleGameMap();
+  }
+});
+var granimInstance = new Granim({
+  element: '#canvas-basic',
+  direction: 'left-right',
+  isPausedWhenNotInView: true,
+  states : {
+      "default-state": {
+          gradients: [
+              ['#00ffcc', '#7aff38'],
+              ['#7aff38', '#0575E6'],
+              ['#e1eec3', '#00ffcc']
+          ]
+      }
   }
 });

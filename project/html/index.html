@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jump Odyssey</title>
     <link rel="stylesheet" href="../css/index.css">  
+    <script src="../granim.js-2.0.0/granim.js-2.0.0/dist/granim.min.js" defer></script>
       <script src="../javascript/key.js" defer></script>
     <script src="../javascript/main.js" defer></script>
     <script src="../javascript/levelMenu.js" defer></script>
     <script src="../javascript/level1.js" defer></script>
     <script src="../javascript/level2.js"defer></script>
+    
 </head>
 <body>
     <div id="deathFlash"></div>
@@ -19,6 +21,7 @@
     <h1>Jump Odyssey</h1>
     
     <div id="settings-popup" style="display: none;">
+        <canvas id="canvas-basic"></canvas>
         <h2>Einstellungen</h2>
         <p>Musik</p>
         <input type="range" min="1" max="100" value="50" class="slider" id="musicVolume">        

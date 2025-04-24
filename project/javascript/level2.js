@@ -22,7 +22,7 @@ let hasTouchedLevel2Box16 = false;
 let deathCounter2 = 0;
 
 function startLevel2() {
-    GAME_CONFIG.characterSpeed = 5;
+    GAME_CONFIG.characterSpeed = 3;
     startStopwatch2();
     updateLevel2();
 }
@@ -46,9 +46,9 @@ function updateLevel2() {
     }
 
     if (KEY_EVENTS.shift) {
-        GAME_CONFIG.characterSpeed = 10;
+        GAME_CONFIG.characterSpeed = 6;
     } else {
-        GAME_CONFIG.characterSpeed = 5;
+        GAME_CONFIG.characterSpeed = 3;
     }
      
     if (KEY_EVENTS.space && !isJumping2) {
@@ -104,11 +104,11 @@ function movePlayerLevel2(dx, dy, dr) {
     let moveX = dx;
     let moveY = dy;
 
-    if (isCollidingWithBox2(PLAYER_LEVEL2.playerMenu, dx, 0)) {
+    if (isCollidingHorizontally(PLAYER_LEVEL2.playerMenu, dx)) {
         moveX = 0;
     }
 
-    if (isCollidingWithBox2(PLAYER_LEVEL2.playerMenu, 0, dy)) {
+    if (isCollidingVertically(PLAYER_LEVEL2.playerMenu, dy)) {
         moveY = 0;
         if (dy > 0) {
             isJumping2 = false;
@@ -133,7 +133,6 @@ function movePlayerLevel2(dx, dy, dr) {
     if (newY < 0) newY = 0;
     if (newY + height > FIELD_HEIGHT) newY = FIELD_HEIGHT - height;
 
-    // Convert pixel values to vw/vh
     const leftInVw = (newX / FIELD_WIDTH) * 100;
     const topInVh = (newY / FIELD_HEIGHT) * 100;
 
@@ -145,6 +144,7 @@ function movePlayerLevel2(dx, dy, dr) {
         PLAYER_LEVEL2.playerMenu.style.transform = `scaleX(${-dr})`;
     }
 }
+
 
 function isTouchingGround2(playerElement) {
     const rect = playerElement.getBoundingClientRect();
@@ -160,15 +160,41 @@ function animatePlayerLevel2() {
     document.getElementById('spriteImg2').src = PLAYER.skin + "/running/sprite_" + PLAYER.spriteImgNumber + ".png";
 }
 
-function isCollidingWithBox2(playerElement, dx, dy) {
+function isCollidingHorizontally(playerElement, dx) {
+    const tolerance = 3;
     const playerRect = playerElement.getBoundingClientRect();
     const boxes = document.querySelectorAll(".Level2JumpBox");
 
     for (let box of boxes) {
         const rect = box.getBoundingClientRect();
+
         const futureRect = {
             left: playerRect.left + dx,
             right: playerRect.right + dx,
+            top: playerRect.top + tolerance,
+            bottom: playerRect.bottom - tolerance
+        };
+
+        const hOverlap = futureRect.right > rect.left && futureRect.left < rect.right;
+        const vOverlap = futureRect.bottom > rect.top && futureRect.top < rect.bottom;
+
+        if (hOverlap && vOverlap) return true;
+    }
+
+    return false;
+}
+
+function isCollidingVertically(playerElement, dy) {
+    const tolerance = 2;
+    const playerRect = playerElement.getBoundingClientRect();
+    const boxes = document.querySelectorAll(".Level2JumpBox");
+
+    for (let box of boxes) {
+        const rect = box.getBoundingClientRect();
+
+        const futureRect = {
+            left: playerRect.left + tolerance,
+            right: playerRect.right - tolerance,
             top: playerRect.top + dy,
             bottom: playerRect.bottom + dy
         };
@@ -182,10 +208,12 @@ function isCollidingWithBox2(playerElement, dx, dy) {
     return false;
 }
 
+
+
 function resetPlayerLevel2() {
     player2VelocityY = 0;
     isJumping2 = false;
-    PLAYER_LEVEL2.playerMenu.style.top = "80vh";
+    PLAYER_LEVEL2.playerMenu.style.top = "75vh";
     PLAYER_LEVEL2.playerMenu.style.left = "22vw";
 }
 
