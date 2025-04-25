@@ -180,7 +180,7 @@ function skinSelect(index) {
       document.getElementById('level1Entrance').innerHTML = ''
       document.getElementById('level2Entrance').innerHTML = ''
       document.getElementById('level3Entrance').innerHTML = ''
-      document.getElementById('shopEntrance').innerHTML = '<img src="../Images/shop.png" alt="shop" id="shopEntranceImg">'
+      document.getElementById('shopEntrance').innerHTML = ''
     }
   }
   function enterLevel1() {

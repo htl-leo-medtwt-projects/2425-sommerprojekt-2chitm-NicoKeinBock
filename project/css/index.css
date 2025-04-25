@@ -279,6 +279,9 @@ left: 5vw;
   }
  
   #shopEntrance{
+    background-image: url(../Images/shop.png);
+     background-size: 150%;
+     background-position: center;
     position: absolute;
     border: solid black;
     width: 10vw;
