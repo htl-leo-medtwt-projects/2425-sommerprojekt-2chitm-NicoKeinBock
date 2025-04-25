@@ -289,9 +289,37 @@ left: 5vw;
     left: 67.5vw;
     top: 35vh;
   }
-  #shopEntranceImg{
-    width: 20vw;
-  }
+ #shop{
+  border: solid;
+  position: absolute;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
+  display: none;
+  width: 90vw;
+  height: 90vh;
+  border-radius: 15px;
+
+ }
+ .shopElement{
+  border: solid;
+  width: 20vw;
+ height: 20vh;
+  border-radius: 15px;
+  background-color:rgba(0, 0, 0, 0.481)
+ }
+ #shop h2{
+  margin-bottom: 0;
+ }
+ #gridBox {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 2rem; 
+  justify-items: center;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
   #howToQuestionmark{
 cursor: pointer;
 transition: all 0.3s;
@@ -312,6 +340,7 @@ transition: all 0.3s;
     z-index: 50;
     display: flex;
     display: none;
+    border: solid;
   }
 
   #level1Entrance{
@@ -680,7 +709,19 @@ transition: all 0.3s;
 #spriteImg2{
   height: 10vh;
 }
-#canvas-basic {
+#canvas-basic{
+  display: block;
+  position: absolute;
+  border-radius: 15px;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+#canvas-shop{
   display: block;
   position: absolute;
   border-radius: 15px;

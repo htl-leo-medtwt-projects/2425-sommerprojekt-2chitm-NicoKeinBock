@@ -16,14 +16,14 @@ function toggleSettings() {
                   gradients: [
                       ['#00ffcc', '#7aff38'],
                       ['#7aff38', '#0575E6'],
-                      ['#e1eec3', '#00ffcc']
+                      ['#7bcbee', '#00ffcc']
                   ]
               }
           }
         });
 
     }
-
+    
         document.getElementById('gameMenuBox').style.display = "none";
   }
 

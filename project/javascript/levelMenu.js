@@ -175,6 +175,10 @@ function skinSelect(index) {
       document.getElementById('shopEntrance').innerHTML = `
       <p class="LevelEntranceText">Drücke E um den Shop zu betreten</p>
       `
+      if(KEY_EVENTS.e){
+        console.log("Entered IF")
+        enterShop()
+      }
     }
     else{
       document.getElementById('level1Entrance').innerHTML = ''
@@ -209,8 +213,21 @@ function skinSelect(index) {
     document.getElementById('level3').style.display = "block";
   }
   function enterShop(){
-    MAP.map.style.display = "none";
-    document.getElementById('shopGUI').style.display = "block";
+    document.getElementById('shop').style.display = "block";
+    var granimInstance2 = new Granim({
+      element: '#canvas-shop',
+      direction: 'left-right',
+      isPausedWhenNotInView: true,
+      states : {
+          "default-state": {
+              gradients: [
+                  ['#00ffcc', '#7aff38'],
+                  ['#7aff38', '#0575E6'],
+                  ['#7bcbee', '#00ffcc']
+              ]
+          }
+      }
+    });
   }
 
  

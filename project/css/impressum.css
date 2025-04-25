@@ -25,10 +25,12 @@ h1{
 p{
     font-family: InriaSans;
     color:rgb(182, 182, 182);
+    text-align: center;
 }
 h3,h2{
     font-family: Jersey25;
     color: white;
+    text-align: center;
     
 }
 img{
