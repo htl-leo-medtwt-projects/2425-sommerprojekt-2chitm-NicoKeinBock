@@ -361,4 +361,6 @@ function backToMenu2() {
     MAP.map.style.display = "block";
     MAP.startseite.style.display = "block";
     clearTimeout(level2Timeout);
+    PLAYER.tokenCount += PLAYER_LEVEL2.newCoins
+    PLAYER_LEVEL2.newCoins  = 0
 }

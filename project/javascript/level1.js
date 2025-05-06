@@ -351,4 +351,7 @@ function playAgain() {
     MAP.map.style.display = "block";
     MAP.startseite.style.display = "block"
     clearTimeout(level1Timeout);
+    PLAYER.tokenCount += PLAYER_LEVEL1.newCoins
+    PLAYER_LEVEL1.newCoins  = 0
   }
+

@@ -266,7 +266,7 @@ left: 5vw;
   #player1{
     position: absolute;
     top: 60vh;
-    left: 20vw;
+    left: 5Yvw;
   
   }
   #player2{
@@ -299,22 +299,33 @@ left: 5vw;
   width: 90vw;
   height: 90vh;
   border-radius: 15px;
-
+  
  }
  .shopElement{
   border: solid;
   width: 20vw;
- height: 20vh;
+ height: 25vh;
   border-radius: 15px;
   background-color:rgba(0, 0, 0, 0.481)
  }
  #shop h2{
   margin-bottom: 0;
+  animation: shimmer 5s infinite;
+ }
+ #leaveShop{
+  position: absolute;
+  left: 85vw;
+  top: 1vh;
+  transition: all 0.5s;
+ }
+ #leaveShop:hover{
+  transform: scale(1.3);
+  cursor: pointer;
  }
  #gridBox {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  padding: 2rem; 
+  padding: 5rem; 
   justify-items: center;
   min-height: 100vh;
   box-sizing: border-box;

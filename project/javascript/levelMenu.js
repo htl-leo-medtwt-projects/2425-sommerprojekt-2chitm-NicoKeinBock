@@ -229,5 +229,8 @@ function skinSelect(index) {
       }
     });
   }
+  function leaveShop(){
+    document.getElementById('shop').style.display = "none"
+  }
 
  
