@@ -745,4 +745,15 @@ transition: all 0.3s;
   z-index: -1;
 }
 
+#slowFallingImg,#slowFallingImg2, #slowFallingImg3 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 7vw;
+}
+#slowFalling, #slowFalling2, #slowFalling3{
+  position: relative;
+}
+
 
