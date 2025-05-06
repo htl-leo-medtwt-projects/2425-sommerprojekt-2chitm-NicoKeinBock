@@ -59,9 +59,12 @@
     <div id="howTo">
         <h1 onclick="howToPlay()" id="howToQuestionmark">?</h1>
     </div>
-    <div id="settings" onclick="toggleMenu();rotateBox()"></div>
+    <div id="settings" onclick="toggleMenu();rotateBox()">
+        
+    </div>
     <div id="gameMenuBox">
     <div id="gameMenu">
+        <canvas id="canvas-settingsMenu"></canvas>
         <div class=settingsMenu onclick="toggleSettings()">
             <p id="settingsMenuTitle">Einstellungen</p>
         </div>
@@ -71,7 +74,8 @@
     </div>
 </div>
 
-    <div id="howToPlay"></div>
+    <div id="howToPlay">
+    </div>
     <div id="level1Entrance"></div>
     
     <div id="level2Entrance"></div>
@@ -108,12 +112,24 @@
         <h2>Shop</h2>
         <div id="leaveShop" onclick="leaveShop()"><h2>X</h2></div>
         <div id="gridBox">
-        <div class="shopElement" id="slowFalling"><p>Slow Falling 1</p><img src="../Images/slowFalling.png" alt="slowFallingIcon" id="slowFallingImg"></div>
-        <div class="shopElement" id="slowFalling2"><p>Slow Falling 2</p><img src="../Images/slowFalling2.png" alt="slowFallingIcon2" id="slowFallingImg2"></div>
-        <div class="shopElement" id="slowFalling3"><p>Slow Falling 3</p><img src="../Images/slowFalling3.png" alt="slowFallingIcon3" id="slowFallingImg3"></div>
-        <div class="shopElement"><p>Element</p></div>
-        <div class="shopElement"><p>Element</p></div>
-        <div class="shopElement"><p>Element</p></div>
+        <div class="shopElement" id="slowFalling"><p>Slow Falling Level 1</p>
+            <img src="../Images/slowFalling.png" alt="slowFallingIcon" id="slowFallingImg">
+        </div>
+        <div class="shopElement" id="slowFalling2"><p>Slow Falling Level 2</p>
+            <img src="../Images/slowFalling2.png" alt="slowFallingIcon2" id="slowFallingImg2">
+        </div>
+        <div class="shopElement" id="slowFalling3"><p>Slow Falling Level 3</p>
+            <img src="../Images/slowFalling3.png" alt="slowFallingIcon3" id="slowFallingImg3">
+        </div>
+        <div class="shopElement" id="jumpBoost"><p>Jump Boost Level 1</p>
+            <img src="../Images/jumpBoost.png" alt="jumpBoost" id="jumpBoostImg">
+        </div>
+        <div class="shopElement" id="jumpBoost2"><p>Jump Boost Level 2</p>
+            <img src="../Images/jumpBoost2.png" alt="jumpBoost2" id="jumpBoostImg2">
+        </div>
+        <div class="shopElement" id="jumpBoost3"><p>Jump Boost Level 3</p>
+            <img src="../Images/jumpBoost3.png" alt="jumpBoost3" id="jumpBoostImg3">
+        </div>
     </div>
     </div>
 

@@ -44,6 +44,21 @@ function toggleMenu() {
         gameMenuBox.style.display = "none";
     } else {
         gameMenuBox.style.display = "block";
+        var granimInstance = new Granim({
+          element: '#canvas-settingsMenu',
+          direction: 'left-right',
+          isPausedWhenNotInView: true,
+          states : {
+              "default-state": {
+                  gradients: [
+                      ['#00ffcc', '#7aff38'],
+                      ['#7aff38', '#0575E6'],
+                      ['#7bcbee', '#00ffcc']
+                  ]
+              }
+          }
+        });
+        document.getElementById('canvas-settingsMenu').style.display = "block"       
     }
 }
 

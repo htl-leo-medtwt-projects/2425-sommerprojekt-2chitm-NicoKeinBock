@@ -171,7 +171,6 @@ left: 5vw;
   position: absolute;
   width: 30vw;
   height: 40vh;
-  background: linear-gradient(180deg, rgba(0, 255, 204, 0.97) 0.01%, rgba(122, 255, 56, 0.85) 100%);
   border-radius: 15px;
   top: 50%;
   left: 50%;
@@ -344,7 +343,6 @@ transition: all 0.3s;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: linear-gradient(180deg, rgba(0, 255, 204, 0.97) 0.01%, rgba(122, 255, 56, 0.85) 100%);
     border-radius: 20px;
     width: 70vw;
     height: 60vh;
@@ -744,16 +742,44 @@ transition: all 0.3s;
   left: 0;
   z-index: -1;
 }
+#canvas-howTo{
+  display: block;
+  position: absolute;
+  border-radius: 15px;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+#canvas-settingsMenu{
+  display: block;
+  position: absolute;
+  border-radius: 15px;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
 
-#slowFallingImg,#slowFallingImg2, #slowFallingImg3 {
+#slowFallingImg,#slowFallingImg2, #slowFallingImg3, #jumpBoostImg, #jumpBoostImg2, #jumpBoostImg3 {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 7vw;
 }
-#slowFalling, #slowFalling2, #slowFalling3{
+#slowFalling, #slowFalling2, #slowFalling3, #jumpBoost, #jumpBoost2, #jumpBoost3{
   position: relative;
+}
+.shopElement p{
+  font-size: 150%;
+  font-family: Jersey25;
 }
 
 

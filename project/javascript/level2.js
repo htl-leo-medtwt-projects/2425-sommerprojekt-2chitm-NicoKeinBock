@@ -28,7 +28,7 @@ function startLevel2() {
 }
 
 function updateLevel2() {
-    const gravity = window.innerHeight * 0.0011;
+    const gravity = window.innerHeight * 0.0009;
     const maxFallSpeed = window.innerHeight * 0.8;
 
     if (KEY_EVENTS.leftArrow) {

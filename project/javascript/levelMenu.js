@@ -27,6 +27,14 @@ let MAP = {
     startseite: document.getElementById('startseite')
 
 }
+let UPGRADES = {
+  jumpBoostLevel1: false,
+  jumpBoostLevel2: false,
+  jumpBoostLevel3: false,
+  slowFallingLevel1: false,
+  slowFallingLevel: false,
+  slowFallingLevel3: false,
+}
 function gameLoop() {
     if (GAME_STATE !== "menu") return;
     console.log('Gameloop running') 
@@ -127,6 +135,7 @@ function skinSelect(index) {
     if(howToPlay.style.display === "none"){
       howToPlay.style.display = "block"
       let howToPlayText = `
+              <canvas id="canvas-howTo"></canvas>
       <div id= "howToText">
       <h2>So spielst du</h2>
       <h3>Steuerung:</h3>
@@ -138,6 +147,22 @@ function skinSelect(index) {
       </div>
       `
       howToPlay.innerHTML = howToPlayText
+      var granimInstance = new Granim({
+        element: '#canvas-howTo',
+        direction: 'left-right',
+        isPausedWhenNotInView: true,
+        states : {
+            "default-state": {
+                gradients: [
+                    ['#00ffcc', '#7aff38'],
+                    ['#7aff38', '#0575E6'],
+                    ['#7bcbee', '#00ffcc']
+                ]
+            }
+        }
+      });
+      document.getElementById('canvas-howTo').style.display = "block"
+
     }
     else{
       howToPlay.style.display = "none"
