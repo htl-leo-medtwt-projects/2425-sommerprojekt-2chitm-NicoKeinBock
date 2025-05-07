@@ -16,15 +16,15 @@ let isJumping = false;
 const GAME_LOOP_INTERVAL = 16;
 let hasTouchedBox16 = false;
 let deathCounter = 0
-
+let gravity1 = window.innerHeight * 0.0011;
+let maxFallSpeed1 = window.innerHeight * 0.8;
 function startLevel1() {
     GAME_CONFIG.characterSpeed = 5;
     startStopwatch();
 }
 
 function updateLevel1() {
-    const gravity = window.innerHeight * 0.0011;
-    const maxFallSpeed = window.innerHeight * 0.8;
+
 
     if (KEY_EVENTS.leftArrow) {
         movePlayerLevel1(-1 * GAME_CONFIG.characterSpeed, 0, 1);
@@ -51,8 +51,8 @@ function updateLevel1() {
         isJumping = true;
     }
 
-    player1VelocityY += gravity;
-    if (player1VelocityY > maxFallSpeed) player1VelocityY = maxFallSpeed;
+    player1VelocityY += gravity1;
+    if (player1VelocityY > maxFallSpeed1) player1VelocityY = maxFallSpeed1;
 
     movePlayerLevel1(0, player1VelocityY, 0);
 
@@ -228,75 +228,75 @@ updateDeathCounter(deathCounter);
 
 function startStopwatch() {
     if (startTime === null) {
-      startTime = new Date().getTime();
-      
-      intervalId = setInterval(updateStopwatch, 10);
+        startTime = new Date().getTime();
+
+        intervalId = setInterval(updateStopwatch, 10);
     } else {
-      clearInterval(intervalId);
-      intervalId = null;
-      startTime = null;
+        clearInterval(intervalId);
+        intervalId = null;
+        startTime = null;
     }
-  }
-  
-  function updateStopwatch() {
+}
+
+function updateStopwatch() {
     const currentTime = new Date().getTime();
     elapsedTime = (currentTime - startTime) / 1000;
     const minutes = Math.floor(elapsedTime / 60);
     const seconds = Math.floor(elapsedTime % 60);
     const milliseconds = Math.floor((elapsedTime % 1) * 100);
-     stopwatchText = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}:${milliseconds.toString().padStart(2, '0')}`;
+    stopwatchText = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}:${milliseconds.toString().padStart(2, '0')}`;
     document.getElementById('stopwatch').innerHTML = stopwatchText;
-  }
-  
-  function resetStopwatch() {
+}
+
+function resetStopwatch() {
     clearInterval(intervalId);
     intervalId = null;
     startTime = null;
     elapsedTime = 0;
     document.getElementById('stopwatch').innerHTML = '00:00:00';
-  }
-  
-  function stopStopwatch() {
+}
+
+function stopStopwatch() {
     clearInterval(intervalId);
     intervalId = null;
-  }
-  resetStopwatch()
- 
-  function createGrassPlattform(id) {
+}
+resetStopwatch()
+
+function createGrassPlattform(id) {
     const plattform = document.createElement('img');
     plattform.src = '../Images/grassPlattform.png';
     plattform.alt = '';
     plattform.className = 'Level1JumpBox';
     plattform.id = `level1Box${id}`;
     return plattform;
-  }
-  const level1 = document.getElementById('level1');
-const anzahlPlattforms = 16; 
+}
+const level1 = document.getElementById('level1');
+const anzahlPlattforms = 16;
 
 for (let i = 1; i < anzahlPlattforms; i++) {
-  const plattform = createGrassPlattform(i);
-  level1.appendChild(plattform);
+    const plattform = createGrassPlattform(i);
+    level1.appendChild(plattform);
 }
 function checkHighscore() {
     const oldHighscore = localStorage.getItem('highscore');
     const oldHighscoreText = localStorage.getItem('highscoreText')
     const newScore = elapsedTime;
     const newScoreText = stopwatchText
-  
-    if (oldHighscore === null || newScore < oldHighscore) {
-      localStorage.setItem('highscore', newScore);
-      localStorage.setItem('highscoreText', newScoreText);
 
-      PLAYER_LEVEL1.highscore = newScore
-      PLAYER_LEVEL1.highscoreText = newScoreText
+    if (oldHighscore === null || newScore < oldHighscore) {
+        localStorage.setItem('highscore', newScore);
+        localStorage.setItem('highscoreText', newScoreText);
+
+        PLAYER_LEVEL1.highscore = newScore
+        PLAYER_LEVEL1.highscoreText = newScoreText
     } else {
         PLAYER_LEVEL1.highscore = oldHighscore;
         PLAYER_LEVEL1.highscoreText = oldHighscoreText;
     }
-  }
-  function displayLevel1ResultScreen(){
+}
+function displayLevel1ResultScreen() {
     checkHighscore();
-    calculateCoinsFromTime(); 
+    calculateCoinsFromTime();
     let winscreen1 = document.createElement('div');
     winscreen1.id = 'winscreen1';
     winscreen1.innerHTML = `
@@ -310,7 +310,7 @@ function checkHighscore() {
     document.getElementById('level1').appendChild(winscreen1);
 }
 function calculateCoinsFromTime() {
-    const time = elapsedTime; 
+    const time = elapsedTime;
     let coinsGathered = Math.max(1, Math.round(100 / time)); // Math.max verhindert das man weniger als eine Münze bekommt
     PLAYER_LEVEL1.newCoins += coinsGathered;
 }
@@ -329,8 +329,8 @@ function playAgain() {
     winscreen1.remove();
     hasTouchedBox16 = false;
     startStopwatch()
-  }
-  function backToMenu() {
+}
+function backToMenu() {
     stopStopwatch();
     resetStopwatch();
     PLAYER_LEVEL1.playerMenu.style.top = "60vh";
@@ -352,6 +352,7 @@ function playAgain() {
     MAP.startseite.style.display = "block"
     clearTimeout(level1Timeout);
     PLAYER.tokenCount += PLAYER_LEVEL1.newCoins
-    PLAYER_LEVEL1.newCoins  = 0
-  }
+    PLAYER_LEVEL1.newCoins = 0
+    document.getElementById('coinCounter').innerHTML = PLAYER.tokenCount + ' Coins';
+}
 

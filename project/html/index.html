@@ -1,139 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jump Odyssey</title>
-    <link rel="stylesheet" href="../css/index.css">  
+    <link rel="stylesheet" href="../css/index.css">
     <script src="https://cdn.jsdelivr.net/npm/granim@2.0.0/dist/granim.min.js"></script>
     <script src="../javascript/key.js" defer></script>
     <script src="../javascript/main.js" defer></script>
     <script src="../javascript/levelMenu.js" defer></script>
     <script src="../javascript/level1.js" defer></script>
-    <script src="../javascript/level2.js"defer></script>
-    
+    <script src="../javascript/level2.js" defer></script>
+
 </head>
+
 <body>
     <div id="deathFlash"></div>
     <div id="winFlash"></div>
 
     <div id="startseite">
-    <h1>Jump Odyssey</h1>
-    
-    <div id="settings-popup" style="display: none;">
-        <canvas id="canvas-basic"></canvas>
-        <h2>Einstellungen</h2>
-        <p>Musik</p>
-        <input type="range" min="1" max="100" value="50" class="slider" id="musicVolume">        
-        <p>Soundeffekte</p>
-        <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
-        <div id="soundImageWrapper">
-        <img src="../Images/sound_off.png" alt="sound_select" id="soundImage" onclick="toggleSoundImage();toggleMusic()">
-        </div>
-        <button id="close-settings" onclick="toggleSettings()">Schließen</button>
-    </div>
-    <nav>
-        <a href="#">
-            <div id="spielen" class="mainMenu">
-                <p>Spielen</p>
-            </div>
-        </a>
-        <a href="#">
-            <div id="einstellungen" class="mainMenu" onclick="toggleSettings()">
-                <p>Einstellungen</p>
-            </div>
-        </a>
-        <a href="#">
-            <div id="statistiken" class="mainMenu">
-                <p>Statistiken</p>
-            </div>
-        </a>
-        <a href="./impressum.html">
-            <div id="impressum" class="mainMenu">
-                <p>Impressum</p>
-            </div>
-        </a>
-    </nav>
-</div>
-<div id="gameMap">
-    <div id="howTo">
-        <h1 onclick="howToPlay()" id="howToQuestionmark">?</h1>
-    </div>
-    <div id="settings" onclick="toggleMenu();rotateBox()">
-        
-    </div>
-    <div id="gameMenuBox">
-    <div id="gameMenu">
-        <canvas id="canvas-settingsMenu"></canvas>
-        <div class=settingsMenu onclick="toggleSettings()">
-            <p id="settingsMenuTitle">Einstellungen</p>
-        </div>
-        <div class="settingsMenu" onclick="toggleGameMap(); toggleMenu()">
-            <p>Hauptmenü</p>
-        </div>
-    </div>
-</div>
+        <h1>Jump Odyssey</h1>
 
-    <div id="howToPlay">
+        <div id="settings-popup" style="display: none;">
+            <canvas id="canvas-basic"></canvas>
+            <h2>Einstellungen</h2>
+            <p>Musik</p>
+            <input type="range" min="1" max="100" value="50" class="slider" id="musicVolume">
+            <p>Soundeffekte</p>
+            <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+            <div id="soundImageWrapper">
+                <img src="../Images/sound_off.png" alt="sound_select" id="soundImage"
+                    onclick="toggleSoundImage();toggleMusic()">
+            </div>
+            <button id="close-settings" onclick="toggleSettings()">Schließen</button>
+        </div>
+        <nav>
+            <a href="#">
+                <div id="spielen" class="mainMenu">
+                    <p>Spielen</p>
+                </div>
+            </a>
+            <a href="#">
+                <div id="einstellungen" class="mainMenu" onclick="toggleSettings()">
+                    <p>Einstellungen</p>
+                </div>
+            </a>
+            <a href="#">
+                <div id="statistiken" class="mainMenu">
+                    <p>Statistiken</p>
+                </div>
+            </a>
+            <a href="./impressum.html">
+                <div id="impressum" class="mainMenu">
+                    <p>Impressum</p>
+                </div>
+            </a>
+        </nav>
     </div>
-    <div id="level1Entrance"></div>
-    
-    <div id="level2Entrance"></div>
-   
-    <div id="level3Entrance"></div>
-    
-    <div id="shopEntrance"></div>
-    <div id="player">
-    <img src="" alt="irgendsoeinSpieler" id="spriteImg">
-    </div>
-</div>
-<div id="level1">
-    <div id="stopwatch"></div>
-    <div id="deathCounter">
-    </div>
-    <div id="player1">
-    <img src="" alt="irgendsoeinSpieler" id="spriteImg1">
-    </div>
+    <div id="gameMap">
+        <div id="howTo">
+            <h1 onclick="howToPlay()" id="howToQuestionmark">?</h1>
+        </div>
+        <div id="settings" onclick="toggleMenu();rotateBox()">
 
-</div>
-<div id="level2">
-    <div id="stopwatch2"></div>
-    <div id="deathCounter2">
+        </div>
+        <div id="gameMenuBox">
+            <div id="gameMenu">
+                <canvas id="canvas-settingsMenu"></canvas>
+                <div class=settingsMenu onclick="toggleSettings()">
+                    <p id="settingsMenuTitle">Einstellungen</p>
+                </div>
+                <div class="settingsMenu" onclick="toggleGameMap(); toggleMenu()">
+                    <p>Hauptmenü</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="howToPlay">
+        </div>
+        <h2 id="level1EntranceText" class="levelEntranceText">Level 1</h2>
+        <div id="level1Entrance"></div>
+
+        <h2 id="level2EntranceText" class="levelEntranceText">Level 2</h2>
+        <div id="level2Entrance"></div>
+
+        <h2 id="level3EntranceText" class="levelEntranceText">Level 3</h2>
+        <div id="level3Entrance"></div>
+
+        <div id="shopEntrance"></div>
+        <div id="player">
+            <img src="" alt="irgendsoeinSpieler" id="spriteImg">
+        </div>
     </div>
-    <div id="player2">
-    <img src="" alt="irgendsoeinSpieler" id="spriteImg2">
-    </div></div>
-<div id="level3">
-    <div id="player3">
-    <img src="" alt="irgendsoeinSpieler" id="spriteImg3">
-    </div></div>
+    <div id="level1">
+        <div id="stopwatch"></div>
+        <div id="deathCounter">
+        </div>
+        <div id="player1">
+            <img src="" alt="irgendsoeinSpieler" id="spriteImg1">
+        </div>
+
+    </div>
+    <div id="level2">
+        <div id="stopwatch2"></div>
+        <div id="deathCounter2">
+        </div>
+        <div id="player2">
+            <img src="" alt="irgendsoeinSpieler" id="spriteImg2">
+        </div>
+    </div>
+    <div id="level3">
+        <div id="player3">
+            <img src="" alt="irgendsoeinSpieler" id="spriteImg3">
+        </div>
+    </div>
     <div id="shop">
         <canvas id="canvas-shop"></canvas>
         <h2>Shop</h2>
-        <div id="leaveShop" onclick="leaveShop()"><h2>X</h2></div>
+        <div id="leaveShop" onclick="leaveShop()">
+            <h2>X</h2>
+        </div>
+        <div id="coinCounter"></div>
         <div id="gridBox">
-        <div class="shopElement" id="slowFalling"><p>Slow Falling Level 1</p>
-            <img src="../Images/slowFalling.png" alt="slowFallingIcon" id="slowFallingImg">
+            <div class="shopElement" id="slowFalling">
+                <p>Slow Falling Level 1</p>
+                <img src="../Images/slowFalling.png" alt="slowFallingIcon" id="slowFallingImg">
+                <button class="button-29" role="button" onclick="buyItem('slowFalling1')" id="buy-slowFalling1"
+                    data-original-text="Kaufen: 25 Münzen">Kaufen: 25 Münzen</button>
+            </div>
+            <div class="shopElement" id="slowFalling2">
+                <p>Slow Falling Level 2</p>
+                <img src="../Images/slowFalling2.png" alt="slowFallingIcon2" id="slowFallingImg2">
+                <button class="button-29" role="button" onclick="buyItem('slowFalling2')" id="buy-slowFalling2"
+                    data-original-text="Kaufen: 250 Münzen">Kaufen: 250 Münzen</button>
+            </div>
+            <div class="shopElement" id="slowFalling3">
+                <p>Slow Falling Level 3</p>
+                <img src="../Images/slowFalling3.png" alt="slowFallingIcon3" id="slowFallingImg3">
+                <button class="button-29" role="button" onclick="buyItem('slowFalling3')" id="buy-slowFalling3"
+                    data-original-text="Kaufen: 1000 Münzen">Kaufen: 1000 Münzen</button>
+            </div>
+            <div class="shopElement" id="jumpBoost">
+                <p>Jump Boost Level 1</p>
+                <img src="../Images/jumpBoost.png" alt="jumpBoost" id="jumpBoostImg">
+                <button class="button-29" role="button" onclick="buyItem('jumpBoost1')" id="buy-jumpBoost1"
+                    data-original-text="Kaufen: 50 Münzen">Kaufen: 50 Münzen</button>
+            </div>
+            <div class="shopElement" id="jumpBoost2">
+                <p>Jump Boost Level 2</p>
+                <img src="../Images/jumpBoost2.png" alt="jumpBoost2" id="jumpBoostImg2">
+                <button class="button-29" role="button" onclick="buyItem('jumpBoost2')" id="buy-jumpBoost2"
+                    data-original-text="Kaufen: 300 Münzen">Kaufen: 300 Münzen</button>
+            </div>
+            <div class="shopElement" id="jumpBoost3">
+                <p>Jump Boost Level 3</p>
+                <img src="../Images/jumpBoost3.png" alt="jumpBoost3" id="jumpBoostImg3">
+                <button class="button-29" role="button" onclick="buyItem('jumpBoost3')" id="buy-jumpBoost3"
+                    data-original-text="Kaufen: 750 Münzen">Kaufen: 750 Münzen</button>
+            </div>
         </div>
-        <div class="shopElement" id="slowFalling2"><p>Slow Falling Level 2</p>
-            <img src="../Images/slowFalling2.png" alt="slowFallingIcon2" id="slowFallingImg2">
-        </div>
-        <div class="shopElement" id="slowFalling3"><p>Slow Falling Level 3</p>
-            <img src="../Images/slowFalling3.png" alt="slowFallingIcon3" id="slowFallingImg3">
-        </div>
-        <div class="shopElement" id="jumpBoost"><p>Jump Boost Level 1</p>
-            <img src="../Images/jumpBoost.png" alt="jumpBoost" id="jumpBoostImg">
-        </div>
-        <div class="shopElement" id="jumpBoost2"><p>Jump Boost Level 2</p>
-            <img src="../Images/jumpBoost2.png" alt="jumpBoost2" id="jumpBoostImg2">
-        </div>
-        <div class="shopElement" id="jumpBoost3"><p>Jump Boost Level 3</p>
-            <img src="../Images/jumpBoost3.png" alt="jumpBoost3" id="jumpBoostImg3">
-        </div>
-    </div>
     </div>
 
-<div id="playerSelection"></div>
-</div>
+    <div id="playerSelection"></div>
+    </div>
 </body>
+
 </html>

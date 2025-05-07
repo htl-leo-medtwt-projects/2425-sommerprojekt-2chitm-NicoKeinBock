@@ -26,10 +26,10 @@ function startLevel2() {
     startStopwatch2();
     updateLevel2();
 }
-
+let gravity2 = window.innerHeight * 0.0009;
+let maxFallSpeed2 = window.innerHeight * 0.8;
 function updateLevel2() {
-    const gravity = window.innerHeight * 0.0009;
-    const maxFallSpeed = window.innerHeight * 0.8;
+
 
     if (KEY_EVENTS.leftArrow) {
         movePlayerLevel2(-1 * GAME_CONFIG.characterSpeed, 0, 1);
@@ -50,14 +50,14 @@ function updateLevel2() {
     } else {
         GAME_CONFIG.characterSpeed = 3;
     }
-     
+
     if (KEY_EVENTS.space && !isJumping2) {
         player2VelocityY = -window.innerHeight * 0.025;
         isJumping2 = true;
     }
 
-    player2VelocityY += gravity;
-    if (player2VelocityY > maxFallSpeed) player2VelocityY = maxFallSpeed;
+    player2VelocityY += gravity2;
+    if (player2VelocityY > maxFallSpeed2) player2VelocityY = maxFallSpeed2;
 
     movePlayerLevel2(0, player2VelocityY, 0);
 
@@ -362,5 +362,6 @@ function backToMenu2() {
     MAP.startseite.style.display = "block";
     clearTimeout(level2Timeout);
     PLAYER.tokenCount += PLAYER_LEVEL2.newCoins
-    PLAYER_LEVEL2.newCoins  = 0
+    PLAYER_LEVEL2.newCoins = 0
+    document.getElementById('coinCounter').innerHTML = PLAYER.tokenCount + ' Coins';
 }

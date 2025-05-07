@@ -1,103 +1,117 @@
 @font-face {
-    font-family: Jersey25;
-    src: url(../Font/Jersey_25,Playfair_Display/Jersey_25/Jersey25-Regular.ttf);
+  font-family: Jersey25;
+  src: url(../Font/Jersey_25,Playfair_Display/Jersey_25/Jersey25-Regular.ttf);
 }
+
 @font-face {
-    font-family: InriaSans;
-    src: url(../Font/Inria_Sans,Jersey_25,Playfair_Display/Inria_Sans/InriaSans-Regular.ttf);
+  font-family: InriaSans;
+  src: url(../Font/Inria_Sans,Jersey_25,Playfair_Display/Inria_Sans/InriaSans-Regular.ttf);
 
 }
-:root{
+
+:root {
   --primary-color1: #00ffcc;
   --primary-color2: #7aff38;
 
 }
-body{
-    background-image: url(../Images/index.jpg);
-    height: 100vh;
-    overflow: hidden;
-    width: 100vw;
+
+body {
+  background-image: url(../Images/index.jpg);
+  height: 100vh;
+  overflow: hidden;
+  width: 100vw;
 }
 
-h1{  
-text-align: center;
-font-family:Jersey25;
-font-size: 8rem;
-font-weight: 400;
-animation: shimmer 5s infinite;
-margin-bottom: 1vh;
+h1 {
+  text-align: center;
+  font-family: Jersey25;
+  font-size: 8rem;
+  font-weight: 400;
+  animation: shimmer 4s infinite ease-in-out;
+  margin-bottom: 1vh;
 }
-h3{
+
+h3 {
   text-align: center;
   font-family: Jersey25;
   font-size: 150%;
 }
 
-a{
-color: #000;
-font-family: "InriaSans";
-font-size: 300%;
-text-decoration: none;
-padding: 1%;
-transition: all 0.5s;
+a {
+  color: #000;
+  font-family: "InriaSans";
+  font-size: 300%;
+  text-decoration: none;
+  padding: 1%;
+  transition: all 0.5s;
 }
-a:hover{
+
+a:hover {
   transform: scale(1.1);
 }
+
 nav {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
 }
+
 @keyframes shimmer {
-    0% {
-      text-shadow: 0 0 6px rgba(255, 255, 255, 0.3), 0 0 10px rgba(255, 255, 255, 0.3);
-    }
-  
-    50% {
-      text-shadow: 0 0 12px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.5);
-    }
-  
-    100% {
-      text-shadow: 0 0 6px rgba(255, 255, 255, 0.3), 0 0 10px rgba(255, 255, 255, 0.3);
-    }
+  0% {
+    text-shadow: 0 0 6px rgba(255, 255, 255, 0.3), 0 0 10px rgba(255, 255, 255, 0.3);
   }
- 
-  .mainMenu {
-    border-radius: 15px;
-    border: 4px solid #000;
-    width: 24.5vw;
-    height: 9vh;
-    margin-left: auto;
-    margin-right: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(180deg, rgba(0, 255, 204, 0.80) 0.01%, rgba(122, 255, 56, 0.80) 100%);
+
+  50% {
+    text-shadow: 0 0 12px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.5);
   }
-  #settings-popup {   
-    position: absolute;
-    width: 50vw;
-    height: 80vh;
-    border-radius: 15px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    box-shadow: 0px 0px 10px var(--primary-color2);
-    border: solid black;
-    z-index: 5;
+
+  100% {
+    text-shadow: 0 0 6px rgba(255, 255, 255, 0.3), 0 0 10px rgba(255, 255, 255, 0.3);
   }
- h2{
+}
+
+.mainMenu {
+  border-radius: 15px;
+  border: 4px solid #000;
+  width: 24.5vw;
+  height: 9vh;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(180deg, rgba(0, 255, 204, 0.80) 0.01%, rgba(122, 255, 56, 0.80) 100%);
+}
+
+#settings-popup {
+  position: absolute;
+  width: 50vw;
+  height: 80vh;
+  border-radius: 15px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0px 0px 10px var(--primary-color2);
+  border: solid black;
+  z-index: 5;
+  background: linear-gradient(180deg, var(--primary-color2) 0.01%, var(--primary-color1) 100%);
+
+}
+
+h2 {
   font-family: Jersey25;
   font-size: 250%;
   text-align: center;
- }
- p,button{
+}
+
+p,
+button {
   font-family: InriaSans;
   text-align: center;
- }
- button {
+}
+
+button {
   background: linear-gradient(180deg, #00ffcc 0.01%, #7aff38 100%);
   border: solid;
   padding: 2%;
@@ -106,17 +120,20 @@ nav {
   position: absolute;
   top: 67vh;
   left: 15vw;
-width: 20vw;
-font-size: 80%;
+  width: 20vw;
+  font-size: 80%;
 }
-input{
+
+input {
   display: block;
   margin-right: auto;
   margin-left: auto;
 }
-#settings-popup{
-font-size: 150%;
+
+#settings-popup {
+  font-size: 150%;
 }
+
 .slider {
   width: 50%;
   height: 15px;
@@ -134,17 +151,19 @@ font-size: 150%;
   border: 5px inset var(--primary-color2);
   border-radius: 4px;
 }
-#settings{
+
+#settings {
   background-image: url(../Images/zahnrad.png);
   background-size: 100%;
   width: 6.25rem;
-height: 6.25rem;
-border-radius: 15px;
-position: absolute;
-top: 8vh;
-left: 5vw;
+  height: 6.25rem;
+  border-radius: 15px;
+  position: absolute;
+  top: 8vh;
+  left: 5vw;
 }
-#soundImage{
+
+#soundImage {
   width: 13vw;
   height: 13vh;
   margin-left: auto;
@@ -154,9 +173,10 @@ left: 5vw;
   position: relative;
   top: 0;
   left: 0;
- 
+
 }
-#gameMap{
+
+#gameMap {
   background-image: url(../Images/map.png);
   background-size: 100vw;
   width: 100vw;
@@ -167,7 +187,7 @@ left: 5vw;
   display: none;
 }
 
-#gameMenu{
+#gameMenu {
   position: absolute;
   width: 30vw;
   height: 40vh;
@@ -181,9 +201,10 @@ left: 5vw;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
- 
+  background: linear-gradient(180deg, var(--primary-color2) 0.01%, var(--primary-color1) 100%);
 }
-.settingsMenu{
+
+.settingsMenu {
   border-radius: 15px;
   border: 4px solid #000;
   width: 22.5rem;
@@ -199,96 +220,119 @@ left: 5vw;
   justify-content: space-evenly;
   align-items: center;
   z-index: 200;
-  }
-  #gameMenuBox{
-    display: none;
-  }
-  #howTo{
-    position: absolute;
-    left: 90vw;
-   top: -7vh;
-   animation: shimmer 2s infinite;
-  }
-  @keyframes rotate {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(180deg);
-    }
-  }
-  
-  .rotate {
-    animation: rotate 0.3s linear;
-  }
-  #playerSelection {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80%;
-    height: 80%;
-    background: linear-gradient(180deg, rgba(0, 255, 204, 0.97) 0.01%, rgba(122, 255, 56, 0.85) 100%);
-    z-index: 50;
-    display: none;
-    border-radius: 15px;
-  }
-  .playerSelectionBox{
-   margin-left: auto;
-   margin-right: auto;    
-  }
-  #skinImageBox{
-    display: grid;
-    grid-template-columns: auto auto auto;
-  
-  }
-  .playerSelectionBox img{
-    width:15vw;
-  }
-  .playerSelectionBox:hover{
-    cursor: pointer;
-    border: solid;
-    border-radius: 40px;
+}
 
+#gameMenuBox {
+  display: none;
+}
+
+#howTo {
+  position: absolute;
+  left: 90vw;
+  top: -7vh;
+  animation: shimmer 2s infinite ease-in-out;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
   }
-  #spriteImg {
-    position: relative;
-    height: 100%; /* oder 1em */
-    bottom: 0%; /* oder 0.25em */
+
+  100% {
+    transform: rotate(180deg);
   }
-  
-  #player {
-    position: absolute;
-    width: 3%; 
-    height: 11%; 
-  }
-  #player1{
-    position: absolute;
-    top: 60vh;
-    left: 5Yvw;
-  
-  }
-  #player2{
-    position: absolute;
-    top: 75vh;
-    left: 22vw;
-  }
-  button, .settingsMenu, #settings, #soundImageWrapper:hover{
-    cursor: pointer;
-  }
- 
-  #shopEntrance{
-    background-image: url(../Images/shop.png);
-     background-size: 150%;
-     background-position: center;
-    position: absolute;
-    border: solid black;
-    width: 10vw;
-    height: 19vh;
-    left: 67.5vw;
-    top: 35vh;
-  }
- #shop{
+}
+
+.rotate {
+  animation: rotate 0.3s linear;
+}
+
+#playerSelection {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 80%;
+  background: linear-gradient(180deg, var(--primary-color2) 0.01%, var(--primary-color1) 100%);
+  z-index: 50;
+  display: none;
+  border-radius: 15px;
+  border: solid;
+}
+
+.playerSelectionBox {
+  margin-left: auto;
+  margin-right: auto;
+  border: solid;
+  border-radius: 40px;
+  transition: all 0.6s;
+
+}
+
+#skinImageBox {
+  display: grid;
+  grid-template-columns: auto auto auto;
+
+}
+
+.playerSelectionBox img {
+  width: 20vw;
+}
+
+.playerSelectionBox:hover {
+  cursor: pointer;
+  border: solid;
+transform: scale(1.1);
+box-shadow: 0 8px 24px rgba(0, 0, 0, 1);
+}
+
+#spriteImg {
+  position: relative;
+  height: 100%;
+  /* oder 1em */
+  bottom: 0%;
+  /* oder 0.25em */
+}
+
+#player {
+  position: absolute;
+  width: 3%;
+  height: 11%;
+}
+
+#player1 {
+  position: absolute;
+  top: 60vh;
+  left: 5Yvw;
+
+}
+
+#player2 {
+  position: absolute;
+  top: 75vh;
+  left: 22vw;
+}
+
+button,
+.settingsMenu,
+#settings,
+#soundImageWrapper:hover {
+  cursor: pointer;
+}
+
+#shopEntrance {
+  background-image: url(../Images/shop.png);
+  background-size: 150%;
+  background-position: center;
+  position: absolute;
+  width: 10vw;
+  height: 19vh;
+  left: 67.5vw;
+  top: 35vh;
+}
+
+#shop {
   border: solid;
   position: absolute;
   top: 50vh;
@@ -298,322 +342,355 @@ left: 5vw;
   width: 90vw;
   height: 90vh;
   border-radius: 15px;
-  
- }
- .shopElement{
+  background: linear-gradient(180deg, var(--primary-color2) 0.01%, var(--primary-color1) 100%);
+
+}
+
+.shopElement {
   border: solid;
   width: 20vw;
- height: 25vh;
+  height: 25vh;
   border-radius: 15px;
-  background-color:rgba(0, 0, 0, 0.481)
- }
- #shop h2{
+  background-color: rgba(0, 0, 0, 0.481)
+}
+
+#shop h2 {
   margin-bottom: 0;
-  animation: shimmer 5s infinite;
- }
- #leaveShop{
+  animation: shimmer 5s infinite ease-in-out;
+}
+
+#leaveShop {
   position: absolute;
   left: 85vw;
   top: 1vh;
   transition: all 0.5s;
- }
- #leaveShop:hover{
+}
+
+#leaveShop:hover {
   transform: scale(1.3);
   cursor: pointer;
- }
- #gridBox {
+}
+
+#gridBox {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  padding: 5rem; 
+  padding: 5rem;
   justify-items: center;
   min-height: 100vh;
   box-sizing: border-box;
 }
 
-  #howToQuestionmark{
-cursor: pointer;
-transition: all 0.3s;
-  }
-  #howToQuestionmark:hover{
-    transform: scale(1.1);
-  }
-  #howToPlay{
-    display: none;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 20px;
-    width: 70vw;
-    height: 60vh;
-    z-index: 50;
-    display: flex;
-    display: none;
-    border: solid;
-  }
+#howToQuestionmark {
+  cursor: pointer;
+  transition: all 0.3s;
+}
 
-  #level1Entrance{
-    position: absolute;
-    border: red solid;  /* Temporär*/
-    width: 15vw;
-    height: 15vh;
-    left: 26vw;
-    top: 10vh;
-  }
-  #level2Entrance{
-    position: absolute;
-    border: blue solid; /* Temporär*/
-    width: 13vw;
-    height: 12vh;
-    top: 36vh;
-    left: 86vw;
-  }
-  #level3Entrance{
-    position: absolute;
-    border: green solid; /* Temporär*/
-    width: 10vw;
-    height: 20vh;
-    top: 78vh;
-    left: 84.5vw;
-  }
-  .LevelEntranceText{
-    font-size: 190%;
-    color: #d1d1d1;
-    font-family: Jersey25;
-    background-color: grey;
-    border-radius: 15px;
-  }
-  #level1 {
-    width: 100vw;
-    height: 100vh;
-    top: 0;
-    left: 0;
-    position: absolute;
-    background-image: url(../Images/Impressum.png);  
-    background-size: 100%; 
-     z-index: 200;
-    display: none;
-  }
-  #level2{
-    width: 100vw;
-    height: 100vh;
-    top: 0;
-    left: 0;
-    position: absolute;
-    background-image: url(../Images/cave.png);  
-    background-size: 100%; 
-     z-index: 200;
-    display: none;
-  }
-  #level3{
-    display: none;
-  }
-  .Level1JumpBox img{
-    width: 100vw;
-    padding: 0;
-  }
-  #level1Box1 {
-    position: absolute;
-    top: 85vh;
-    width: 10vw;
-    height: 4vh;
-    box-shadow: inset 0 0 20px red;
-    border-radius: 15px;
-    padding: 1%;
-  }
-  
-  #level1Box2 {
-    position: absolute;
-    top: 75vh;
-    left: 15vw;
-    width: 5vw;
-    height: 4vh;
-  }
-  
-  #level1Box3 {
-    position: absolute;
-    left: 25vw;
-    top: 65vh;
-    width: 3vw;
-    height: 4vh;
-  }
-  
-  #level1Box4 {
-    position: absolute;
-    width: 10vw;
-    height: 4vh;
-    top: 55vh;
-    left: 35vw;
-  }
-  
-  #level1Box5 {
-    position: absolute;
-    width: 2.5vw;
-    height: 4vh;
-    top: 55vh;
-    left: 55vw;
-  }
-  
-  #level1Box6 {
-    position: absolute;
-    width: 2.5vw;
-    height: 4vh;
-    top: 55vh;
-    left: 65vw;
-  }
-  
-  #level1Box7 {
-    position: absolute;
-    width: 2vw;
-    height: 2vh;
-    top: 40vh;
-    left: 98vw;
-  }
-  
-  #level1Box8 {
-    position: absolute;
-    width: 5vw;
-    height: 4vh;
-    top: 55vh;
-    left: 80vw;
-  }
-  
-  #level1Box9 {
-    position: absolute;
-    width: 2vw;
-    height: 2vh;
-    top: 50vh;
-    left: 93vw;
-  }
-  
-  #level1Box10 {
-    position: absolute;
-    width: 4vw;
-    height: 3vh;
-    top: 30vh;
-    left: 87vw;
-  }
-  
-  #level1Box11 {
-    position: absolute;
-    width: 5vw;
-    height: 3vh;
-    top: 20vh;
-    left: 75vw;
-  }
-  
-  #level1Box12 {
-    position: absolute;
-    width: 6vw;
-    height: 4vh;
-    top: 20vh;
-    left: 57vw;
-  }
-  
-  #level1Box13 {
-    position: absolute;
-    width: 3vw;
-    height: 2vh;
-    top: 25vh;
-    left: 45vw;
-  }
-  
-  #level1Box14 {
-    position: absolute;
-    width: 5w;
-    height: 4vh;
-    top: 25vh;
-    left: 25vw;
-  }
-  
-  #level1Box15 {
-    position: absolute;
-    width: 8vw;
-    height: 4vh;
-    top: 25vh;
-    left: 5vw;
-    box-shadow: inset 0 0 20px var(--primary-color2);
-    border-radius: 15px;
-    padding: 1%;
-  }
-  #deathFlash,
-  #winFlash {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      pointer-events: none;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-      z-index: 9999;
-      
-  }
-  
-  #deathFlash {
-      background: rgba(255, 0, 0, 0.5);
-  }
-  
-  #winFlash {
-      background: var(--primary-color2);
-  }
-  #deathCounter, #deathCounter2{
-    position: absolute;
-    left: 90vw;
-    top: 5vh;
-    display: flex;
-    align-items: center;
-    font-size: 150%;
-    color: white;
-    
-  }
-  #deathCounter p , #deathCounter2 p{
-    font-family: Jersey25;
-  }
-  #deathCounter img, #deathCounter2 img{
-    width: 5vw;
-  }
-  #stopwatch, #stopwatch2{
-    position: absolute;
-    left: 5vw;
-    top: 5vh;
-    font-family: Jersey25;
-    font-size: 150%;
-    color: white;
-  }
-  #winscreen1{
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    background: linear-gradient(180deg, var(--primary-color1) 0.01%, var(--primary-color2) 100%);
-    border-radius: 15px;
-    padding: 4%;
-  }
-  .level1Buttons, .level2Buttons{
-    display: flex;
-    justify-content: space-evenly;
-    padding: 3%;
-    border: solid;
-    background: linear-gradient(180deg, var(--primary-color1) 0.01%, var(--primary-color2) 100%);
-    border-radius: 15px;
-  }
-  .level1Buttons:hover, .level2Buttons:hover{
-    cursor: pointer;
-  }
-  #playAgainButton{
-    margin-bottom: 3vh;
-  }
- .levelCompletedText{
-  animation: shimmer 5s infinite;
- }
- .Level2JumpBox{
-    padding: 0;
-   
- }
- #level2Box1{
+#howToQuestionmark:hover {
+  transform: scale(1.1);
+}
+
+#howToPlay {
+  display: none;
   position: absolute;
-  top: 90dvh ;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 20px;
+  width: 70vw;
+  height: 60vh;
+  z-index: 50;
+  display: flex;
+  display: none;
+  border: solid;
+}
+
+#level1Entrance {
+  position: absolute;
+  width: 15vw;
+  height: 15vh;
+  left: 26vw;
+  top: 10vh;
+}
+
+#level2Entrance {
+  position: absolute;
+  width: 13vw;
+  height: 12vh;
+  top: 36vh;
+  left: 86vw;
+}
+
+#level3Entrance {
+  position: absolute;
+  width: 10vw;
+  height: 20vh;
+  top: 78vh;
+  left: 84.5vw;
+}
+
+.LevelEntranceText {
+  font-size: 190%;
+  color: #d1d1d1;
+  font-family: Jersey25;
+  background-color: grey;
+  border-radius: 15px;
+  animation: shimmer 3s  ease-in-out infinite;
+}
+
+#level1 {
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  position: absolute;
+  background-image: url(../Images/Impressum.png);
+  background-size: 100%;
+  z-index: 200;
+  display: none;
+}
+
+#level2 {
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  position: absolute;
+  background-image: url(../Images/cave.png);
+  background-size: 100%;
+  z-index: 200;
+  display: none;
+}
+
+#level3 {
+  display: none;
+}
+
+.Level1JumpBox img {
+  width: 100vw;
+  padding: 0;
+}
+
+#level1Box1 {
+  position: absolute;
+  top: 85vh;
+  width: 10vw;
+  height: 4vh;
+  box-shadow: inset 0 0 20px red;
+  border-radius: 15px;
+  padding: 1%;
+}
+
+#level1Box2 {
+  position: absolute;
+  top: 75vh;
+  left: 15vw;
+  width: 5vw;
+  height: 4vh;
+}
+
+#level1Box3 {
+  position: absolute;
+  left: 25vw;
+  top: 65vh;
+  width: 3vw;
+  height: 4vh;
+}
+
+#level1Box4 {
+  position: absolute;
+  width: 10vw;
+  height: 4vh;
+  top: 55vh;
+  left: 35vw;
+}
+
+#level1Box5 {
+  position: absolute;
+  width: 2.5vw;
+  height: 4vh;
+  top: 55vh;
+  left: 55vw;
+}
+
+#level1Box6 {
+  position: absolute;
+  width: 2.5vw;
+  height: 4vh;
+  top: 55vh;
+  left: 65vw;
+}
+
+#level1Box7 {
+  position: absolute;
+  width: 2vw;
+  height: 2vh;
+  top: 40vh;
+  left: 98vw;
+}
+
+#level1Box8 {
+  position: absolute;
+  width: 5vw;
+  height: 4vh;
+  top: 55vh;
+  left: 80vw;
+}
+
+#level1Box9 {
+  position: absolute;
+  width: 2vw;
+  height: 2vh;
+  top: 50vh;
+  left: 93vw;
+}
+
+#level1Box10 {
+  position: absolute;
+  width: 4vw;
+  height: 3vh;
+  top: 30vh;
+  left: 87vw;
+}
+
+#level1Box11 {
+  position: absolute;
+  width: 5vw;
+  height: 3vh;
+  top: 20vh;
+  left: 75vw;
+}
+
+#level1Box12 {
+  position: absolute;
+  width: 6vw;
+  height: 4vh;
+  top: 20vh;
+  left: 57vw;
+}
+
+#level1Box13 {
+  position: absolute;
+  width: 3vw;
+  height: 2vh;
+  top: 25vh;
+  left: 45vw;
+}
+
+#level1Box14 {
+  position: absolute;
+  width: 5w;
+  height: 4vh;
+  top: 25vh;
+  left: 25vw;
+}
+
+#level1Box15 {
+  position: absolute;
+  width: 8vw;
+  height: 4vh;
+  top: 25vh;
+  left: 5vw;
+  box-shadow: inset 0 0 20px var(--primary-color2);
+  border-radius: 15px;
+  padding: 1%;
+}
+
+#deathFlash,
+#winFlash {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 9999;
+
+}
+
+#deathFlash {
+  background: rgba(255, 0, 0, 0.5);
+}
+
+#winFlash {
+  background: var(--primary-color2);
+}
+
+#deathCounter,
+#deathCounter2 {
+  position: absolute;
+  left: 90vw;
+  top: 5vh;
+  display: flex;
+  align-items: center;
+  font-size: 150%;
+  color: white;
+
+}
+
+#deathCounter p,
+#deathCounter2 p {
+  font-family: Jersey25;
+}
+
+#deathCounter img,
+#deathCounter2 img {
+  width: 5vw;
+}
+
+#stopwatch,
+#stopwatch2 {
+  position: absolute;
+  left: 5vw;
+  top: 5vh;
+  font-family: Jersey25;
+  font-size: 150%;
+  color: white;
+}
+
+#winscreen1 {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(180deg, var(--primary-color1) 0.01%, var(--primary-color2) 100%);
+  border-radius: 15px;
+  padding: 4%;
+  border: solid;
+}
+
+.level1Buttons,
+.level2Buttons {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 3%;
+  border: solid;
+  background: linear-gradient(180deg, var(--primary-color1) 0.01%, var(--primary-color2) 100%);
+  border-radius: 15px;
+}
+
+.level1Buttons:hover,
+.level2Buttons:hover {
+  cursor: pointer;
+}
+
+#playAgainButton {
+  margin-bottom: 3vh;
+}
+
+.levelCompletedText {
+  animation: shimmer 5s infinite ease-in-out;
+}
+
+.Level2JumpBox {
+  padding: 0;
+
+}
+
+#level2Box1 {
+  position: absolute;
+  top: 90dvh;
   width: 15vh;
   height: 5vh;
   left: 20vw;
@@ -621,140 +698,129 @@ transition: all 0.3s;
   border-radius: 15px;
   padding: 1%;
 }
- #level2Box2{
+
+#level2Box2 {
   position: absolute;
-  top: 83vh ;
+  top: 83vh;
   left: 10vw;
   width: 5vh;
- }
- #level2Box3{
+}
+
+#level2Box3 {
   position: absolute;
-  top: 78vh ;
+  top: 78vh;
   left: 2vw;
   width: 5vh;
- }
- #level2Box4{
+}
+
+#level2Box4 {
   position: absolute;
-  top: 68vh ;
+  top: 68vh;
   left: 13vw;
   width: 8vh;
- }
- #level2Box5{
+}
+
+#level2Box5 {
   position: absolute;
-  top: 58vh ;
+  top: 58vh;
   left: 5vw;
   width: 6.5vh;
- }
- #level2Box6{
+}
+
+#level2Box6 {
   position: absolute;
-  top: 50vh ;
+  top: 50vh;
   width: 6vh;
   left: 18vw;
- }
- #level2Box7{
+}
+
+#level2Box7 {
   position: absolute;
-  top: 40vh ;
+  top: 40vh;
   left: 7vw;
   width: 10vh;
- }
- #level2Box8{
+}
+
+#level2Box8 {
   position: absolute;
-  top: 30vh ;
+  top: 30vh;
   left: 24vw;
   width: 10vh;
- }
- #level2Box9{
+}
+
+#level2Box9 {
   position: absolute;
   left: 50vw;
   top: 80vh;
-  width: 10vh;
- }
- #level2Box10{
+  width: 16vh;
+  height: 5vh;
+}
+
+#level2Box10 {
   position: absolute;
-  top: 70vh ;
+  top: 70vh;
   left: 65vw;
   width: 10vh;
- }
+}
 
- #level2Box11{
+#level2Box11 {
   position: absolute;
-  top: 63vh ;
+  top: 63vh;
   left: 79vw;
   width: 5vh;
- }
- #level2Box12{
+}
+
+#level2Box12 {
   position: absolute;
   top: 52.5vh;
   left: 87vw;
   width: 10vh;
- }
- #level2Box13{
+}
+
+#level2Box13 {
   position: absolute;
-  top: 42vh ;
+  top: 42vh;
   left: 73vw;
   width: 10vh;
- } #level2Box14{
+}
+
+#level2Box14 {
   position: absolute;
-  top: 33vh ;
+  top: 33vh;
   left: 60vw;
   width: 10vh;
- } #level2Box15{
+}
+
+#level2Box15 {
   position: absolute;
-  top: 10vh ;
+  top: 10vh;
   top: 22vh;
   width: 10vh;
   left: 50vw;
   box-shadow: inset 0 0 20px var(--primary-color2);
   border-radius: 15px;
   padding: 1%;
- }
+}
 
-#playAgainButton, #backToMenuButton, #close-settings , .settingsMenu{
+#playAgainButton,
+#backToMenuButton,
+#close-settings,
+.settingsMenu {
   transition: all 0.3s;
 }
-#playAgainButton:hover, #backToMenuButton:hover, #close-settings:hover, .settingsMenu:hover{
+
+#playAgainButton:hover,
+#backToMenuButton:hover,
+#close-settings:hover,
+.settingsMenu:hover {
   transform: scale(1.035);
 }
-#spriteImg2{
+
+#spriteImg2 {
   height: 10vh;
 }
-#canvas-basic{
-  display: block;
-  position: absolute;
-  border-radius: 15px;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: -1;
-}
-#canvas-shop{
-  display: block;
-  position: absolute;
-  border-radius: 15px;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: -1;
-}
-#canvas-howTo{
-  display: block;
-  position: absolute;
-  border-radius: 15px;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: -1;
-}
-#canvas-settingsMenu{
+
+#canvas-basic {
   display: block;
   position: absolute;
   border-radius: 15px;
@@ -767,19 +833,174 @@ transition: all 0.3s;
   z-index: -1;
 }
 
-#slowFallingImg,#slowFallingImg2, #slowFallingImg3, #jumpBoostImg, #jumpBoostImg2, #jumpBoostImg3 {
+#canvas-shop {
+  display: block;
+  position: absolute;
+  border-radius: 15px;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+
+#canvas-howTo {
+  display: block;
+  position: absolute;
+  border-radius: 15px;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+
+#canvas-settingsMenu {
+  display: block;
+  position: absolute;
+  border-radius: 15px;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+#canvas-skinSelect{
+  display: block;
+  position: absolute;
+  border-radius: 15px;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+
+#slowFallingImg,
+#slowFallingImg2,
+#slowFallingImg3,
+#jumpBoostImg,
+#jumpBoostImg2,
+#jumpBoostImg3 {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 7vw;
 }
-#slowFalling, #slowFalling2, #slowFalling3, #jumpBoost, #jumpBoost2, #jumpBoost3{
+
+#slowFalling,
+#slowFalling2,
+#slowFalling3,
+#jumpBoost,
+#jumpBoost2,
+#jumpBoost3 {
   position: relative;
 }
-.shopElement p{
+
+.shopElement p {
   font-size: 150%;
   font-family: Jersey25;
 }
 
+/* button style online gefunden und angepasst*/
+.button-29 {
+  background: linear-gradient(180deg, rgba(0, 255, 204, 0.80) 0.01%, rgba(122, 255, 56, 0.80) 100%);
+  border: solid 2px;
+  border-radius: 8px;
+  box-shadow: rgba(45, 35, 66, .4) 0 2px 4px, var(--primary-color2) 0 7px 13px -3px, var(--primary-color1) 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: black;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: InriaSans;
+  font-size: 130%;
+  transition: box-shadow 0.15s, transform 0.15s;
+  user-select: none;
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  width: 12vw;
+  transform: translate(-50%, -50%);
+  padding: 2%;
+}
 
+.button-29:focus {
+  box-shadow: var(--primary-color1) 0 0 0 1.5px inset,
+    rgba(45, 35, 66, .4) 0 2px 4px,
+    rgba(45, 35, 66, .3) 0 7px 13px -3px,
+    var(--primary-color2) 0 -3px 0 inset;
+}
+
+.button-29:hover {
+  box-shadow: rgba(45, 35, 66, .4) 0 4px 8px,
+    rgba(45, 35, 66, .3) 0 7px 13px -3px,
+    var(--primary-color2) 0 -3px 0 inset;
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.button-29:active {
+  box-shadow: var(--primary-color1) 0 3px 7px inset;
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+#coinCounter {
+  position: absolute;
+  left: 75vw;
+  top: 5vh;
+  font-size: 200%;
+  font-family: Jersey25;
+  animation: shimmer 3s infinite ease-in-out;
+}
+
+.levelEntranceText {
+  animation: floatUpDown 2s ease-in-out infinite;
+  color: black;
+  text-shadow:
+    0 0 5px #FFD700,
+    0 0 10px #FFD700,
+    0 0 15px #FFA500,
+    0 0 20px #FFA500;
+}
+
+#level1EntranceText {
+  position: absolute;
+  left: 30.5vw;
+  top: 5vh;
+}
+
+#level2EntranceText {
+  position: absolute;
+  left: 90vw;
+  top: 30vh;
+}
+
+#level3EntranceText {
+  position: absolute;
+  left: 86.4vw;
+  top: 70vh;
+}
+
+@keyframes floatUpDown {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-1vh);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}

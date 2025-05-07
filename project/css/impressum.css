@@ -2,65 +2,78 @@
     font-family: Jersey25;
     src: url(../Font/Jersey_25,Playfair_Display/Jersey_25/Jersey25-Regular.ttf);
 }
+
 @font-face {
     font-family: InriaSans;
     src: url(../Font/Inria_Sans,Jersey_25,Playfair_Display/Inria_Sans/InriaSans-Regular.ttf);
 
 }
-:root{
-  --primary-color1: rgb(0, 255, 204);
-  --primary-color2: rgb(122, 255, 56);
+
+:root {
+    --primary-color1: rgb(0, 255, 204);
+    --primary-color2: rgb(122, 255, 56);
 
 }
-body{
+
+body {
     background-image: url(../Images/sunset.jpg);
     background-size: cover;
-    
+
 }
-h1{
+
+h1 {
     font-family: Jersey25;
     text-align: center;
     font-size: 350%;
 }
-p{
+
+p {
     font-family: InriaSans;
-    color:rgb(182, 182, 182);
+    color: rgb(182, 182, 182);
     text-align: center;
 }
-h3,h2{
+
+h3,
+h2 {
     font-family: Jersey25;
     color: white;
     text-align: center;
-    
+
 }
-img{
+
+img {
     width: 10%;
-   
+
     position: absolute;
     top: 0.3vh;
 }
-h1{
+
+h1 {
     animation: shimmer 5s infinite;
 }
+
 @keyframes shimmer {
     0% {
-      text-shadow: 0 0 6px rgba(255, 255, 255, 0.5), 0 0 10px rgba(255, 255, 255, 0.5);
+        text-shadow: 0 0 6px rgba(255, 255, 255, 0.5), 0 0 10px rgba(255, 255, 255, 0.5);
     }
-  
+
     50% {
-      text-shadow: 0 0 12px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.8);
+        text-shadow: 0 0 12px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.8);
     }
-  
+
     100% {
-      text-shadow: 0 0 6px rgba(255, 255, 255, 0.5), 0 0 10px rgba(255, 255, 255, 0.5);
+        text-shadow: 0 0 6px rgba(255, 255, 255, 0.5), 0 0 10px rgba(255, 255, 255, 0.5);
     }
-  }
-#impressum{
+}
+
+#impressum {
     margin-bottom: 3vh;
 }
-img:hover{
+
+img:hover {
     transform: scale(1.1);
 }
-img{
+
+img {
     transition: all 0.5s;
 }
