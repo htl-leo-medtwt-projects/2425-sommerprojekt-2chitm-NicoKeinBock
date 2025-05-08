@@ -11,7 +11,7 @@ let PLAYER = {
   spriteImgNumber: 1,
   spriteDirection: 1,
   spriteResetPoint: 0,
-  tokenCount: 0,
+  tokenCount: getTotalCoins(),
   skin: "",
 }
 let GAME_CONFIG = {
@@ -269,7 +269,7 @@ function buyItem(itemId) {
     case 'jumpBoost2': cost = 250; break;
     case 'jumpBoost3': cost = 1000; break;
     case 'slowFalling1': cost = 50; break;
-    case 'slowFalling2': cost = 300; break; d
+    case 'slowFalling2': cost = 300; break; 
     case 'slowFalling3': cost = 750; break;
   }
 
@@ -294,13 +294,14 @@ function buyItem(itemId) {
     button.style.cursor = 'not-allowed';
     switch (itemId) {
       case 'jumpBoost1': gravity1 = window.innerHeight * 0.00095; console.log('bought grav1'); break;
-      case 'jumpBoost2': ; break;
+      case 'jumpBoost2': ; gravity2 = window.innerHeight * 0.0011;console.log('bought grav2');
       case 'jumpBoost3': cost = 1000; break;
       case 'slowFalling1': maxFallSpeed1 = window.innerHeight * 0.006; console.log('bought slowFa1'); break;
-      case 'slowFalling2': cost = 300; break;
+      case 'slowFalling2': maxFallSpeed2 = window.innerHeight * 0.006; console.log('bought slowFa2'); break;
       case 'slowFalling3': cost = 750; break;
     }
   }
+  saveTotalCoins(PLAYER.tokenCount)
 }
 
 

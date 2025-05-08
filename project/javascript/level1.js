@@ -16,7 +16,7 @@ let isJumping = false;
 const GAME_LOOP_INTERVAL = 16;
 let hasTouchedBox16 = false;
 let deathCounter = 0
-let gravity1 = window.innerHeight * 0.0011;
+let gravity1 = window.innerHeight * 0.0013;
 let maxFallSpeed1 = window.innerHeight * 0.8;
 function startLevel1() {
     GAME_CONFIG.characterSpeed = 5;
@@ -311,7 +311,7 @@ function displayLevel1ResultScreen() {
 }
 function calculateCoinsFromTime() {
     const time = elapsedTime;
-    let coinsGathered = Math.max(1, Math.round(100 / time)); // Math.max verhindert das man weniger als eine Münze bekommt
+    let coinsGathered = Math.max(1, Math.round(180 / time)); // Math.max verhindert das man weniger als eine Münze bekommt
     PLAYER_LEVEL1.newCoins += coinsGathered;
 }
 function playAgain() {
@@ -354,5 +354,15 @@ function backToMenu() {
     PLAYER.tokenCount += PLAYER_LEVEL1.newCoins
     PLAYER_LEVEL1.newCoins = 0
     document.getElementById('coinCounter').innerHTML = PLAYER.tokenCount + ' Coins';
+    saveTotalCoins(PLAYER.tokenCount)
 }
+function displayBackToMenu1() {
+    if (document.getElementById('backToMenuBox1').style.display === "flex") {
+        document.getElementById('backToMenuBox1').style.display = "none";
+    } else {
+        document.getElementById('backToMenuBox1').style.display = "flex";
+    }
+}
+
+
 

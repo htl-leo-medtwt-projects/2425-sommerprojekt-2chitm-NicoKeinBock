@@ -187,7 +187,7 @@ input {
   display: none;
 }
 
-#gameMenu {
+#gameMenu, #backToMenuBox1, #backToMenuBox2 {
   position: absolute;
   width: 30vw;
   height: 40vh;
@@ -198,10 +198,10 @@ input {
   box-shadow: 0px 0px 10px var(--primary-color2);
   border: solid black;
   z-index: 5;
-  display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   background: linear-gradient(180deg, var(--primary-color2) 0.01%, var(--primary-color1) 100%);
+  display: none;
 }
 
 .settingsMenu {
@@ -339,8 +339,8 @@ button,
   left: 50vw;
   transform: translate(-50%, -50%);
   display: none;
-  width: 90vw;
-  height: 90vh;
+  width: 95vw;
+  height: 95vh;
   border-radius: 15px;
   background: linear-gradient(180deg, var(--primary-color2) 0.01%, var(--primary-color1) 100%);
 
@@ -349,9 +349,9 @@ button,
 .shopElement {
   border: solid;
   width: 20vw;
-  height: 25vh;
+  height: 30vh;
   border-radius: 15px;
-  background-color: rgba(0, 0, 0, 0.481)
+  background-color: rgba(0, 0, 0, 0.481);
 }
 
 #shop h2 {
@@ -930,7 +930,7 @@ button,
   position: absolute;
   top: 85%;
   left: 50%;
-  width: 12vw;
+  width: 15vw;
   transform: translate(-50%, -50%);
   padding: 2%;
 }
@@ -1003,4 +1003,14 @@ button,
   100% {
     transform: translateY(0);
   }
+}
+#backToMenuButton1, #backToMenuButton2, #backToMenuButton3 {
+  background-image: url(../Images/zahnrad.png);
+  background-size: 100%;
+  width: 6.25rem;
+  height: 6.25rem;
+  border-radius: 15px;
+  position: absolute;
+  top: 80vh;
+  left: 90vw;
 }

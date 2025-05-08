@@ -26,7 +26,7 @@ function startLevel2() {
     startStopwatch2();
     updateLevel2();
 }
-let gravity2 = window.innerHeight * 0.0009;
+let gravity2 = window.innerHeight * 0.0014;
 let maxFallSpeed2 = window.innerHeight * 0.8;
 function updateLevel2() {
 
@@ -364,4 +364,12 @@ function backToMenu2() {
     PLAYER.tokenCount += PLAYER_LEVEL2.newCoins
     PLAYER_LEVEL2.newCoins = 0
     document.getElementById('coinCounter').innerHTML = PLAYER.tokenCount + ' Coins';
+    saveTotalCoins(PLAYER.tokenCount)
+}
+function displayBackToMenu2() {
+    if (document.getElementById('backToMenuBox2').style.display === "flex") {
+        document.getElementById('backToMenuBox2').style.display = "none";
+    } else {
+        document.getElementById('backToMenuBox2').style.display = "flex";
+    }
 }

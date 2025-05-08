@@ -77,6 +77,20 @@ function rotateBox() {
     box.classList.remove("rotate");
   }, 400);
 }
+function rotateBox1() {
+  var box = document.getElementById("backToMenuButton1");
+  box.classList.add("rotate");
+  setTimeout(function () {
+    box.classList.remove("rotate");
+  }, 400);
+}
+function rotateBox2() {
+  var box = document.getElementById("backToMenuButton2");
+  box.classList.add("rotate");
+  setTimeout(function () {
+    box.classList.remove("rotate");
+  }, 400);
+}
 var music = new Audio();
 music.src = "../music/index.mp3";
 music.loop = true;
@@ -155,3 +169,14 @@ document.getElementById('spielen').addEventListener('click', function () {
     toggleGameMap();
   }
 });
+function saveTotalCoins(totalCoins) {
+  localStorage.setItem('totalCoins', totalCoins);
+}
+function getTotalCoins() {
+  const coins = localStorage.getItem('totalCoins');
+  if (coins !== null) {
+      return parseInt(coins);
+  }
+  return 0;
+}
+
