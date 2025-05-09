@@ -266,12 +266,12 @@ function buyItem(itemId) {
 
 
   switch (itemId) {
-    case 'jumpBoost1': cost = 25; break;
-    case 'jumpBoost2': cost = 250; break;
-    case 'jumpBoost3': cost = 1000; break;
-    case 'slowFalling1': cost = 50; break;
-    case 'slowFalling2': cost = 300; break; 
-    case 'slowFalling3': cost = 750; break;
+    case 'jumpBoost1': cost = 50; break;
+    case 'jumpBoost2': cost = 300; break;
+    case 'jumpBoost3': cost = 750; break;
+    case 'slowFalling1': cost = 25; break;
+    case 'slowFalling2': cost = 250; break; 
+    case 'slowFalling3': cost = 1000; break;
   }
 
   if (PLAYER.tokenCount < cost) {

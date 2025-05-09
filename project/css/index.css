@@ -973,7 +973,7 @@ button,
 #coinCounter {
   position: absolute;
   left: 75vw;
-  top: 5vh;
+  top: 6.5vh;
   font-size: 200%;
   font-family: Jersey25;
   animation: shimmer 3s infinite ease-in-out;
