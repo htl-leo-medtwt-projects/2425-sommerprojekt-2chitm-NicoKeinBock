@@ -33,7 +33,6 @@ function toggleGameMap() {
     gameMap.style.display = "none";
   } else {
     gameMap.style.display = "block";
-    game
     gameLoop();
   }
 }
@@ -158,14 +157,16 @@ function togglePlayerSelection() {
 
   box.style.display = "block"
 }
-let callCount = 1;
+let firstCall = isFirstCall();
+
 
 document.getElementById('spielen').addEventListener('click', function () {
 
-  if (callCount === 1) {
-    callCount++;
+  if (firstCall == true) {
+    firstCall++;
     togglePlayerSelection();
-  } else if (callCount === 2) {
+  } else if (firstCall == false) {
+    PLAYER.skin = localStorage.getItem('skin');
     toggleGameMap();
   }
 });
@@ -178,5 +179,12 @@ function getTotalCoins() {
       return parseInt(coins);
   }
   return 0;
+}
+function isFirstCall() {
+  if (localStorage.getItem('isFirstCall') === null) {
+    localStorage.setItem('isFirstCall', 'false');
+    return true;
+  }
+  return false;
 }
 

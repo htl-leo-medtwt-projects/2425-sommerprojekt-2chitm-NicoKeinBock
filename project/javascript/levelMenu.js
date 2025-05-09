@@ -127,6 +127,7 @@ function skinSelect(index) {
     console.error('Error updating sprite image:', error);
   }
   document.getElementById('playerSelection').style.display = "none";
+  localStorage.setItem('skin', PLAYER.skin);
   MAP.map.style.display = "block";
   gameLoop();
 }
