@@ -90,6 +90,13 @@ function rotateBox2() {
     box.classList.remove("rotate");
   }, 400);
 }
+function rotateBox3() {
+  var box = document.getElementById("backToMenuButton3");
+  box.classList.add("rotate");
+  setTimeout(function () {
+    box.classList.remove("rotate");
+  }, 400);
+}
 var music = new Audio();
 music.src = "../music/index.mp3";
 music.loop = true;
@@ -170,7 +177,7 @@ document.getElementById('spielen').addEventListener('click', function () {
     toggleGameMap();
   }
 });
-function saveTotalCoins(totalCoins) {
+function tTotalCoins(totalCoins) {
   localStorage.setItem('totalCoins', totalCoins);
 }
 function getTotalCoins() {

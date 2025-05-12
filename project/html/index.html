@@ -12,6 +12,7 @@
     <script src="../javascript/levelMenu.js" defer></script>
     <script src="../javascript/level1.js" defer></script>
     <script src="../javascript/level2.js" defer></script>
+    <script src="../javascript/level3.js" defer></script>
 
 </head>
 
@@ -121,6 +122,14 @@
         </div>
     </div>
     <div id="level3">
+        <div id="backToMenuBox3">
+            <div id="cancel3" class="settingsMenu" onclick="displayBackToMenu3()"><p>Zurück</p></div>      
+            <div id="leaveLevel3" class="settingsMenu" onclick="backToMenu3()"><p>Level 3 verlassen</p></div>
+        </div>
+        <div id="backToMenuButton3" onclick="rotateBox3();displayBackToMenu3()"></div>
+        <div id="stopwatch3"></div>
+        <div id="deathCounter3">
+        </div>
         <div id="player3">
             <img src="" alt="irgendsoeinSpieler" id="spriteImg3">
         </div>

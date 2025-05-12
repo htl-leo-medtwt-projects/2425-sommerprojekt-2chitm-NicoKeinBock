@@ -195,6 +195,10 @@ function checkForCollisionsWithLevelEntrance() {
     document.getElementById('level3Entrance').innerHTML = `
       <p class="LevelEntranceText">Drücke E um Level 3 zu betreten</p>
       `
+      if(KEY_EVENTS.e){
+        console.log("Entered IF")
+        enterLevel3()
+      }
   }
   else if (isColliding(PLAYER.playerMenu, MAP.shopEntrance, 0)) {
     console.log("Shop Entrance");
@@ -235,8 +239,14 @@ function enterLevel2() {
   startLevel2();
 }
 function enterLevel3() {
+  GAME_STATE = "level3";
+  clearTimeout(gameLoopTimeout);
+  GAME_CONFIG.characterSpeed = 5;
   MAP.map.style.display = "none";
-  document.getElementById('level3').style.display = "block";
+  document.getElementById("level3").style.display = "block";
+  MAP.startseite.style.display = "none";
+  updateLevel3();
+  startLevel3();
 }
 function enterShop() {
   document.getElementById('shop').style.display = "block";
@@ -295,10 +305,10 @@ function buyItem(itemId) {
     button.style.cursor = 'not-allowed';
     switch (itemId) {
       case 'jumpBoost1': gravity1 = window.innerHeight * 0.00095; console.log('bought grav1'); break;
-      case 'jumpBoost2': ; gravity2 = window.innerHeight * 0.0011;console.log('bought grav2');
+      case 'jumpBoost2': ; gravity3 = window.innerHeight * 0.0011;console.log('bought grav2');
       case 'jumpBoost3': cost = 1000; break;
       case 'slowFalling1': maxFallSpeed1 = window.innerHeight * 0.006; console.log('bought slowFa1'); break;
-      case 'slowFalling2': maxFallSpeed2 = window.innerHeight * 0.006; console.log('bought slowFa2'); break;
+      case 'slowFalling2': maxFallSpeed3 = window.innerHeight * 0.006; console.log('bought slowFa2'); break;
       case 'slowFalling3': cost = 750; break;
     }
   }

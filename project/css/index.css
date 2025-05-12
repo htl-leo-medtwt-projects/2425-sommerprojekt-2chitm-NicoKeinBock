@@ -203,7 +203,7 @@ input {
   justify-content: space-evenly;
   background: linear-gradient(180deg, var(--primary-color2) 0.01%, var(--primary-color1) 100%);
 }
-#backToMenuBox1, #backToMenuBox2 {
+#backToMenuBox1, #backToMenuBox2, #backToMenuBox3 {
   position: absolute;
   width: 30vw;
   height: 40vh;
@@ -325,6 +325,11 @@ box-shadow: 0 8px 24px rgba(0, 0, 0, 1);
 }
 
 #player2 {
+  position: absolute;
+  top: 75vh;
+  left: 22vw;
+}
+#player3{
   position: absolute;
   top: 75vh;
   left: 22vw;
@@ -478,6 +483,14 @@ button,
 }
 
 #level3 {
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  position: absolute;
+  background-image: url(../Images/house.png);
+  background-size: 100%;
+  z-index: 200;
   display: none;
 }
 
@@ -634,7 +647,8 @@ button,
 }
 
 #deathCounter,
-#deathCounter2 {
+#deathCounter2,
+#deathCounter3 {
   position: absolute;
   left: 90vw;
   top: 5vh;
@@ -646,12 +660,14 @@ button,
 }
 
 #deathCounter p,
-#deathCounter2 p {
+#deathCounter2 p,
+#deathCounter3 p {
   font-family: Jersey25;
 }
 
 #deathCounter img,
-#deathCounter2 img {
+#deathCounter2 img,
+#deathCounter3 img {
   width: 5vw;
 }
 
@@ -677,7 +693,8 @@ button,
 }
 
 .level1Buttons,
-.level2Buttons {
+.level2Buttons,
+.level3Buttons {
   display: flex;
   justify-content: space-evenly;
   padding: 3%;
@@ -687,7 +704,8 @@ button,
 }
 
 .level1Buttons:hover,
-.level2Buttons:hover {
+.level2Buttons:hover,
+.level3Buttons:hover {
   cursor: pointer;
 }
 
