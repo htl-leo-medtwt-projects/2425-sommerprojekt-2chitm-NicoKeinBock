@@ -305,10 +305,10 @@ function buyItem(itemId) {
     button.style.cursor = 'not-allowed';
     switch (itemId) {
       case 'jumpBoost1': gravity1 = window.innerHeight * 0.00095; console.log('bought grav1'); break;
-      case 'jumpBoost2': ; gravity3 = window.innerHeight * 0.0011;console.log('bought grav2');
+      case 'jumpBoost2': ; gravity2 = window.innerHeight * 0.0011;console.log('bought grav2');
       case 'jumpBoost3': cost = 1000; break;
       case 'slowFalling1': maxFallSpeed1 = window.innerHeight * 0.006; console.log('bought slowFa1'); break;
-      case 'slowFalling2': maxFallSpeed3 = window.innerHeight * 0.006; console.log('bought slowFa2'); break;
+      case 'slowFalling2': maxFallSpeed2 = window.innerHeight * 0.006; console.log('bought slowFa2'); break;
       case 'slowFalling3': cost = 750; break;
     }
   }

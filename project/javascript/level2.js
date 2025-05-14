@@ -24,7 +24,6 @@ let deathCounter2 = 0;
 function startLevel2() {
     GAME_CONFIG.characterSpeed = 3;
     startStopwatch2();
-    updateLevel2();
 }
 let gravity2 = window.innerHeight * 0.0014;
 let maxFallSpeed2 = window.innerHeight * 0.8;

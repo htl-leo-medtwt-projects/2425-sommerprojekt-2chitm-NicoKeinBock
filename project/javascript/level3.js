@@ -24,7 +24,6 @@ let deathCounter3 = 0;
 function startLevel3() {
     GAME_CONFIG.characterSpeed = 3;
     startStopwatch3();
-    updateLevel3();
 }
 let gravity3 = window.innerHeight * 0.0014;
 let maxFallSpeed3 = window.innerHeight * 0.8;
@@ -102,11 +101,11 @@ function movePlayerLevel3(dx, dy, dr) {
     let moveX = dx;
     let moveY = dy;
 
-    if (isCollidingHorizontally(PLAYER_LEVEL3.playerMenu, dx)) {
+    if (isCollidingHorizontally2(PLAYER_LEVEL3.playerMenu, dx)) {
         moveX = 0;
     }
 
-    if (isCollidingVertically(PLAYER_LEVEL3.playerMenu, dy)) {
+    if (isCollidingVertically2(PLAYER_LEVEL3.playerMenu, dy)) {
         moveY = 0;
         if (dy > 0) {
             isJumping3 = false;
@@ -157,7 +156,7 @@ function animatePlayerLevel3() {
     document.getElementById('spriteImg3').src = PLAYER.skin + "/running/sprite_" + PLAYER.spriteImgNumber + ".png";
 }
 
-function isCollidingHorizontally(playerElement, dx) {
+function isCollidingHorizontally2(playerElement, dx) {
     const tolerance = 3;
     const playerRect = playerElement.getBoundingClientRect();
     const boxes = document.querySelectorAll(".Level3JumpBox");
@@ -181,7 +180,7 @@ function isCollidingHorizontally(playerElement, dx) {
     return false;
 }
 
-function isCollidingVertically(playerElement, dy) {
+function isCollidingVertically2(playerElement, dy) {
     const tolerance = 2;
     const playerRect = playerElement.getBoundingClientRect();
     const boxes = document.querySelectorAll(".Level3JumpBox");

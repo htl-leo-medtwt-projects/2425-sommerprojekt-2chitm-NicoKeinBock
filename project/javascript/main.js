@@ -177,7 +177,7 @@ document.getElementById('spielen').addEventListener('click', function () {
     toggleGameMap();
   }
 });
-function tTotalCoins(totalCoins) {
+function saveTotalCoins(totalCoins) {
   localStorage.setItem('totalCoins', totalCoins);
 }
 function getTotalCoins() {
