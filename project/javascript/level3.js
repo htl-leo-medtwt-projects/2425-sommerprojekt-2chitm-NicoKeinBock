@@ -101,11 +101,11 @@ function movePlayerLevel3(dx, dy, dr) {
     let moveX = dx;
     let moveY = dy;
 
-    if (isCollidingHorizontally2(PLAYER_LEVEL3.playerMenu, dx)) {
+    if (isCollidingHorizontally3(PLAYER_LEVEL3.playerMenu, dx)) {
         moveX = 0;
     }
 
-    if (isCollidingVertically2(PLAYER_LEVEL3.playerMenu, dy)) {
+    if (isCollidingVertically3(PLAYER_LEVEL3.playerMenu, dy)) {
         moveY = 0;
         if (dy > 0) {
             isJumping3 = false;
@@ -156,7 +156,7 @@ function animatePlayerLevel3() {
     document.getElementById('spriteImg3').src = PLAYER.skin + "/running/sprite_" + PLAYER.spriteImgNumber + ".png";
 }
 
-function isCollidingHorizontally2(playerElement, dx) {
+function isCollidingHorizontally3(playerElement, dx) {
     const tolerance = 3;
     const playerRect = playerElement.getBoundingClientRect();
     const boxes = document.querySelectorAll(".Level3JumpBox");
@@ -180,7 +180,7 @@ function isCollidingHorizontally2(playerElement, dx) {
     return false;
 }
 
-function isCollidingVertically2(playerElement, dy) {
+function isCollidingVertically3(playerElement, dy) {
     const tolerance = 2;
     const playerRect = playerElement.getBoundingClientRect();
     const boxes = document.querySelectorAll(".Level3JumpBox");
@@ -274,7 +274,7 @@ resetStopwatch3();
 
 function createGrassPlattformLevel3(id) {
     const plattform = document.createElement('img');
-    plattform.src = '';
+    plattform.src = '../Images/woodenPlattform.png';
     plattform.alt = '';
     plattform.className = 'Level3JumpBox';
     plattform.id = `level3Box${id}`;
