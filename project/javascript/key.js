@@ -45,6 +45,10 @@ function keyListenerDown(e) {
       player2VelocityY = -15;
       isJumping2 = true;
     }
+    if (GAME_STATE === "level3" && !isJumping3) {
+      player3VelocityY = -15;
+      isJumping3 = true;
+    }
     e.preventDefault();
   }
   if (e.key === "Esc") {

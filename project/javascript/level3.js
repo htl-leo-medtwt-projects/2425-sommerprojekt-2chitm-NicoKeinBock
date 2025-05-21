@@ -25,8 +25,10 @@ function startLevel3() {
     GAME_CONFIG.characterSpeed = 3;
     startStopwatch3();
 }
+
 let gravity3 = window.innerHeight * 0.0014;
 let maxFallSpeed3 = window.innerHeight * 0.8;
+
 function updateLevel3() {
     if (KEY_EVENTS.leftArrow) {
         movePlayerLevel3(-1 * GAME_CONFIG.characterSpeed, 0, 1);
@@ -67,7 +69,7 @@ function updateLevel3() {
             deathCounter3++;
             resetPlayerLevel3();
             showDeathFlash();
-            updateDeathCounter3(deathCounter3);
+            updateDeathCounter3(deathCounter3); 
             startTime3 = startTime3 - 5000;
         }
     }
@@ -148,18 +150,18 @@ function isTouchingGround3(playerElement) {
 }
 
 function animatePlayerLevel3() {
-    if (PLAYER.spriteImgNumber < 8) {
+    if (PLAYER.spriteImgNumber < 8) {  
         PLAYER.spriteImgNumber += 1;
     } else {
         PLAYER.spriteImgNumber = 1;
     }
-    document.getElementById('spriteImg3').src = PLAYER.skin + "/running/sprite_" + PLAYER.spriteImgNumber + ".png";
+    document.getElementById('spriteImg3').src = PLAYER.skin + "/running/sprite_" + PLAYER.spriteImgNumber + ".png";  
 }
 
 function isCollidingHorizontally3(playerElement, dx) {
     const tolerance = 3;
     const playerRect = playerElement.getBoundingClientRect();
-    const boxes = document.querySelectorAll(".Level3JumpBox");
+    const boxes = document.querySelectorAll(".Level3JumpBox");  
 
     for (let box of boxes) {
         const rect = box.getBoundingClientRect();
@@ -183,7 +185,7 @@ function isCollidingHorizontally3(playerElement, dx) {
 function isCollidingVertically3(playerElement, dy) {
     const tolerance = 2;
     const playerRect = playerElement.getBoundingClientRect();
-    const boxes = document.querySelectorAll(".Level3JumpBox");
+    const boxes = document.querySelectorAll(".Level3JumpBox"); 
 
     for (let box of boxes) {
         const rect = box.getBoundingClientRect();
@@ -204,11 +206,12 @@ function isCollidingVertically3(playerElement, dy) {
     return false;
 }
 
+
 function resetPlayerLevel3() {
     player3VelocityY = 0;
     isJumping3 = false;
     PLAYER_LEVEL3.playerMenu.style.top = "75vh";
-    PLAYER_LEVEL3.playerMenu.style.left = "22vw";
+    PLAYER_LEVEL3.playerMenu.style.left = "10vw";
 }
 
 function showWinningFlash3() {
