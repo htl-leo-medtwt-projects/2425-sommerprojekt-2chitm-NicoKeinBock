@@ -211,7 +211,7 @@ function resetPlayerLevel3() {
     player3VelocityY = 0;
     isJumping3 = false;
     PLAYER_LEVEL3.playerMenu.style.top = "75vh";
-    PLAYER_LEVEL3.playerMenu.style.left = "10vw";
+    PLAYER_LEVEL3.playerMenu.style.left = "48vw";
 }
 
 function showWinningFlash3() {
@@ -326,7 +326,7 @@ function displayLevel3ResultScreen() {
 
 function calculateCoinsFromTime3() {
     const time = elapsedTime3;
-    let coinsGathered = Math.max(1, Math.round(1000 / time));
+    let coinsGathered = Math.max(1, Math.round(50000 / time));
     PLAYER_LEVEL3.newCoins += coinsGathered;
 }
 

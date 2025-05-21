@@ -47,7 +47,7 @@ function updateLevel1() {
     }
 
     if (KEY_EVENTS.space && !isJumping) {
-        player1VelocityY = -window.innerHeight * 0.03; // Responsive jump
+        player1VelocityY = -window.innerHeight * 0.03; 
         isJumping = true;
     }
 

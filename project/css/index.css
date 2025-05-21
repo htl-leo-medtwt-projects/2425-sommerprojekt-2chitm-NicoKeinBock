@@ -332,7 +332,7 @@ box-shadow: 0 8px 24px rgba(0, 0, 0, 1);
 #player3{
   position: absolute;
   top: 75vh;
-  left: 10vw;
+  left: 48vw;
 }
 
 button,
@@ -672,7 +672,8 @@ button,
 }
 
 #stopwatch,
-#stopwatch2 {
+#stopwatch2,
+#stopwatch3 {
   position: absolute;
   left: 5vw;
   top: 5vh;
@@ -681,7 +682,7 @@ button,
   color: white;
 }
 
-#winscreen1 {
+#winscreen1, #winscreen3 {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -1047,128 +1048,134 @@ button,
   position: absolute;
   top: 80vh;
   left: 90vw;
+  cursor: pointer;
 }
 #level3Box1 {
   position: absolute;
-  top: 85vh;
-  width: 10vw;
-  height: 4vh;
+  left: 45vw;
+  top: 87vh;
+   width: 15vh;
+  height: 3.5vh;
   box-shadow: inset 0 0 20px red;
   border-radius: 15px;
   padding: 1%;
+  padding-right: 1%;
 }
 
 #level3Box2 {
   position: absolute;
-  top: 75vh;
-  left: 15vw;
+  top: 79vh;
+  left: 39vw;
   width: 5vw;
-  height: 4vh;
+  height: 2vh;
 }
 
 #level3Box3 {
   position: absolute;
-  left: 25vw;
-  top: 65vh;
-  width: 3vw;
-  height: 4vh;
+  left: 58vw;
+  top: 79vh;
+  width: 2vw;
+  height: 2vh;
 }
 
 #level3Box4 {
   position: absolute;
-  width: 10vw;
-  height: 4vh;
-  top: 55vh;
-  left: 35vw;
+  width: 4vw;
+  height: 2vh;
+  top: 71vh;
+  left: 30vw;
 }
 
 #level3Box5 {
   position: absolute;
   width: 2.5vw;
-  height: 4vh;
-  top: 55vh;
-  left: 55vw;
+  height: 2vh;
+  top: 62.5vh;
+  left: 38vw
 }
 
 #level3Box6 {
   position: absolute;
-  width: 2.5vw;
-  height: 4vh;
-  top: 55vh;
-  left: 65vw;
+  width: 1.5vw;
+  height: 2vh;
+  top: 57.5vh;
+  left: 48.5vw;
 }
 
 #level3Box7 {
   position: absolute;
-  width: 2vw;
+  width: 1vw;
   height: 2vh;
-  top: 40vh;
-  left: 98vw;
+  top: 71vh;
+  left: 66vw;
 }
 
 #level3Box8 {
   position: absolute;
-  width: 5vw;
-  height: 4vh;
+  width: 4.5vw;
+  height: 2vh;
   top: 55vh;
-  left: 80vw;
+  left: 58vw;
 }
 
 #level3Box9 {
   position: absolute;
   width: 2vw;
   height: 2vh;
-  top: 50vh;
-  left: 93vw;
+  top: 63vh;
+  left: 72vw;
 }
 
 #level3Box10 {
   position: absolute;
   width: 4vw;
-  height: 3vh;
-  top: 30vh;
-  left: 87vw;
+  height: 2vh;
+  top: 55vh;
+  left: 80vw;
 }
 
 #level3Box11 {
   position: absolute;
-  width: 5vw;
-  height: 3vh;
-  top: 20vh;
-  left: 75vw;
+  width: 3vw;
+  height: 2vh;
+  top: 47vh;
+  left: 72vw;
 }
 
 #level3Box12 {
   position: absolute;
   width: 6vw;
-  height: 4vh;
-  top: 20vh;
-  left: 57vw;
+  height: 2vh;
+  top: 39vh;
+  left: 60vw;
 }
 
 #level3Box13 {
   position: absolute;
   width: 3vw;
   height: 2vh;
-  top: 25vh;
-  left: 45vw;
+  top: 32vh;
+  left: 51vw;
 }
 
 #level3Box14 {
   position: absolute;
-  width: 5w;
-  height: 4vh;
-  top: 25vh;
-  left: 25vw;
+  width: 7vw;
+  height: 2.8vh;
+  top: 26vh;
+  left: 37vw;
 }
 
 #level3Box15 {
   position: absolute;
   width: 8vw;
   height: 4vh;
-  top: 25vh;
-  left: 5vw;
+  top: 35vh;
+  left: 20vw;
   box-shadow: inset 0 0 20px var(--primary-color2);
   border-radius: 15px;
   padding: 1%;
+}
+.Level3JumpBox{
+    width: 100vw;
 }

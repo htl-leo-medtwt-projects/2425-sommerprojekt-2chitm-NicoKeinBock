@@ -194,4 +194,14 @@ function isFirstCall() {
   }
   return false;
 }
+function displayStatistics(){
+  const totalCoins = getTotalCoins();
+  const totalGames = localStorage.getItem('totalGames');
+  const totalDeaths = localStorage.getItem('totalDeaths');
+  const totalWins = localStorage.getItem('totalWins');
+  const totalDeathsLevel1 = localStorage.getItem('totalDeathsLevel1')
+  const totalDeathsLevel2 = localStorage.getItem('totalDeathsLevel2')
+  const totalDeathsLevel3 = localStorage.getItem('totalDeathsLevel3')
+  document.getElementById('startSeite')
+}
 

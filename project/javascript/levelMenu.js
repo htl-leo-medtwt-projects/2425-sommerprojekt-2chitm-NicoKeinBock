@@ -27,14 +27,7 @@ let MAP = {
   startseite: document.getElementById('startseite')
 
 }
-let UPGRADES = {
-  jumpBoostLevel1: false,
-  jumpBoostLevel2: false,
-  jumpBoostLevel3: false,
-  slowFallingLevel1: false,
-  slowFallingLevel: false,
-  slowFallingLevel3: false,
-}
+
 function gameLoop() {
   console.log('Gameloop running')
   if (GAME_STATE !== "menu") return;
@@ -307,16 +300,75 @@ function buyItem(itemId) {
       case 'jumpBoost1': gravity1 = window.innerHeight * 0.00095; console.log('bought grav1'); break;
       case 'jumpBoost2': ; gravity2 = window.innerHeight * 0.0011;console.log('bought grav2');
       case 'jumpBoost3': cost = 1000; break;
-      case 'slowFalling1': maxFallSpeed1 = window.innerHeight * 0.006; console.log('bought slowFa1'); break;
+      case 'slowFalling1': maxFallSpeed1 = window.innerHeight * 0.006; console.log('bought slowFa1');  break;
       case 'slowFalling2': maxFallSpeed2 = window.innerHeight * 0.006; console.log('bought slowFa2'); break;
       case 'slowFalling3': cost = 750; break;
     }
+      localStorage.setItem(`buy-${itemId}`, true);
   }
   saveTotalCoins(PLAYER.tokenCount)
 }
-
-
-
+function getBoughtItems() {
+  const boughtItems = {};
+  
+  const itemIds = [
+    'jumpBoost1',
+    'jumpBoost2',
+    'jumpBoost3',
+    'slowFalling1',
+    'slowFalling2',
+    'slowFalling3'
+  ];
+  itemIds.forEach(itemId => {
+    const bought = localStorage.getItem(`buy-${itemId}`);
+    if (bought === 'true') {
+      boughtItems[itemId] = true;
+    } else {
+      boughtItems[itemId] = false;
+    }
+  });
+  return boughtItems;
+}
+window.onload = function() {
+  const boughtItems = getBoughtItems();
+  Object.keys(boughtItems).forEach(itemId => { // Chat gpt meinet das ist eine bessere lösung als alles einzeln zu setzen :)
+    if (boughtItems[itemId]) {
+      const button = document.getElementById(`buy-${itemId}`);
+      button.textContent = 'Gekauft!';
+      button.style.border = '';
+      button.style.boxShadow = '';
+      button.style.opacity = '0.5';
+      button.disabled = true;
+      button.style.cursor = 'not-allowed';
+      switch (itemId) {
+        case 'jumpBoost1':
+          gravity1 = window.innerHeight * 0.00095;
+          console.log('bought grav1');
+          break;
+        case 'jumpBoost2':
+          gravity2 = window.innerHeight * 0.0011;
+          console.log('bought grav2');
+          break;
+        case 'jumpBoost3':
+          gravity3 = window.innerHeight * 0.0014;
+          console.log('bought grav3');
+          break;
+        case 'slowFalling1':
+          maxFallSpeed1 = window.innerHeight * 0.006;
+          console.log('bought slowFa1');
+          break;
+        case 'slowFalling2':
+          maxFallSpeed2 = window.innerHeight * 0.006;
+          console.log('bought slowFa2');
+          break;
+        case 'slowFalling3':
+          maxFallSpeed3 = window.innerHeight * 0.006;
+          console.log('bought slowFa3');
+          break;
+      }
+    }
+  });
+};
 
 document.getElementById('coinCounter').innerHTML = PLAYER.tokenCount + ' Coins';
 
