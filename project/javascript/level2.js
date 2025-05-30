@@ -259,7 +259,7 @@ function updateStopwatch2() {
     const seconds = Math.floor(elapsedTime2 % 60);
     const milliseconds = Math.floor((elapsedTime2 % 1) * 100);
     stopwatchText2 = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}:${milliseconds.toString().padStart(2, '0')}`;
-    document.getElementById('stopwatch2').innerHTML = stopwatchText2;
+    document.getElementById('stopwatch2').innerHTML = stopwatchText2 + `<img src= "../images/coin.png" class = "levelCoin" id= "levelCoin2">`;
 }
 
 function resetStopwatch2() {
@@ -312,7 +312,7 @@ function checkHighscore2() {
 
 function displayLevel2ResultScreen() {
     checkHighscore2();
-    calculateCoinsFromTime2();
+    PLAYER_LEVEL2.newCoins += calculateCoinsFromTime2()
     let winscreen1 = document.createElement('div');
     winscreen1.id = 'winscreen1';
     winscreen1.innerHTML = `
@@ -328,8 +328,8 @@ function displayLevel2ResultScreen() {
 
 function calculateCoinsFromTime2() {
     const time = elapsedTime2;
-    let coinsGathered = Math.max(1, Math.round(1000 / time));
-    PLAYER_LEVEL2.newCoins += coinsGathered;
+  return Math.max(1, Math.floor(2500 - (time * 1000))); 
+
 }
 
 function playAgain2() {
@@ -364,6 +364,8 @@ function backToMenu2() {
     PLAYER_LEVEL2.newCoins = 0
     document.getElementById('coinCounter').innerHTML = PLAYER.tokenCount + ' Coins';
     saveTotalCoins(PLAYER.tokenCount)
+    displayBackToMenu2()
+
 }
 function displayBackToMenu2() {
     if (document.getElementById('backToMenuBox2').style.display === "flex") {

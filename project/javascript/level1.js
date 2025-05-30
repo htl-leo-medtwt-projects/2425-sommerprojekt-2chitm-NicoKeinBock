@@ -66,7 +66,7 @@ function updateLevel1() {
             resetPlayerLevel1();
             showDeathFlash();
             updateDeathCounter(deathCounter);
-            startTime = startTime - 5000;
+            startTime = startTime - 2000;
         }
     }
 
@@ -245,8 +245,9 @@ function updateStopwatch() {
     const seconds = Math.floor(elapsedTime % 60);
     const milliseconds = Math.floor((elapsedTime % 1) * 100);
     stopwatchText = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}:${milliseconds.toString().padStart(2, '0')}`;
-    document.getElementById('stopwatch').innerHTML = stopwatchText;
+    document.getElementById('stopwatch').innerHTML = calculateCoinsFromTime() + `<img src= "../images/coin.png" class = "levelCoin" id= "levelCoin1">`;
 }
+document.getElementById
 
 function resetStopwatch() {
     clearInterval(intervalId);
@@ -296,7 +297,7 @@ function checkHighscore() {
 }
 function displayLevel1ResultScreen() {
     checkHighscore();
-    calculateCoinsFromTime();
+    PLAYER_LEVEL1.newCoins = calculateCoinsFromTime()
     let winscreen1 = document.createElement('div');
     winscreen1.id = 'winscreen1';
     winscreen1.innerHTML = `
@@ -308,11 +309,11 @@ function displayLevel1ResultScreen() {
         <div id="backToMenuButton" class = "level1Buttons" onclick="backToMenu()"><p>Zurück zum Menü</p> </div>
     `;
     document.getElementById('level1').appendChild(winscreen1);
+    
 }
 function calculateCoinsFromTime() {
-    const time = elapsedTime;
-    let coinsGathered = Math.max(1, Math.round(180 / time)); // Math.max verhindert das man weniger als eine Münze bekommt
-    PLAYER_LEVEL1.newCoins += coinsGathered;
+  const time = elapsedTime;
+  return Math.max(1, Math.floor(150 - (time * 5))); 
 }
 function playAgain() {
     PLAYER_LEVEL1.playerMenu.style.top = "60vh";
@@ -329,6 +330,8 @@ function playAgain() {
     winscreen1.remove();
     hasTouchedBox16 = false;
     startStopwatch()
+     PLAYER.tokenCount += PLAYER_LEVEL1.newCoins
+    PLAYER_LEVEL1.newCoins = 0
 }
 function backToMenu() {
     stopStopwatch();
@@ -355,6 +358,7 @@ function backToMenu() {
     PLAYER_LEVEL1.newCoins = 0
     document.getElementById('coinCounter').innerHTML = PLAYER.tokenCount + ' Coins';
     saveTotalCoins(PLAYER.tokenCount)
+    displayBackToMenu1()
 }
 function displayBackToMenu1() {
     if (document.getElementById('backToMenuBox1').style.display === "flex") {

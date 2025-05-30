@@ -257,7 +257,8 @@ function updateStopwatch3() {
     const seconds = Math.floor(elapsedTime3 % 60);
     const milliseconds = Math.floor((elapsedTime3 % 1) * 100);
     stopwatchText3 = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}:${milliseconds.toString().padStart(2, '0')}`;
-    document.getElementById('stopwatch3').innerHTML = stopwatchText3;
+       document.getElementById('stopwatch3').innerHTML = calculateCoinsFromTime3() + `<img src= "../images/coin.png" class = "levelCoin" id= "levelCoin3">`;
+
 }
 
 function resetStopwatch3() {
@@ -310,7 +311,7 @@ function checkHighscore3() {
 
 function displayLevel3ResultScreen() {
     checkHighscore3();
-    calculateCoinsFromTime3();
+    PLAYER_LEVEL3.newCoins += calculateCoinsFromTime3()
     let winscreen1 = document.createElement('div');
     winscreen1.id = 'winscreen3';
     winscreen1.innerHTML = `
@@ -326,8 +327,7 @@ function displayLevel3ResultScreen() {
 
 function calculateCoinsFromTime3() {
     const time = elapsedTime3;
-    let coinsGathered = Math.max(1, Math.round(50000 / time));
-    PLAYER_LEVEL3.newCoins += coinsGathered;
+  return Math.max(1, Math.floor(30000 - (time * 1000))); 
 }
 
 function playAgain3() {
@@ -362,6 +362,7 @@ function backToMenu3() {
     PLAYER_LEVEL3.newCoins = 0;
     document.getElementById('coinCounter').innerHTML = PLAYER.tokenCount + ' Coins';
     saveTotalCoins(PLAYER.tokenCount);
+    displayBackToMenu3()
 }
 
 function displayBackToMenu3() {

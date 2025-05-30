@@ -70,7 +70,9 @@ nav {
     text-shadow: 0 0 6px rgba(255, 255, 255, 0.3), 0 0 10px rgba(255, 255, 255, 0.3);
   }
 }
-
+#startText{
+animation: floatUpDown infinite 2s,shimmer 4s infinite ease-in-out;
+}
 .mainMenu {
   border-radius: 15px;
   border: 4px solid #000;
@@ -656,7 +658,6 @@ button,
   align-items: center;
   font-size: 150%;
   color: white;
-
 }
 
 #deathCounter p,
@@ -680,6 +681,8 @@ button,
   font-family: Jersey25;
   font-size: 150%;
   color: white;
+  display: flex;
+ 
 }
 
 #winscreen1, #winscreen3 {
@@ -989,7 +992,7 @@ button,
   transform: translate(-50%, -50%) scale(1.1);
 }
 
-#coinCounter {
+#death {
   position: absolute;
   left: 75vw;
   top: 6.5vh;
@@ -1178,4 +1181,8 @@ button,
 }
 .Level3JumpBox{
     width: 100vw;
+}
+.levelCoin {
+  width: 5%;
+  margin-left: 1vw;
 }
