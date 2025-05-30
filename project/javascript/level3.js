@@ -220,13 +220,14 @@ function showWinningFlash3() {
     setTimeout(() => {
         flash.style.opacity = "0";
     }, 150);
+    localStorage.setItem('totalwins', (parseInt(localStorage.getItem('totalwins') || '0', 10) + 1).toString());
     displayLevel3ResultScreen();
 }
 
 function updateDeathCounter3(deathCount) {
     const deathCounter = document.getElementById("deathCounter3");
     const text = document.getElementById("deathCounterText3");
-
+    localStorage.setItem('totaldeaths', (parseInt(localStorage.getItem('totaldeaths') || '0', 10) + 1).toString());
     if (text) {
         text.textContent = deathCount;
     } else {
@@ -327,7 +328,8 @@ function displayLevel3ResultScreen() {
 
 function calculateCoinsFromTime3() {
     const time = elapsedTime3;
-  return Math.max(1, Math.floor(30000 - (time * 1000))); 
+    let coinsGathered = Math.max(1, Math.round(50000 / time));
+    PLAYER_LEVEL3.newCoins += coinsGathered;
 }
 
 function playAgain3() {
@@ -335,6 +337,7 @@ function playAgain3() {
     resetStopwatch3();
     deathCounter3 = 0;
     updateDeathCounter3(deathCounter3);
+  localStorage.setItem('totalGames',(parseInt(localStorage.getItem('totalGames') || '0', 10) + 1).toString());
     GAME_CONFIG.characterSpeed = 5;
     document.getElementById("winFlash").style.opacity = "0";
     document.getElementById("winscreen3").remove();

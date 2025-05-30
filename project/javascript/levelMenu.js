@@ -171,6 +171,7 @@ function checkForCollisionsWithLevelEntrance() {
     if (KEY_EVENTS.e) {
       console.log("Entered IF")
       enterLevel1()
+            localStorage.setItem('totalGames',(parseInt(localStorage.getItem('totalGames') || '0', 10) + 1).toString());
     }
   }
   else if (isColliding(PLAYER.playerMenu, MAP.level2Entrance, 0)) {
@@ -181,6 +182,7 @@ function checkForCollisionsWithLevelEntrance() {
     if (KEY_EVENTS.e) {
       console.log("Entered IF")
       enterLevel2()
+      localStorage.setItem('totalGames',(parseInt(localStorage.getItem('totalGames') || '0', 10) + 1).toString());
     }
   }
   else if (isColliding(PLAYER.playerMenu, MAP.level3Entrance, 0)) {
@@ -191,6 +193,8 @@ function checkForCollisionsWithLevelEntrance() {
       if(KEY_EVENTS.e){
         console.log("Entered IF")
         enterLevel3()
+              localStorage.setItem('totalGames',(parseInt(localStorage.getItem('totalGames') || '0', 10) + 1).toString());
+
       }
   }
   else if (isColliding(PLAYER.playerMenu, MAP.shopEntrance, 0)) {

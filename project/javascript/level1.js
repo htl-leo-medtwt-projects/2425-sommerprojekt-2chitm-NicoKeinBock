@@ -209,12 +209,13 @@ function showWinningFlash() {
     setTimeout(() => {
         flash.style.opacity = "0";
     }, 150);
+    localStorage.setItem('totalwins', (parseInt(localStorage.getItem('totalwins') || '0', 10) + 1).toString());
     displayLevel1ResultScreen()
 }
 function updateDeathCounter(deathCount) {
     const deathCounter = document.getElementById("deathCounter");
     const deathCounterText = document.getElementById("deathCounterText");
-
+    localStorage.setItem('totaldeaths', (parseInt(localStorage.getItem('totaldeaths') || '0', 10) + 1).toString());
     if (deathCounterText) {
         deathCounterText.textContent = deathCount;
     } else {
@@ -323,6 +324,7 @@ function playAgain() {
     resetStopwatch();
     deathCounter = 0;
     updateDeathCounter(deathCounter);
+    localStorage.setItem('totalGames',(parseInt(localStorage.getItem('totalGames') || '0', 10) + 1).toString());
     GAME_CONFIG.characterSpeed = 5;
     const winFlash = document.getElementById("winFlash");
     winFlash.style.opacity = "0";

@@ -25,7 +25,9 @@ function toggleSettings() {
   }
 
   document.getElementById('gameMenuBox').style.display = "none";
-}
+}    
+
+
 
 function toggleGameMap() {
   var gameMap = document.getElementById("gameMap");
@@ -194,14 +196,46 @@ function isFirstCall() {
   }
   return false;
 }
-function displayStatistics(){
-  const totalCoins = getTotalCoins();
-  const totalGames = localStorage.getItem('totalGames');
-  const totalDeaths = localStorage.getItem('totalDeaths');
-  const totalWins = localStorage.getItem('totalWins');
-  const totalDeathsLevel1 = localStorage.getItem('totalDeathsLevel1')
-  const totalDeathsLevel2 = localStorage.getItem('totalDeathsLevel2')
-  const totalDeathsLevel3 = localStorage.getItem('totalDeathsLevel3')
-  document.getElementById('startSeite')
+function displayStatistics() {
+  let totalCoins = getTotalCoins();
+  let totalGames = localStorage.getItem('totalGames');
+  let totalDeaths = localStorage.getItem('totalDeaths');
+  let totalwins = localStorage.getItem('totalwins');
+  let statisticsElement = document.getElementById('statistics');
+  if (statisticsElement) {
+    statisticsElement.remove();
+  }
+   document.getElementById('startseite').innerHTML += `
+    <div id="statistics" style="display: none;">
+      <canvas id="canvas-stats"></canvas>
+      <h1>Statistiken</h1>
+      <h2>Münzen: ${totalCoins}</h2>
+      <h2>Gespielte Level: ${totalGames}</h2>
+      <h2>Tode: ${totalDeaths}</h2>
+      <h2>Siege: ${totalwins}</h2>
+      <button id="close-statistics">Close</button>
+    </div>
+  `;
+  if (document.getElementById('statistics').style.display === "block") {
+    document.getElementById('statistics').style.display = "none";
+  } else {
+    document.getElementById('statistics').style.display = "block";
+  }
+ var granimInstance = new Granim({
+    element: '#canvas-stats',
+    direction: 'left-right',
+    isPausedWhenNotInView: true,
+    states: {
+      "default-state": {
+        gradients: [
+          ['#00ffcc', '#7aff38'],
+          ['#7aff38', '#0575E6'],
+          ['#7bcbee', '#00ffcc']
+        ]
+      }
+    }
+  });
+   document.getElementById('close-statistics').addEventListener('click', function() {
+    document.getElementById('statistics').remove();
+  });
 }
-

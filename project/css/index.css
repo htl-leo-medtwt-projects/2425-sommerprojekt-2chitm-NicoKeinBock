@@ -883,6 +883,18 @@ button,
   left: 0;
   z-index: -1;
 }
+#canvas-stats{
+  display: block;
+  position: absolute;
+  border-radius: 15px;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
 
 #canvas-howTo {
   display: block;
@@ -1181,6 +1193,33 @@ button,
 }
 .Level3JumpBox{
     width: 100vw;
+}
+#statistics {
+  position: absolute;
+  width: 70vw;
+  z-index: 100;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding-bottom: 6%;
+  border: solid;
+  border-radius: 15px;
+}
+#statistics button {
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 150%;
+  font-family: InriaSans;
+  transition: all 0.5s;
+}
+#statistics button:hover {
+  transform: translate(-50%, -50%) scale(1.1);
+  cursor: pointer;
+}
+#statistics h1 {
+  font-size: 400%;
 }
 .levelCoin {
   width: 5%;
