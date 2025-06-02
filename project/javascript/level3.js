@@ -50,10 +50,7 @@ function updateLevel3() {
         GAME_CONFIG.characterSpeed = 3;
     }
 
-    if (KEY_EVENTS.space && !isJumping3) {
-        player3VelocityY = -window.innerHeight * 0.025;
-        isJumping3 = true;
-    }
+   
 
     player3VelocityY += gravity3;
     if (player3VelocityY > maxFallSpeed3) player3VelocityY = maxFallSpeed3;
@@ -327,9 +324,8 @@ function displayLevel3ResultScreen() {
 }
 
 function calculateCoinsFromTime3() {
-    const time = elapsedTime3;
-    let coinsGathered = Math.max(1, Math.round(50000 / time));
-    PLAYER_LEVEL3.newCoins += coinsGathered;
+  const time = elapsedTime3;
+  return Math.max(500, Math.floor(15000 - (time * 200))); 
 }
 
 function playAgain3() {

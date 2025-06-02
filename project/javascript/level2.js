@@ -50,10 +50,6 @@ function updateLevel2() {
         GAME_CONFIG.characterSpeed = 3;
     }
 
-    if (KEY_EVENTS.space && !isJumping2) {
-        player2VelocityY = -window.innerHeight * 0.025;
-        isJumping2 = true;
-    }
 
     player2VelocityY += gravity2;
     if (player2VelocityY > maxFallSpeed2) player2VelocityY = maxFallSpeed2;
@@ -70,7 +66,7 @@ function updateLevel2() {
             resetPlayerLevel2();
             showDeathFlash();
             updateDeathCounter2(deathCounter2);
-            startTime2 = startTime2 - 5000;
+            startTime2 = startTime2 - 2000;
         }
     }
 
@@ -260,7 +256,7 @@ function updateStopwatch2() {
     const seconds = Math.floor(elapsedTime2 % 60);
     const milliseconds = Math.floor((elapsedTime2 % 1) * 100);
     stopwatchText2 = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}:${milliseconds.toString().padStart(2, '0')}`;
-    document.getElementById('stopwatch2').innerHTML = stopwatchText2 + `<img src= "../images/coin.png" class = "levelCoin" id= "levelCoin2">`;
+    document.getElementById('stopwatch2').innerHTML = calculateCoinsFromTime2() + `<img src= "../images/coin.png" class = "levelCoin" id= "levelCoin2">`;
 }
 
 function resetStopwatch2() {
@@ -329,7 +325,7 @@ function displayLevel2ResultScreen() {
 
 function calculateCoinsFromTime2() {
     const time = elapsedTime2;
-  return Math.max(1, Math.floor(2500 - (time * 1000))); 
+  return Math.max(100, Math.floor(2500 - (time * 100))); 
 
 }
 

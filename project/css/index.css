@@ -377,7 +377,7 @@ button,
   background-color: rgba(0, 0, 0, 0.481);
 }
 
-#shop h2 {
+#shop h2, #coinCounter {
   margin-bottom: 0;
   animation: shimmer 5s infinite ease-in-out;
 }
@@ -956,7 +956,7 @@ button,
   position: relative;
 }
 
-.shopElement p {
+.shopElement p, #coinCounter  {
   font-size: 150%;
   font-family: Jersey25;
 }
@@ -1224,4 +1224,10 @@ button,
 .levelCoin {
   width: 5%;
   margin-left: 1vw;
+}
+#coinCounter{
+  position: absolute;
+  left: 5vw;
+  font-size: 200%;
+top: 5vh;
 }

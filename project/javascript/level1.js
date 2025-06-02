@@ -46,10 +46,7 @@ function updateLevel1() {
         GAME_CONFIG.characterSpeed = 5;
     }
 
-    if (KEY_EVENTS.space && !isJumping) {
-        player1VelocityY = -window.innerHeight * 0.03; 
-        isJumping = true;
-    }
+    
 
     player1VelocityY += gravity1;
     if (player1VelocityY > maxFallSpeed1) player1VelocityY = maxFallSpeed1;
