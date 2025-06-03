@@ -133,10 +133,14 @@ function howToPlay() {
       <div id= "howToText">
       <h2>So spielst du</h2>
       <h3>Steuerung:</h3>
-      <p>Benutze WASD um den Spieler zu steuern</p>
-      <p>Du kannst während du SHIFT gedrückt hältst sprinten</p>
-      <p>Drücke SPACE um in den Leveln zu springen</p>
-      <p>Drücke ESC um das Level zu pausieren</p>
+      <p>Benutze <b>WASD</b> um den Spieler zu steuern</p>
+      <br>
+      <p>Du kannst während du <b>SHIFT</b> gedrückt hältst sprinten</p>
+      <br>
+      <p>Drücke <b>SPACE</b> um in den Leveln zu springen</p>
+      <br>
+      <p>Drücke <b>ESC</b> um das Level zu pausieren</p>
+      <br>
       <p>Benütze den Shop um die gesammelten Münzen für Boosts auszugeben</p>
       </div>
       `
@@ -301,12 +305,12 @@ function buyItem(itemId) {
     button.disabled = true;
     button.style.cursor = 'not-allowed';
     switch (itemId) {
-      case 'jumpBoost1': gravity1 = window.innerHeight * 0.00095; console.log('bought grav1'); break;
-      case 'jumpBoost2': ; gravity2 = window.innerHeight * 0.0011;console.log('bought grav2');
-      case 'jumpBoost3': cost = 1000; break;
+      case 'jumpBoost1':   gravity1 = window.innerHeight * 0.00095; console.log('bought grav1'); break;
+      case 'jumpBoost2':   gravity2 = window.innerHeight * 0.0011;console.log('bought grav2'); break;
+      case 'jumpBoost3':   gravity3 = window.innerHeight * 0.00095; console.log('bought grav3'); break;
       case 'slowFalling1': maxFallSpeed1 = window.innerHeight * 0.006; console.log('bought slowFa1');  break;
       case 'slowFalling2': maxFallSpeed2 = window.innerHeight * 0.006; console.log('bought slowFa2'); break;
-      case 'slowFalling3': cost = 750; break;
+      case 'slowFalling3': maxFallSpeed3 = window.innerHeight * 0.006; console.log('bought slowFa3'); break;
     }
       localStorage.setItem(`buy-${itemId}`, true);
   }
